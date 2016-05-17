@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516123624) do
+ActiveRecord::Schema.define(version: 20160517140412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,15 +43,24 @@ ActiveRecord::Schema.define(version: 20160516123624) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tickets", force: :cascade do |t|
-    t.integer  "seat_no"
-    t.integer  "user_id"
-    t.integer  "event_id"
+  create_table "ticket_types", force: :cascade do |t|
+    t.string   "group"
+    t.integer  "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "tickets", force: :cascade do |t|
+    t.integer  "seat_no"
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "ticket_type_id"
+  end
+
   add_index "tickets", ["event_id"], name: "index_tickets_on_event_id", using: :btree
+  add_index "tickets", ["ticket_type_id"], name: "index_tickets_on_ticket_type_id", using: :btree
   add_index "tickets", ["user_id"], name: "index_tickets_on_user_id", using: :btree
 
   create_table "user_types", force: :cascade do |t|
@@ -74,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160516123624) do
   add_foreign_key "event_speakers", "events"
   add_foreign_key "event_speakers", "speakers"
   add_foreign_key "tickets", "events"
+  add_foreign_key "tickets", "ticket_types"
   add_foreign_key "tickets", "users"
   add_foreign_key "users", "user_types"
 end

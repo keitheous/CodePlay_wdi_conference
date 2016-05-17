@@ -1,0 +1,6 @@
+<h1>Show all tickets that belongs to one user</h1>
+<ul>
+  <% @tickets.each do |ticket| %>
+    <li><%= ticket.event.name %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,18 @@
+<h1>Speakers List</h1>
+<ul>
+  <% @speakers.each do |speaker| %>
+    <li>
+      <span><%= speaker.name%></span>         
+      <span><%= speaker.desc%></span>    
+      <a href="/speakers/<%= speaker.id%>/edit">edit</a>  
+      <form action="/speakers/<%= speaker.id %>" method="post">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+         <input type="hidden" value="delete" name="_method">
+         <button>delete</button>
+      </form>
+    </li>
+    
+  <%end%>
+</ul>
+
+<a href="/speakers/new">Add Speaker</a>

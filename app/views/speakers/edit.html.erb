@@ -1,0 +1,11 @@
+<form action="/speakers/<%= @speaker.id %>" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="hidden" value="put" name="_method">
+  <label for="">name</label>
+  <input type="text" name="name" value="<%= @speaker.name%>">
+  <label for="">description</label>
+  <input type="text" name="desc" value="<%= @speaker.desc%>">
+  <label for="">image</label>
+  <input type="text" name="img" value="<%= @speaker.img%>">
+  <input type="submit">
+</form>

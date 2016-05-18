@@ -1,0 +1,27 @@
+#seating-plan {
+  text-align: center;
+}
+
+.row, .seat {
+  text-align: center;
+}
+
+.seat:hover {
+  background-color: pink;
+  transition: 0.5s;
+}
+
+.seat {
+  display: inline-block;
+  background-color: lightblue;
+  width: 50px;
+  height: 50px;
+  margin: 10px 10px;
+  border-radius: 6px;
+  vertical-align: top;
+  line-height: 50px;
+}
+
+.selected {
+  background-color: pink;
+}

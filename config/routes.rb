@@ -53,4 +53,6 @@ Rails.application.routes.draw do
   resources :speakers
   resources :users
   get '/' => 'homes#index'
+  get '/login' => 'sessions#loginpage'
+  post '/login' => 'sessions#login'
 end

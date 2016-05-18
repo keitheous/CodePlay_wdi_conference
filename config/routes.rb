@@ -57,4 +57,5 @@ Rails.application.routes.draw do
   resources :events
   resources :speakers
   resources :users
+  get '/' => 'homes#index'
 end

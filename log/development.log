@@ -4099,3 +4099,88 @@ Processing by EventsController#index as HTML
   [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
   Rendered events/index.html.erb within layouts/application (8.6ms)
 Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tickets" for ::1 at 2016-05-18 10:45:06 +1000
+Processing by TicketsController#index as HTML
+  Rendered tickets/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-18 11:17:48 +1000
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/rending/.rvm/gems/ruby-2.2.2/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (0.6ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tickets" for ::1 at 2016-05-18 14:24:48 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TicketsController#index as HTML
+  Rendered tickets/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 198ms (Views: 189.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for ::1 at 2016-05-18 14:28:33 +1000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 37ms (Views: 25.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/events/new" for ::1 at 2016-05-18 14:33:15 +1000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/speakers" for ::1 at 2016-05-18 14:33:20 +1000
+Processing by SpeakersController#index as HTML
+  [1m[36mSpeaker Load (0.5ms)[0m  [1mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 26ms (Views: 19.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/speakers/4/edit" for ::1 at 2016-05-18 14:33:24 +1000
+Processing by SpeakersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSpeaker Load (0.6ms)[0m  SELECT  "speakers".* FROM "speakers" WHERE "speakers"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered speakers/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 14.3ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/speakers/4" for ::1 at 2016-05-18 14:33:26 +1000
+Processing by SpeakersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dkBVkD+eOGcwqj7p+5G/sVQ3ZiQ9g2vI4b7zyRA3HnHqcm57adKb9FIVs0+nd8oJ7G/Xh0ikEiDxescPXuUV4Q==", "id"=>"4"}
+  [1m[36mSpeaker Load (0.3ms)[0m  [1mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEventSpeaker Load (0.9ms)[0m  [1mSELECT "event_speakers".* FROM "event_speakers" WHERE "event_speakers"."speaker_id" = $1[0m  [["speaker_id", 4]]
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "speakers" WHERE "speakers"."id" = $1  [["id", 4]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 28ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/speakers" for ::1 at 2016-05-18 14:33:26 +1000
+Processing by SpeakersController#index as HTML
+  [1m[35mSpeaker Load (0.3ms)[0m  SELECT "speakers".* FROM "speakers"
+  Rendered speakers/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for ::1 at 2016-05-18 14:34:11 +1000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tickets" for ::1 at 2016-05-18 14:38:35 +1000
+Processing by TicketsController#index as HTML
+  Rendered tickets/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-18 14:44:47 +1000
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)

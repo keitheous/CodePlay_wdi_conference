@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users
   get '/' => 'homes#index'
 
+
   #============ api controller ================
   namespace :api do
     resources :tickets
@@ -15,4 +16,8 @@ Rails.application.routes.draw do
     resources :speakers
     resources :users
   end
+
+  get '/login' => 'sessions#loginpage'
+  post '/login' => 'sessions#login'
+
 end

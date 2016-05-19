@@ -1,4 +1,16 @@
 <%= form_tag charges_path do %>
+
+  <input type="hidden" name="tickets_list" value="<%= @seats %>" class="tickets_list">
+  <input type="hidden" name="total" value="<%= @total %>" class="total">
+
+  <% @seats.each do |seat|%>
+    <div>
+      <%= seat[:seat_num] %>
+      <%= seat[:type] %>
+      <%= seat[:price] %>
+    </div>
+  <% end %>
+
   <article>
     <% if flash[:error].present? %>
       <div id="error_explanation">
@@ -6,15 +18,15 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>Total: <%= @total %></span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-description="A month's subscription"
-    data-amount="500"
+    data-description="WDI CONF 2016"
+    data-amount="<%= @total*100 %>"
     data-locale="auto">
   </script>
-  
+
 <% end %>

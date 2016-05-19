@@ -15,7 +15,13 @@ $(document).ready(function(){
 
   });
 
-  
+  $('.circle-div').on('click', function() {
+   $('#hamburger').find('i').removeClass('fa-close').addClass('fa-bars');
+   $('#show-menu').fadeOut(100);
+   $('#overlay').show();
+ })
+
+
 
 
 

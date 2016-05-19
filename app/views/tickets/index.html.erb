@@ -1,8 +1,20 @@
 <div class="seating-wrap">
   <div id="seating-plan"></div>
   <div id="selected-seats"></div>
-  <div id="display-breakdown"></div>
-  <div id="display-total"></div>
+  <div class="tickets-breakdown">
+
+    <table id="tickets-breakdown" style="width:100%">
+      <tr>
+        <td>Quantity</td>
+        <td>Seat No</td>
+        <td>Ticket Type</td>
+        <td>Price</td>
+      </tr>
+    </table>
+
+      <div id="display-breakdown"></div>
+
+  </div>
 
   <article>
     <%# if flash[:error].present? %>
@@ -10,7 +22,6 @@
         <p><%#= flash[:error] %></p>
       </div> -->
     <%# end %>
-    <label class="amount">
     </label>
   </article>
 

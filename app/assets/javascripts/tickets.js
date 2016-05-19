@@ -1,7 +1,8 @@
-$(document).on('page:load', function(){
+$(document).ready(function() {
 
   var rows = ["A", "B", "C", "D", "E"];
   var seats = 10;
+  var pricePremium = 125.00;
   var priceNormal = 75.00;
 
   // Add number of rows of seats.
@@ -29,7 +30,30 @@ $(document).on('page:load', function(){
     };
     console.log(calculateTotal());
     if ($('.seat.selected').length > 0) {
-      $('#display-breakdown').html($('.seat.selected').length + ' x ' + '$' + priceNormal + ' = $' + calculateTotal());
+      // When a ticket is selected:
+
+      // Append new record
+      var quantity = 1;
+      var seatNo = $(this).text()
+      var ticketType = '';
+      if (seatNo[0] === "A") {
+        ticketType = "Premium"
+      } else {
+        ticketType = "Normal"
+      }
+      var price = 0;
+      if (ticketType === "Premium") {
+        var price = pricePremium.toFixed(2);
+      } else {
+        var price = priceNormal.toFixed(2);
+      }
+
+      var tr = $('<tr>').append($('<td>').html(quantity)).append($('<td>').html(seatNo)).append($('<td>').html(ticketType)).append($('<td>').html('$' + price));
+      $("#tickets-breakdown").find('tbody').append(tr);
+
+      // Calculate total price
+      // $('#display-breakdown').html($('.seat.selected').length + ' x ' + '$' + priceNormal + ' = $' + calculateTotal());
+
     } else if ($('.seat.selected').length == 0) {
       $('#display-breakdown').html('');
     }
@@ -37,8 +61,15 @@ $(document).on('page:load', function(){
 
   // Function for calculating total charges
   function calculateTotal() {
-    var total = $('.seat.selected').length * priceNormal;
-    $('.amount').html(total);
+    var total = 0;
+    $('.selected').each(function(index, value) {
+      var getSeat = this.getAttribute('data-seat')[0];
+      if (getSeat === "A") {
+        total = total + pricePremium;
+      } else {
+        total = total + priceNormal;
+      }
+    })
     return total;
   }
 

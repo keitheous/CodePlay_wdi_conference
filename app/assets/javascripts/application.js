@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery.knob
 //= require jquery.throttle
 //= require jquery.countdown

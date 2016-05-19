@@ -1,16 +1,78 @@
 
-<a href="/users/<%= @user.id %>/edit"> edit user profile </a>
-<a href="">Apply</a>
+<a href="/users/<%= @user.id %>/edit">edit_user_profile </a>
+<a class="apply-btn" href="">Apply</a>
+
+<div class="application-form">
+  <form action="/apply" method="post">
+   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <label for=""><strong>Topic :</strong></label>
+  <input type="text" name="topic">
+  <label for=""><strong>Content :</strong></label>
+  <textarea name="content" rows='20'></textarea>
+  <br>
+  <select name="event" id="select_event">
+    <% @events.each do |event| %>
+      <option value="<%= event.id%>"><%= event.name%></option>
+    <% end %>
+  </select>
+  <br>
+  <button class="confirm-apply-btn">Confirm Apply</button>
+
+  </form>
+  <button class="cancelBtn">Cancel Apply</button>
+</div>
 
 
 <% if (logged_in?) %>
-<a href="/logout"><button> Log Out</button></a>
+<a href="/logout">Log Out</a>
 <% end %>
 
 <style>
+
 .a {
   text-decoration: none;
   color: red;
-  visibility:
+  border:1px white;
+}
+.application-form{
+  display: none;
+  width: 300px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: pink;
+  border-radius: 20px;
+  padding-bottom: 10px;
+}
+
+.application-form *{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 80%;
+  margin-top: 5px;
+}
+.application-form button{
+ background-color: plum;
+ border:none;
+ border-radius: 10px;
+ height: 20px;
+>>>>>>> e797a1100ad090b89e2950f625050e827c92335f
 }
 </style>
+
+<script type="text/javascript">
+  $('.apply-btn').on('click',function(event) {
+    event.preventDefault();
+    $('.application-form').css({"display":"block","transition":'1.5s'});
+
+  });
+
+  $('.cancelBtn').on('click',function(event) {
+    event.preventDefault();
+    $('.application-form').css("display",'none');
+
+  });
+
+</script>

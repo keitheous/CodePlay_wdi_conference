@@ -11,8 +11,9 @@
   <textarea name="content" rows='20'></textarea>
   <br>
   <select name="event" id="select_event">
-    <option value="ruby">ruby</option>
-    <option value="javascript">javascript</option>
+    <% @events.each do |event| %>
+      <option value="<%= event.id%>"><%= event.name%></option>
+    <% end %>
   </select>
   <br>
   <button class="confirm-apply-btn">Confirm Apply</button> 

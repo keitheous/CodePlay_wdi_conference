@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
+    @events = Event.all
   end
 
   def new
@@ -51,7 +52,7 @@ class UsersController < ApplicationController
   def apply
     event_speaker = EventSpeaker.new
     event_speaker.user_id = session[:user_id]
-    event_speaker.event_id = Event.find_by(name:params[:event]).id
+    event_speaker.event_id = params[:event]
     event_speaker.topic = params[:topic]
     event_speaker.content = params[:content]
     event_speaker.application_status = "applying"

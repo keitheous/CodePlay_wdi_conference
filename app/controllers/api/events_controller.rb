@@ -13,7 +13,6 @@ module Api
         event = Event.new
         event.name = params[:name]
         event.time = params[:time]
-        event.location = params[:location]
         if event.save
           redirect_to '/events'
         else
@@ -31,7 +30,6 @@ module Api
         event = Event.find(params[:id])
         event.name = params[:name]
         event.time = params[:time]
-        event.location = params[:location]
         if event.save
           redirect_to '/events'
         else

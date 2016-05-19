@@ -21,5 +21,6 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#loginpage'
   post '/login' => 'sessions#login'
-  delete '/logout' => 'sessions#logout'
+  get '/logout' => 'sessions#logout'
+  # delete '/logout' => 'sessions#logout'
 end

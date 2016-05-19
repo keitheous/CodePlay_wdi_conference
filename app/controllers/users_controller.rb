@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @user = User.first
+    @user = current_user
   end
 
   def new
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user.email = params[:email]
     @user.password = params[:password]
     if @user.save
-      
+
       render :index
     else
       render :new
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
   end
 

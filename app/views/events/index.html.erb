@@ -1,18 +1,72 @@
-<h1>All Events</h1>
-<ul>
-  <% @events.each do |event| %>
-     <li>
-        <span><%= event.name %>
-        </span>
-        <span><%= event.time %></span>
-        <a href="/events/<%= event.id%>/edit">edit</a>
-        <form action="/events/<%= event.id %>" method="post">
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-         <input type="hidden" value="delete" name="_method">
-         <button>delete</button>
-       </form>
-     </li>
-  <% end %>
-</ul>
+<div class="events-handler">
+  <h1>All Events</h1>
+  <ul>
+    <% @events.each do |event| %>
+       <li>
+          <span><%= event.name %>
+          </span>
+          <span><%= event.time %></span>
+          <a href="/events/<%= event.id%>/edit">edit</a>
+          <form action="/events/<%= event.id %>" method="post">
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+           <input type="hidden" value="delete" name="_method">
+           <button>delete</button>
+         </form>
+       </li>
+    <% end %>
+  </ul>
 
-<a href="/events/new">Add Event</a>
+  <a href="/events/new">Add Event</a>
+</div>
+<br />
+<br />
+<div class="applying-users-handler">
+  <h1>Pending Applications</h1>
+  <ul>
+    <% @event_speakers.each do | event_speaker | %>
+      <li data-event-speaker-id="<%= event_speaker.id%>">
+        <span><%= event_speaker.user.name %>: </span>
+        <span><%= event_speaker.topic %> | </span>
+        <span><%= event_speaker.content%> | </span>
+        <span><%= event_speaker.event.name%></span>
+        <button class="approve-button">Approve</button>
+        <button class="reject-button">Reject</button>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<style type="text/css">
+  button {
+    color:black;
+  }
+</style>
+
+<script type="text/javascript">
+  $('.approve-button').on('click',function(event){
+    var event_speaker_id = $(this).closest('li').data('event-speaker-id');
+    $.ajax({
+      url: '/api/apply',
+      data: {id: event_speaker_id, status: 'approved'},
+      method: 'put'
+    }).done(function(response) {
+      // $(this).closest('li').css('display','none');
+      // delete this item manually
+    });
+  });
+
+  $('.reject-button').on('click',function(event){
+    var event_speaker_id = $(this).closest('li').data('event-speaker-id');
+    $.ajax({
+      url: '/api/apply',
+      data: {id: event_speaker_id, status: 'rejected'},
+      method: 'delete'
+    }).done(function(response) {
+      // $(this).closest('li').css('display','none');
+      // delete this item manually
+    });
+    
+  });
+</script>
+
+

@@ -1,5 +1,7 @@
 <%= form_tag charges_path do %>
 
+  <input type="hidden" name="total" value="<%= @total %>" class="total">
+
   <% @seats.each do |seat|%>
     <div>
       <%= seat[:seat_num] %>

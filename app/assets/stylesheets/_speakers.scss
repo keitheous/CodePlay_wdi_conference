@@ -1,0 +1,50 @@
+#speakers {
+  height: 100vh;
+  background-color: white;
+  padding-top: 5em;
+  padding-left: 5em;
+  padding-right: 5em;
+  padding-bottom: 1em;
+  background-color: aliceblue;
+}
+
+#speakers h1{
+  font-size: 2em;
+  text-align: center;
+  color: #808080;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.speakers-card {
+  float: left;
+  margin:10px;
+  padding:10px;
+  text-align: center;
+  transition: .3s;
+  height: 250px;
+  width: 175px;
+  overflow: hidden;
+  color:black;
+}
+
+.speakers-card .image {
+  text-align: center;
+}
+.speakers-card .image img{
+  border:3px solid skyblue;
+  border-radius: 140px;
+  width: 135px;
+  height: 140px;
+
+}
+
+.speakers-card .speaker-info {
+  height: 120px;
+  line-height: 30px;
+  color: #808080;
+}
+
+.speakers-card .speaker-name {
+  font-size: 1.5em;
+}

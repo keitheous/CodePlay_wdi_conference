@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     user.desc = params[:desc]
     user.img = params[:img]
     if user.save
-      render :index
+      redirect_to '/users'
     else
       render :edit
     end

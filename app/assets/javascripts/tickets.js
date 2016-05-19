@@ -3,7 +3,7 @@ $(document).ready(function() {
   var rows = ["A", "B", "C", "D", "E"];
   var seats = 10;
   var pricePremium = 125.00;
-  var price = 75.00;
+  var priceGeneral = 75.00;
 
   // Add number of rows of seats.
   for (var i=0; i<rows.length; i++) {
@@ -43,13 +43,13 @@ $(document).ready(function() {
       if (seatNo[0] === "A") {
         ticketType = "Premium"
       } else {
-        ticketType = "Normal"
+        ticketType = "General"
       }
       var price = 0;
       if (ticketType === "Premium") {
         var price = pricePremium.toFixed(2);
       } else {
-        var price = price.toFixed(2);
+        var price = priceGeneral.toFixed(2);
       }
 
       var tr = $('<tr>').append($('<td>').html(quantity)).append($('<td>').html(seatNo)).append($('<td>').html(ticketType)).append($('<td>').html('$' + price));
@@ -57,8 +57,8 @@ $(document).ready(function() {
 
       $('#display-total').html('Total: $' + calculateTotal().toFixed(2));
 
-      // Calculate total price
-      // $('#display-breakdown').html($('.seat.selected').length + ' x ' + '$' + price + ' = $' + calculateTotal());
+      // Calculate total priceGeneral
+      // $('#display-breakdown').html($('.seat.selected').length + ' x ' + '$' + priceGeneral + ' = $' + calculateTotal());
 
     } else if ($('.seat.selected').length == 0) {
       $('#display-breakdown').html('');
@@ -74,7 +74,7 @@ $(document).ready(function() {
       if (getSeat === "A") {
         total = total + pricePremium;
       } else {
-        total = total + price;
+        total = total + priceGeneral;
       }
     })
     return total;

@@ -1,6 +1,23 @@
 class ChargesController < ApplicationController
 
-  def new
+  def index
+    @seats = params[:seats_list]
+    @seats = @seats.split(',')
+    @seats = @seats.map do |seat_num|
+      if seat_num[0] == "A"
+        type = "Premium"
+        price = 125
+      else
+        type = "General"
+        price = 75
+      end
+      {type: type, price: price, seat_num: seat_num}
+    end
+    @total = 0
+    @seats.each do |seat|
+      @total = @total + seat[:price]
+    end
+    render :new
   end
 
   def create
@@ -19,9 +36,10 @@ class ChargesController < ApplicationController
       :currency    => 'aud'
     )
 
-  # rescue Stripe::CardError => e
-  #   flash[:error] = e.message
-  #   redirect_to new_charge_path
-  # end
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to new_charge_path
+
+  end
 
 end

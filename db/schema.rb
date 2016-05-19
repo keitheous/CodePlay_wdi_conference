@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517140412) do
+ActiveRecord::Schema.define(version: 20160519052054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,26 +19,18 @@ ActiveRecord::Schema.define(version: 20160517140412) do
   create_table "event_speakers", force: :cascade do |t|
     t.string   "topic"
     t.integer  "event_id"
-    t.integer  "speaker_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "application_status"
+    t.integer  "user_id"
   end
 
   add_index "event_speakers", ["event_id"], name: "index_event_speakers_on_event_id", using: :btree
-  add_index "event_speakers", ["speaker_id"], name: "index_event_speakers_on_speaker_id", using: :btree
+  add_index "event_speakers", ["user_id"], name: "index_event_speakers_on_user_id", using: :btree
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.datetime "time"
-    t.string   "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "speakers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "desc"
-    t.string   "img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,7 +44,6 @@ ActiveRecord::Schema.define(version: 20160517140412) do
 
   create_table "tickets", force: :cascade do |t|
     t.integer  "seat_no"
-    t.integer  "user_id"
     t.integer  "event_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
@@ -61,7 +52,6 @@ ActiveRecord::Schema.define(version: 20160517140412) do
 
   add_index "tickets", ["event_id"], name: "index_tickets_on_event_id", using: :btree
   add_index "tickets", ["ticket_type_id"], name: "index_tickets_on_ticket_type_id", using: :btree
-  add_index "tickets", ["user_id"], name: "index_tickets_on_user_id", using: :btree
 
   create_table "user_types", force: :cascade do |t|
     t.string   "group"
@@ -76,14 +66,15 @@ ActiveRecord::Schema.define(version: 20160517140412) do
     t.integer  "user_type_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.text     "desc"
+    t.text     "img"
   end
 
   add_index "users", ["user_type_id"], name: "index_users_on_user_type_id", using: :btree
 
   add_foreign_key "event_speakers", "events"
-  add_foreign_key "event_speakers", "speakers"
+  add_foreign_key "event_speakers", "users"
   add_foreign_key "tickets", "events"
   add_foreign_key "tickets", "ticket_types"
-  add_foreign_key "tickets", "users"
   add_foreign_key "users", "user_types"
 end

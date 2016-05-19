@@ -36,9 +36,29 @@ class ChargesController < ApplicationController
       :currency    => 'aud'
     )
 
+    ticket_list = eval(params[:tickets_list])
+    ticket_list.each do |ticket|
+      new_ticket = Ticket.new
+      new_ticket.seat_no = ticket[:seat_num]
+      
+      # new_ticket.event_id = Event.first.id
+      new_ticket.save
+    end
+
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_charge_path
+
+
+    # num_of_tickets = params[:num_of_tickets].to_i
+    # num_of_tickets.times do
+    #   ticket = Ticket.new
+    #   ticket.seat_no =
+    #   ticket.event_id = Event.first.id
+    #   ticket.user_id = User.first.id
+    #   ticket.save
+    # end
+
 
   end
 

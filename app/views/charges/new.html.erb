@@ -1,5 +1,6 @@
 <%= form_tag charges_path do %>
 
+  <input type="hidden" name="tickets_list" value="<%= @seats %>" class="tickets_list">
   <input type="hidden" name="total" value="<%= @total %>" class="total">
 
   <% @seats.each do |seat|%>
@@ -23,7 +24,7 @@
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-description="A month's subscription"
+    data-description="WDI CONF 2016"
     data-amount="<%= @total*100 %>"
     data-locale="auto">
   </script>

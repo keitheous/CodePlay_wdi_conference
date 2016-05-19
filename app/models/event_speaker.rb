@@ -1,4 +1,4 @@
 class EventSpeaker < ActiveRecord::Base
   belongs_to :event
-  belongs_to :speaker
+  belongs_to :user
 end

@@ -1,5 +1,12 @@
+.seating-wrap {
+  // perspective: 480px;
+  text-align: center;
+}
+
 #seating-plan {
   text-align: center;
+  margin-top: 80px;
+  // transform: rotateX(35deg);
 }
 
 .row, .seat {
@@ -9,6 +16,7 @@
 .seat:hover {
   background-color: pink;
   transition: 0.5s;
+  color: white;
 }
 
 .seat {
@@ -20,8 +28,38 @@
   border-radius: 6px;
   vertical-align: top;
   line-height: 50px;
+  color: lightblue;
+  cursor: pointer;
+}
+
+.premium-seat {
+  background-color: blue;
+  color: blue;
 }
 
 .selected {
-  background-color: pink;
+  background-color: #E75480;
+  color: white;
+}
+
+#selected-seats {
+  text-align: center;
+}
+
+.chosen-seat {
+  width: 80px;
+  height: 50px;
+  background-color: lightgreen;
+  border-radius: 6px;
+  vertical-align: top;
+  line-height: 50px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+#display-breakdown {
+  text-align: center;
+  margin: 30px auto;
+  font-size: 20px;
 }

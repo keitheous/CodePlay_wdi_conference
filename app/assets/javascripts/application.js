@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require jquery.knob
+//= require jquery.throttle
+//= require jquery.countdown
+//= require countdown
+//= require typed
+//= require tickets

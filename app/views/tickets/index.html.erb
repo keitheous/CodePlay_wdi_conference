@@ -1,1 +1,24 @@
-<div id="seating-plan"></div>
+<div class="seating-wrap">
+  <div id="seating-plan"></div>
+  <div id="selected-seats"></div>
+  <div id="display-breakdown"></div>
+  <div id="display-total"></div>
+
+  <article>
+    <%# if flash[:error].present? %>
+      <!-- <div id="error_explanation">
+        <p><%#= flash[:error] %></p>
+      </div> -->
+    <%# end %>
+    <label class="amount">
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+  data-description="A month's subscription"
+  data-amount="500"
+  data-locale="auto">
+  </script>
+
+</div>

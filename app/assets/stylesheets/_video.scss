@@ -1,14 +1,24 @@
 #video-overlay {
-  background-color:rgba(0,0,0,0.5);
-  position:absolute;
-  z-index:-50;
+  // z-index: -50;
+  position: relative;
+  text-align: center;
+  // top: 100%;
+  height: 100vh;
+}
+
+#video-background {
+  background-color:rgba(0,0,0,0.7);
   height:100vh;
-  overflow:hidden;
+  overflow: hidden;
+  z-index: -50;
+  top: 100%;
+
+
 }
 
 #vid {
   position: absolute;
-  top: 50%;
+  top: 100%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
@@ -22,7 +32,7 @@
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
-
-::-webkit-media-controls {
-  display:none !important;
-}
+//
+// ::-webkit-media-controls {
+//   display:none !important;
+// }

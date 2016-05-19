@@ -48,4 +48,15 @@ class UsersController < ApplicationController
     
   end
 
+  def apply
+    event_speaker = EventSpeaker.new
+    event_speaker.user_id = session[:user_id]
+    event_speaker.event_id = Event.find_by(name:params[:event]).id
+    event_speaker.topic = params[:topic]
+    event_speaker.content = params[:content]
+    event_speaker.application_status = "applying"
+    event_speaker.save
+    redirect_to '/users'
+  end
+
 end

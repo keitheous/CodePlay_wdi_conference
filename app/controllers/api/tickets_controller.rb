@@ -21,10 +21,7 @@ module Api
       end
 
       def show
-        user_id = params[:id]
-        @tickets = Ticket.where(user_id: user_id);
-        render json: @tickets.to_json
-        # should render to user's profile page which we don't have yet, hard code to show page
+        
       end
     end
 end

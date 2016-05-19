@@ -1,8 +1,20 @@
 <div class="seating-wrap">
   <div id="seating-plan"></div>
   <div id="selected-seats"></div>
-  <div id="display-breakdown"></div>
-  <div id="display-total"></div>
+  <div class="tickets-breakdown">
+
+    <table id="tickets-breakdown" style="width:100%">
+      <tr>
+        <td>Quantity</td>
+        <td>Seat No</td>
+        <td>Ticket Type</td>
+        <td>Price</td>
+      </tr>
+    </table>
+
+    <div id="display-total"></div>
+
+  </div>
 
   <article>
     <%# if flash[:error].present? %>
@@ -10,15 +22,16 @@
         <p><%#= flash[:error] %></p>
       </div> -->
     <%# end %>
-    <label class="amount">
     </label>
   </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-  data-description="A month's subscription"
-  data-amount="500"
-  data-locale="auto">
-  </script>
+  <form action="/charges/" method="get" enctype="multipart/form-data">
+
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <input type="hidden" name="seats_list" value="" class="seats-list">
+
+    <button>Check Out</button>
+  </form>
 
 </div>

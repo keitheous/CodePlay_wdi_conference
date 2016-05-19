@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     @user.password = params[:password]
+    @user.desc = params[:desc]
+    @user.img = params[:img]
     if @user.save
       
       render :index
@@ -33,6 +35,8 @@ class UsersController < ApplicationController
     user.name = params[:name]
     user.email = params[:email]
     user.password = params[:password]
+    user.desc = params[:desc]
+    user.img = params[:img]
     if user.save
       render :index
     else
@@ -41,6 +45,7 @@ class UsersController < ApplicationController
   end
   
   def destroy
+    
   end
 
 end

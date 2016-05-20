@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519144214) do
+ActiveRecord::Schema.define(version: 20160520054514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,23 +36,33 @@ ActiveRecord::Schema.define(version: 20160519144214) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ticket_types", force: :cascade do |t|
+  create_table "seat_types", force: :cascade do |t|
     t.string   "group"
-    t.integer  "price"
+    t.string   "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "tickets", force: :cascade do |t|
-    t.string   "seat_no"
+  create_table "seats", force: :cascade do |t|
+    t.string   "seat_num"
+    t.string   "status"
+    t.integer  "ticket_id"
     t.integer  "event_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "ticket_type_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "seat_type_id"
   end
 
-  add_index "tickets", ["event_id"], name: "index_tickets_on_event_id", using: :btree
-  add_index "tickets", ["ticket_type_id"], name: "index_tickets_on_ticket_type_id", using: :btree
+  add_index "seats", ["event_id"], name: "index_seats_on_event_id", using: :btree
+  add_index "seats", ["seat_type_id"], name: "index_seats_on_seat_type_id", using: :btree
+  add_index "seats", ["ticket_id"], name: "index_seats_on_ticket_id", using: :btree
+
+  create_table "tickets", force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "email"
+    t.string   "stripe_token"
+  end
 
   create_table "user_types", force: :cascade do |t|
     t.string   "group"
@@ -75,7 +85,8 @@ ActiveRecord::Schema.define(version: 20160519144214) do
 
   add_foreign_key "event_speakers", "events"
   add_foreign_key "event_speakers", "users"
-  add_foreign_key "tickets", "events"
-  add_foreign_key "tickets", "ticket_types"
+  add_foreign_key "seats", "events"
+  add_foreign_key "seats", "seat_types"
+  add_foreign_key "seats", "tickets"
   add_foreign_key "users", "user_types"
 end

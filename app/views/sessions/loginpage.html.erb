@@ -1,22 +1,20 @@
-<h2> Log in page </h2>
 
-<form action="/login" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <label for="">name</label>
-  <input type="text" name="name">
-  <label for="">password</label>
-  <input type="password" name="password">
+<a href="/"><button class="back-btn">Back</button></a>
 
-  <button>Log In</button>
-</form>
-<br>
-<p> not a user yet? sign up now! </p>
-<button><a href="/users/new"> SIGN UP! </a></button>
+<div class="form-div">
+  <h1 style="text-align:center;"> Log In </h1>
 
-<!-- temp css -->
-<style>
-a {
-  text-decoration: none;
-  color: red;
-}
-</style>
+  <form action="/login" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <label for="">Name</label>
+    <input type="text" name="name">
+
+    <label for="">Password</label>
+    <input type="password" name="password">
+
+    <button class="sign-in-btn">Log In</button>
+
+    <p>Not a user yet ? <a class="link-underline" href="/users/new">Sign up now!</a></p>
+  </form>
+</div>

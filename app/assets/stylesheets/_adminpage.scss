@@ -1,0 +1,117 @@
+.events-handler {
+  margin-top: 50px;
+
+  .add-event-btn {
+    background-color: #5cb85c;
+    padding: 5px 8px;
+    margin-left: 81px;
+  }
+
+  h1 {
+    font-size:1.6em;
+    text-align: center;
+    padding:20px;
+  }
+
+  table, td, th {
+    border: 1px solid white;
+    padding:10px 0px 10px 15px;
+  }
+
+  table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+  }
+  table .save {
+    display: none;
+  }
+
+  th {
+    text-align: left;
+    background-color: #2980b9;
+  }
+
+  .event-name-td {
+    padding-right: 80px;
+  }
+  .event-time-td {
+    padding-right: 100px;
+  }
+  .event-edit-td {
+    padding-right: 15px;
+  }
+  form {
+    display: inline-block;
+
+  }
+  .event-delete-tbn {
+    border:none;
+    background-color: #222222;
+  }
+  .event-edit-btn {
+    padding-right: 10px;
+  }
+
+  .fa-pencil-square-o, .fa-trash {
+    color:white;
+  }
+}
+.applying-users-handler {
+  margin: 50px auto;
+
+  h1 {
+    font-size:1.6em;
+    text-align: center;
+    padding:20px;
+  }
+  ul {
+    margin: 10px auto;
+    color:gray;
+  }
+  li {
+    border:1px solid gray;
+    background-color: aliceblue;
+    padding:10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 2px;
+
+  }
+  span {
+    margin-right: 20px;
+  }
+
+  .approve-button {
+    float: right;
+    border:none;
+    background-color: skyblue;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding:3px;
+    height: 25px;
+    width: 50px;
+    color:white;
+  }
+  .reject-button {
+    float: right;
+    border:none;
+    background-color: plum;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding:3px;
+    height: 25px;
+    width: 50px;
+    color:white;
+  }
+
+  .approve-button:hover {
+    background-color: royalblue;
+  }
+  .reject-button:hover {
+    background-color: tomato;
+  }
+
+}
+
+

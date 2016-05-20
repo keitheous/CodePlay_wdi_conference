@@ -23,24 +23,20 @@ module Api
       def edit
         @event = Event.find(params[:id])
         render json: @event.to_json
-
       end
 
       def update
         event = Event.find(params[:id])
         event.name = params[:name]
         event.time = params[:time]
-        if event.save
-          redirect_to '/events'
-        else
-          render :edit
-        end
+        event.save
+        render json: event.to_json
       end
 
       def destroy
         event = Event.find(params[:id])
         event.destroy
-        redirect_to '/events'
+        render json: 200.to_json
       end
 
     end

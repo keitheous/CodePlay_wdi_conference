@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user.img = params[:img]
     if @user.save
 
-      render :index
+      redirect_to '/'
     else
       render :new
     end
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    
+
   end
 
   def apply

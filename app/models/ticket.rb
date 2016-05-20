@@ -1,4 +1,3 @@
 class Ticket < ActiveRecord::Base
-  belongs_to :event
-  belongs_to :ticket_type
+  has_many :seats
 end

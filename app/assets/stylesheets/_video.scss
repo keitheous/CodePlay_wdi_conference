@@ -1,24 +1,14 @@
-#video-overlay {
-  // z-index: -50;
-  position: relative;
-  text-align: center;
-  // top: 100%;
-  height: 100vh;
+#overlay {
+  position:relative;
 }
 
-#video-background {
-  background-color:rgba(0,0,0,0.7);
-  height:100vh;
-  overflow: hidden;
-  z-index: -50;
-  top: 100%;
-
-
+::-webkit-media-controls {
+  display:none !important;
 }
 
 #vid {
   position: absolute;
-  top: 100%;
+  top: 50%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
@@ -32,7 +22,12 @@
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
-//
-// ::-webkit-media-controls {
-//   display:none !important;
-// }
+
+#video-overlay {
+  position: absolute;
+  background-color:rgba(0,0,0,0.8);
+  height: 100vh;
+  min-width:100%;
+  overflow: hidden;
+  top: 0;
+}

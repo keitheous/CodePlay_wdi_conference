@@ -1,0 +1,86 @@
+.login-div {
+  position:fixed;
+  top:2%;
+  left:2%;
+  z-index:150;
+}
+
+.back-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid none;
+  border-radius: 40px;
+  border:none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 13px;
+  margin-left:20px;
+}
+
+.back-btn-two {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 40px;
+  border:none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-left:100px;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: white;
+  border:none;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sign-in-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom:10px;
+}
+
+.sign-in-btn:hover, .login-btn:hover, .back-btn:hover,.back-btn-two:hover {
+  background-color: white;
+  color: black;
+}
+
+.form-div {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:50%;
+}
+
+.form-footer {
+  position: relative;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:50%;
+}
+
+.link-underline {
+  text-decoration: underline;
+  color:#f39c12;
+}
+
+input {
+  width: 100%;
+  height:3em;
+  margin: 8px 0;
+  outline-color:#f39c12;
+  border-radius:6px;
+  border:none;
+}

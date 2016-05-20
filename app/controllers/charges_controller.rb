@@ -39,14 +39,18 @@ class ChargesController < ApplicationController
       :currency    => 'aud'
     )
 
-    ticket_list = eval(params[:tickets_list])
-    ticket_list.each do |ticket|
+    new_ticket = Ticket.new
+    new_ticket.email = params[:stripeEmail]
+    new_ticket.stripe_token = params[:stripeToken]
+    new_ticket.save
 
-      new_ticket = Ticket.new
-      new_ticket.seat_no = ticket[:seat_num]
-
-      # new_ticket.event_id = Event.first.id
-      new_ticket.save
+    seats_list = eval(params[:tickets_list])
+    seats_list.each do |seat|
+      current_seat = Seat.find_by(seat_num: seat[:seat_num])
+      current_seat.status = "Taken"
+      current_seat.ticket_id = new_ticket.id
+      current_seat.save
+      # new_ticket = ticket[:seat_num]
     end
 
 

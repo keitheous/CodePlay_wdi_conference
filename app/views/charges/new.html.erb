@@ -3,30 +3,36 @@
   <input type="hidden" name="tickets_list" value="<%= @seats %>" class="tickets_list">
   <input type="hidden" name="total" value="<%= @total %>" class="total">
 
-  <% @seats.each do |seat|%>
-    <div>
-      <%= seat[:seat_num] %>
-      <%= seat[:type] %>
-      <%= seat[:price] %>
-    </div>
-  <% end %>
+  <div class="order-summary">
 
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Total: <%= @total %></span>
-    </label>
-  </article>
+    <div class="order-title">ORDER SUMMARY</div>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-description="WDI CONF 2016"
-    data-amount="<%= @total*100 %>"
-    data-locale="auto">
-  </script>
+    <table id="order-checkout">
+      <% @seats.each do |seat|%>
+        <tr>
+          <td class="seat-checkout"><%= seat[:seat_num] %></td>
+          <td class="type-checkout"><%= seat[:type] %></td>
+          <td class="price-checkout"><%= number_to_currency(seat[:price]) %></td>
+        </tr>
+      <% end %>
+    </table>
+
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <div class="total-checkout">Total: <%= number_to_currency(@total) %></div>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-description="WDI CONF 2016"
+      data-amount="<%= @total*100 %>"
+      data-locale="auto">
+    </script>
+
+  </div>
 
 <% end %>

@@ -10,16 +10,6 @@
 </head>
 <body>
 
-  <div class="login-div" style="<%= 'display: none;' if request.path == '/login'%>">
-    <% if (logged_in?) %>
-      <button class="login-btn"><a href="/logout">Log Out</a></button>
-    <% end %>
-
-    <% if (!logged_in?) %>
-      <a href="/login"><button class="login-btn">Log In</button></a>
-    <% end %>
-  </div>
-
 <%= yield %>
 
 </body>

@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @event_speakers = EventSpeaker.where(application_status: 'applying')
   end
 
   def new

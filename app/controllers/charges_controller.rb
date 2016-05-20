@@ -41,6 +41,7 @@ class ChargesController < ApplicationController
 
     ticket_list = eval(params[:tickets_list])
     ticket_list.each do |ticket|
+
       new_ticket = Ticket.new
       new_ticket.seat_no = ticket[:seat_num]
 

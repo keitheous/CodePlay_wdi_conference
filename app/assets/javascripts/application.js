@@ -21,3 +21,4 @@
 //= require main
 //= require tickets
 //= require hamburger
+//= require forms

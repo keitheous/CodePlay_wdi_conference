@@ -1,82 +1,57 @@
 $(document).ready(function() {
 
-  var rows = ["A", "B", "C", "D", "E"];
-  var seats = 10;
   var pricePremium = 125.00;
   var priceGeneral = 75.00;
 
-  // Add number of rows of seats.
-  for (var i=0; i<rows.length; i++) {
-    var row = 'row' + rows[i];
-    $('#seating-plan').append('<div class="row ' + row + '"></div>');
-  }
+  $.ajax({
+    url: '/api/seats'
+  }).done(function(seats) {
 
-  // Add seats to row with a class 'seat'.
-  $('.row').each(function(index, value) {
-    for (var j=0; j<seats; j++) {
-      var seatNo = ($(this).attr('class')[7]) + (j+1);
-      $('<div class="seat" data-seat="' + seatNo + '"></div>').html(seatNo).appendTo(this);
-    };
-  })
-  $('.rowA').children().addClass('premium');
+    // Add number of rows of seats.
+    var rowArr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+    var seatsPerRow = 10;
+    var rows = seats.length / seatsPerRow
 
-  // Seat Selection
-  $('.seat').click(function() {
+    for (var i=0; i<rows; i++) {
+      var row = 'row' + rowArr[i];
+      $('#seating-plan').append('<div class="row ' + row + '"></div>');
+    }
 
-    if ($(this).hasClass('selected')) {
-      $(this).removeClass('selected');
-    } else {
-      $(this).addClass('selected');
-      $(this).parent().attr('class')[7] + $(this).attr('class')[5]+ $(this).attr('class')[6];
-    };
+    // Add seats to row with a class 'seat'.
+    $('.row').each(function(index, value) {
+      for (var j=0; j<seatsPerRow; j++) {
+        var seatNo = ($(this).attr('class')[7]) + (j+1);
+        $('<div class="seat" data-seat="' + seatNo + '"></div>').html(seatNo).appendTo(this);
+      };
+    })
+    $('.rowA').children().addClass('premium');
 
-    var selectedSeats = getSelectedSeats();
-    $('.seats-list').val(selectedSeats);
+    console.log(seats);
+    $.each(seats, function(index, seat) {
 
-    // When a ticket is selected:
-    $('.orders-bar').html(displaySummary());
+      if (seat.status.toLowerCase() === "taken") {
+        var $seat = $("[data-seat='" + seat.seat_num + "']");
+        $seat.addClass('taken');
+      }
+    })
 
-    // if ($('.selected').length > 0) {
-    //   $('.orders-bar').html(displaySummary());
-    // } else {
-    //   $('.orders-bar').html('Please Select a Seat.');
-    // }
+    // Seat Selection
+    $('.seat').click(function() {
 
+      if ($(this).hasClass('selected')) {
+        $(this).removeClass('selected');
+      } else {
+        $(this).addClass('selected');
+        $(this).parent().attr('class')[7] + $(this).attr('class')[5]+ $(this).attr('class')[6];
+      };
 
+      // Store array of selected seats in a hidden input tag
+      $('.seats-list').val(getSelectedSeats());
 
-    // if ($('.seat.selected').length > 0) {
-    //
-    //   $('#tickets-breakdown tr').slice(1).remove()
-    //
-    //   $('.selected').each(function(index, value) {
-    //     var quantity = 1;
-    //     var seatNo = $(value).html()
-    //     var ticketType = '';
-    //     if (seatNo[0] === "A") {
-    //       ticketType = "Premium"
-    //     } else {
-    //       ticketType = "General"
-    //     }
-    //     var price = 0;
-    //     if (ticketType === "Premium") {
-    //       var price = pricePremium.toFixed(2);
-    //     } else {
-    //       var price = priceGeneral.toFixed(2);
-    //     }
-    //     var tr = $('<tr>').append($('<td>').html(quantity)).append($('<td>').html(seatNo)).append($('<td>').html(ticketType)).append($('<td>').html('$' + price));
-    //     $("#tickets-breakdown").find('tbody').append(tr);
-    //
-    //     $('#display-total').html('Total: $' + calculateTotal().toFixed(2));
-    //
-    //   })
-    //
-    // } else if ($('.seat.selected').length == 0) {
-    //   $('#tickets-breakdown tr').slice(1).remove()
-    //   var tr = $('<tr>').append($('<td>').html('-')).append($('<td>').html('-')).append($('<td>').html('-')).append($('<td>').html('$' + '-'));
-    //   $("#tickets-breakdown").find('tbody').append(tr)
-    //   $('#display-total').html('');
-    // }
+      // Append summary total to html:
+      $('.orders-bar').html(displaySummary());
 
+    })
   })
 
   // Function for calculating total charges
@@ -93,6 +68,7 @@ $(document).ready(function() {
     return total;
   }
 
+  // Function for collecting selected seats in an array.
   function getSelectedSeats() {
     var seatsArr = [];
     $('.selected').each(function(index, value) {
@@ -102,6 +78,7 @@ $(document).ready(function() {
     return seatsArr;
   }
 
+  // Function for displaying order summary at footer bar of page.
   function displaySummary() {
     var selectedPremium = $('.selected.premium').length
     var selectedGeneral = $('.selected').not('.premium').length

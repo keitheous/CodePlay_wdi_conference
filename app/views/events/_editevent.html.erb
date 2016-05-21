@@ -1,0 +1,12 @@
+<div class="edit-events-form">
+  <i id="close-edit-event" class="fa fa-close fa-2x" aria-hidden="true"></i>
+  <form action="" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="hidden" value="put" name="_method">
+    <label for="">Event Name</label>
+    <input id="event-name" type="text" name="name">
+    <label for="">Start Time</label>
+    <input id="event-time" type="datetime-local" name="time">
+    <input class="edit-event-submit" type="submit">
+  </form>
+</div>

@@ -7,7 +7,11 @@ class SessionsController < ApplicationController
     @user = User.find_by(name: params[:name])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to "/"
+      if @user.user_type.group == "Admin"
+        redirect_to '/events'
+      else 
+        redirect_to "/" 
+      end
     else
       redirect_to "/"
     end

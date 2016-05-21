@@ -26,12 +26,14 @@
       <div class="total-checkout">Total: <%= number_to_currency(@total) %></div>
     </article>
 
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-      data-description="WDI CONF 2016"
-      data-amount="<%= @total*100 %>"
-      data-locale="auto">
-    </script>
+    <div class="pay-now-btn">
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="WDI CONF 2016"
+        data-amount="<%= @total*100 %>"
+        data-locale="auto">
+      </script>
+    </div>
 
   </div>
 

@@ -24,3 +24,4 @@
 //= require hamburger
 //= require forms
 //= require adminpage
+//= require checkout

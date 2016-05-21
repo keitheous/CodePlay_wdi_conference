@@ -1,39 +1,41 @@
-<a href="/"><button class="back-btn-two">Back</button></a>
+<div id="tickets-page">
+  <a href="/">Back To Main</a>
 
-<div class="seating-wrap">
-  <div id="seating-plan"></div>
-  <div id="selected-seats"></div>
-  <div class="tickets-breakdown">
+  <div class="seating-wrap">
+    <div id="seating-plan"></div>
+    <div id="selected-seats"></div>
+    <div class="tickets-breakdown">
 
-    <table id="tickets-breakdown" style="width:100%">
-      <tr>
-        <td>Quantity</td>
-        <td>Seat No</td>
-        <td>Ticket Type</td>
-        <td>Price</td>
-      </tr>
-    </table>
+      <table id="tickets-breakdown" style="width:100%">
+        <tr>
+          <td>Quantity</td>
+          <td>Seat No</td>
+          <td>Ticket Type</td>
+          <td>Price</td>
+        </tr>
+      </table>
 
-    <div id="display-total"></div>
+      <div id="display-total"></div>
+
+    </div>
+
+    <article>
+      <%# if flash[:error].present? %>
+        <!-- <div id="error_explanation">
+          <p><%#= flash[:error] %></p>
+        </div> -->
+      <%# end %>
+      </label>
+    </article>
+
+    <form action="/charges/" method="get" enctype="multipart/form-data">
+
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+      <input type="hidden" name="seats_list" value="" class="seats-list">
+
+      <button>Check Out</button>
+    </form>
 
   </div>
-
-  <article>
-    <%# if flash[:error].present? %>
-      <!-- <div id="error_explanation">
-        <p><%#= flash[:error] %></p>
-      </div> -->
-    <%# end %>
-    </label>
-  </article>
-
-  <form action="/charges/" method="get" enctype="multipart/form-data">
-
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-    <input type="hidden" name="seats_list" value="" class="seats-list">
-
-    <button>Check Out</button>
-  </form>
-
 </div>

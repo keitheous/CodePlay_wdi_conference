@@ -1,21 +1,22 @@
 <div id="edit-page">
   <a href="/">Back To Main</a>
 
-  <h1 id="greeting">Hello <%= current_user.name%>,</h1>
+  <h1 id="greeting">Hello <%= @user.name%>,</h1>
 
   <div id="show-profile">
-    <img id="img-profile" src="<%= current_user.img%>" alt="">
+    <img id="img-profile" src="<%= @user.img%>" alt="">
   </div>
 
   <div id="profile-section">
     <ul id="edit-profile">
       <li><a href="/users/<%= @user.id %>/edit">Edit Profile </a></li>
-      <li><a class="apply-btn" href="">Apply as a Speaker</a></li>
+      <li><a class="apply-btn" href="">Apply to be a Speaker</a></li>
+      <li><a href="/tickets">Buy Tickets</a></li>
     </ul>
   </div>
 
   <div id="desc-section">
-    <p><%= current_user.desc%></p>
+    <p><%= @user.desc%></p>
   </div>
 </div>
 
@@ -29,7 +30,7 @@
     <label for=""><strong>Topic :</strong></label>
     <input type="text" name="topic">
     <label for=""><strong>Content :</strong></label>
-    <textarea name="content" rows='20'></textarea>
+    <textarea name="desc" rows='20'></textarea>
     <br>
     <select name="event" id="select_event">
       <% @events.each do |event| %>

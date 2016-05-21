@@ -9,7 +9,7 @@
 <div id="home" class="container">
   <nav id="navbar">
     <ul id="navmenu">
-      <% if session[:user_id] %>
+      <% if current_user %>
         <li id="logout-icon"><a href="/logout">Log Out</a></li>
       <% else %>
         <li id="login-icon">Log In</li>
@@ -19,7 +19,7 @@
       <div id="show-menu">
         <div id="icon-list">
 
-          <% if session[:user_id] %>
+          <% if current_user %>
             <li><a href="/users"><div class="circle-div"><i class="fa fa-user fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Profile</span>
             </div></a></li>
           <% else %>
@@ -32,7 +32,7 @@
             <li><a data-scroll href="#schedule"><div class="circle-div"><i class="fa fa-calendar-o fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Schedule</span></div></a></li>
             <li><a data-scroll href="#about"><div class="circle-div"><i class="fa fa-code fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">About</span></div></a></li>
             <li><a data-scroll href="#sponsors"><div class="circle-div"><i class="fa fa-heart fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Sponsors</span></div></a></li>
-            <li><a data-scroll href="#home"><div class="circle-div"><i class="fa fa-home fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Home</span></div></a></li>
+            <li><a data-scroll href="#home"><div class="circle-div"><i class="fa fa-home fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Back To Top</span></div></a></li>
           </div>
       </div>
 

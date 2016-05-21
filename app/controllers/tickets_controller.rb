@@ -1,6 +1,7 @@
 class TicketsController < ApplicationController
 
   def index
+    @tickets_page = true
   end
 
   def create

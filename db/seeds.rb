@@ -98,7 +98,7 @@ EventSpeaker.create(topic:"proactively grow bleeding-edge methods of empowerment
 #   end
 #   seat.save
 # end
-#
+# ???? dynamic seats size allocation
 def generate_seats(num_of_tickets, seats_per_row)
   seats_arr = []
   row_arr = ('A'..'Z').to_a

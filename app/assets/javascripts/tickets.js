@@ -18,7 +18,7 @@ $(document).ready(function() {
       $('<div class="seat" data-seat="' + seatNo + '"></div>').html(seatNo).appendTo(this);
     };
   })
-  $('.rowA').children().addClass('premium-seat');
+  $('.rowA').children().addClass('premium');
 
   // Seat Selection
   $('.seat').click(function() {
@@ -34,35 +34,48 @@ $(document).ready(function() {
     $('.seats-list').val(selectedSeats);
 
     // When a ticket is selected:
-    if ($('.seat.selected').length > 0) {
+    $('.orders-bar').html(displaySummary());
 
-      // Append new record
-      var quantity = 1;
-      var seatNo = $(this).text()
-      var ticketType = '';
-      if (seatNo[0] === "A") {
-        ticketType = "Premium"
-      } else {
-        ticketType = "General"
-      }
-      var price = 0;
-      if (ticketType === "Premium") {
-        var price = pricePremium.toFixed(2);
-      } else {
-        var price = priceGeneral.toFixed(2);
-      }
+    // if ($('.selected').length > 0) {
+    //   $('.orders-bar').html(displaySummary());
+    // } else {
+    //   $('.orders-bar').html('Please Select a Seat.');
+    // }
 
-      var tr = $('<tr>').append($('<td>').html(quantity)).append($('<td>').html(seatNo)).append($('<td>').html(ticketType)).append($('<td>').html('$' + price));
-      $("#tickets-breakdown").find('tbody').append(tr);
 
-      $('#display-total').html('Total: $' + calculateTotal().toFixed(2));
 
-      // Calculate total priceGeneral
-      // $('#display-breakdown').html($('.seat.selected').length + ' x ' + '$' + priceGeneral + ' = $' + calculateTotal());
-
-    } else if ($('.seat.selected').length == 0) {
-      $('#display-breakdown').html('');
-    }
+    // if ($('.seat.selected').length > 0) {
+    //
+    //   $('#tickets-breakdown tr').slice(1).remove()
+    //
+    //   $('.selected').each(function(index, value) {
+    //     var quantity = 1;
+    //     var seatNo = $(value).html()
+    //     var ticketType = '';
+    //     if (seatNo[0] === "A") {
+    //       ticketType = "Premium"
+    //     } else {
+    //       ticketType = "General"
+    //     }
+    //     var price = 0;
+    //     if (ticketType === "Premium") {
+    //       var price = pricePremium.toFixed(2);
+    //     } else {
+    //       var price = priceGeneral.toFixed(2);
+    //     }
+    //     var tr = $('<tr>').append($('<td>').html(quantity)).append($('<td>').html(seatNo)).append($('<td>').html(ticketType)).append($('<td>').html('$' + price));
+    //     $("#tickets-breakdown").find('tbody').append(tr);
+    //
+    //     $('#display-total').html('Total: $' + calculateTotal().toFixed(2));
+    //
+    //   })
+    //
+    // } else if ($('.seat.selected').length == 0) {
+    //   $('#tickets-breakdown tr').slice(1).remove()
+    //   var tr = $('<tr>').append($('<td>').html('-')).append($('<td>').html('-')).append($('<td>').html('-')).append($('<td>').html('$' + '-'));
+    //   $("#tickets-breakdown").find('tbody').append(tr)
+    //   $('#display-total').html('');
+    // }
 
   })
 
@@ -87,6 +100,22 @@ $(document).ready(function() {
       seatsArr.push(seatNum);
     })
     return seatsArr;
+  }
+
+  function displaySummary() {
+    var selectedPremium = $('.selected.premium').length
+    var selectedGeneral = $('.selected').not('.premium').length
+    var selectedTotal = calculateTotal().toFixed(2);
+    if (selectedPremium === 0) {
+      var summary = selectedGeneral + '&nbsp; x &nbsp; General &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Total : &nbsp; $ ' + selectedTotal;
+      return summary;
+    } else if (selectedGeneral === 0) {
+      var summary = selectedPremium + '&nbsp; x &nbsp; Premium &nbsp;&nbsp;&nbsp;|   &nbsp;&nbsp;&nbsp; Total : &nbsp; $ ' + selectedTotal;
+      return summary;
+    } else {
+      var summary = selectedPremium + '&nbsp; x &nbsp; Premium, &nbsp;' + selectedGeneral + '&nbsp; x &nbsp;General &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Total : &nbsp; $ ' + selectedTotal;
+      return summary;
+    }
   }
 
 })

@@ -11,7 +11,7 @@ module Api
 
       def create
         event = Event.new
-        event.name = Event.first
+        event.name = params[:name]
         event.time = params[:time]
         event.total_seats = params[:total_seats].to_id
         if event.save
@@ -32,7 +32,7 @@ module Api
 
       def update
         event = Event.find(params[:id])
-        event.name = Event.first
+        event.name = params[:name]
         event.time = params[:time]
         event.save
         render json: event.to_json

@@ -13,6 +13,7 @@ module Api
         event = Event.new
         event.name = params[:name]
         event.time = params[:time]
+        event.total_seats = params[:total_seats].to_id
         if event.save
           redirect_to '/events'
         else

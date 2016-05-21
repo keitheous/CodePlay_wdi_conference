@@ -24,4 +24,5 @@ Rails.application.routes.draw do
 
   put '/api/apply' => 'api/applyings#update'
   delete '/api/apply' => 'api/applyings#destroy'
+  put '/api/seats/update' => 'api/seats#update'
 end

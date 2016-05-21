@@ -1,64 +1,19 @@
-<div id="video-overlay">
-  <video id="vid" controls autoplay loop muted>
-    <source src="./videos/ourmovie2.mp4" type="video/mp4">
-    <source src="./videos/ourmovie2.oog" type="video/oog">
-    Your browser does not support HTML5 video.
-  </video>
-</div>
+<section id="main-home">
+  <%= render partial: "home"%>
+</section>
 
-<div id="home" class="container">
-  <nav id="navbar">
-    <ul id="navmenu">
-      <% if session[:user_id] %>
-        <li id="logout-icon"><a href="/logout">Log Out</a></li>
-      <% else %>
-        <li id="login-icon">Log In</li>
-      <% end %>
-      <%= render partial: "login"%>
-      <li id="hamburger"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></li>
-      <div id="show-menu">
-        <div id="icon-list">
-
-          <% if session[:user_id] %>
-            <li><a href="/users"><div class="circle-div"><i class="fa fa-user fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Profile</span>
-            </div></a></li>
-          <% else %>
-
-            <li><a id="register-btn"><div class="circle-div"><i class="fa fa-user fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Register</span>
-            </div></a></li>
-          <% end %>
-
-          <li><a data-scroll href="#speakers"><div class="circle-div"><i class="fa fa-microphone fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Speakers</span></div></a></li>
-          <li><a data-scroll href="#schedule"><div class="circle-div"><i class="fa fa-calendar-o fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Schedule</span></div></a></li>
-          <li><a data-scroll href="#about"><div class="circle-div"><i class="fa fa-code fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">About</span></div></a></li>
-          <li><a data-scroll href="#sponsors"><div class="circle-div"><i class="fa fa-heart fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Sponsors</span></div></a></li>
-          <li><a data-scroll href="#home"><div class="circle-div"><i class="fa fa-home fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Home</span></div></a></li>
-        </div>
-      </div>
-
-    </ul>
-  </nav>
-
-  <div id="overlay">
-    <div class="conf-name"></div>
-    <h2 class="conf-date">AUGUST 30TH</h2>
-    <a href="/tickets"><div><button class="primary-button">BUY TICKETS</button></div></a>
-    <div id="countdown"></div>
-  </div>
-</div>
-
-<div id="about">
+<section id="about">
   <%= render partial: "about"%>
-</div>
+</section>
 
-<div id="speakers">
+<section id="speakers">
   <%= render partial: "speakers"%>
-</div>
+</section>
 
-<div id="schedule">
+<section id="schedule">
   <%= render partial: "schedule"%>
-</div>
+</section>
 
-<div id="sponsors">
+<section id="sponsors">
   <%= render partial: "sponsors"%>
-</div>
+</section>

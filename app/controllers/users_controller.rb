@@ -14,9 +14,11 @@ class UsersController < ApplicationController
     @user.email = params[:email]
     @user.password = params[:password]
     @user.desc = params[:desc]
-    @user.img = params[:img]
+    @user.user_type_id = 2
+    @user.img = "https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Pig-512.png"
     if @user.save
-      redirect_to '/'
+      session[:user_id] = @user.id
+      redirect_to '/users'
     else
       redirect_to '/'
     end

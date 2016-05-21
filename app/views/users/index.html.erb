@@ -1,77 +1,45 @@
+<div id="edit-page">
+  <a href="/">Back To Main</a>
 
-<a href="/users/<%= @user.id %>/edit">edit_user_profile </a>
-<a class="apply-btn" href="">Apply</a>
+  <h1 id="greeting">Hello <%= @user.name%>,</h1>
 
-<div class="application-form">
-  <form action="/apply" method="post">
-   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <label for=""><strong>Topic :</strong></label>
-  <input type="text" name="topic">
-  <label for=""><strong>Content :</strong></label>
-  <textarea name="content" rows='20'></textarea>
-  <br>
-  <select name="event" id="select_event">
-    <% @events.each do |event| %>
-      <option value="<%= event.id%>"><%= event.name%></option>
-    <% end %>
-  </select>
-  <br>
-  <button class="confirm-apply-btn">Confirm Apply</button>
+  <div id="show-profile">
+    <img id="img-profile" src="<%= @user.img%>" alt="">
+  </div>
 
-  </form>
-  <button class="cancelBtn">Cancel Apply</button>
+  <div id="profile-section">
+    <ul id="edit-profile">
+      <li><a href="/users/<%= @user.id %>/edit">Edit Profile </a></li>
+      <li><a class="apply-btn" href="">Apply to be a Speaker</a></li>
+      <li><a href="/tickets">Buy Tickets</a></li>
+    </ul>
+  </div>
+
+  <div id="desc-section">
+    <p><%= @user.desc%></p>
+  </div>
 </div>
 
 
-<% if (logged_in?) %>
-<a href="/logout">Log Out</a>
-<% end %>
+<div id="speaker-form">
+  <div class="application-form">
+    <i class="fa fa-close fa-2x close-btn" aria-hidden="true"></i>
 
-<style>
+    <form action="/apply" method="post">
+     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <label for=""><strong>Topic :</strong></label>
+    <input type="text" name="topic">
+    <label for=""><strong>Content :</strong></label>
+    <textarea name="desc" rows='20'></textarea>
+    <br>
+    <select name="event" id="select_event">
+      <% @events.each do |event| %>
+        <option value="<%= event.id%>"><%= event.name%></option>
+      <% end %>
+    </select>
+    <br>
+    <button class="sign-in-btn">Submit</button>
 
-.a {
-  text-decoration: none;
-  color: red;
-  border:1px white;
-}
-.application-form{
-  display: none;
-  width: 300px;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  background-color: pink;
-  border-radius: 20px;
-  padding-bottom: 10px;
-}
-
-.application-form *{
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  width: 80%;
-  margin-top: 5px;
-}
-.application-form button{
- background-color: plum;
- border:none;
- border-radius: 10px;
- height: 20px;
-}
-</style>
-
-<script type="text/javascript">
-  $('.apply-btn').on('click',function(event) {
-    event.preventDefault();
-    $('.application-form').css({"display":"block","transition":'1.5s'});
-
-  });
-
-  $('.cancelBtn').on('click',function(event) {
-    event.preventDefault();
-    $('.application-form').css("display",'none');
-
-  });
-
-</script>
+    </form>
+  </div>
+</div>

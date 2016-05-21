@@ -22,3 +22,4 @@
 //= require tickets
 //= require hamburger
 //= require forms
+//= require profile

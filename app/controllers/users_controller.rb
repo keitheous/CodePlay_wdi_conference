@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user.desc = params[:desc]
     @user.img = params[:img]
     if @user.save
-      redirect_to '/'
+      redirect_to '/users'
     else
       redirect_to '/'
     end

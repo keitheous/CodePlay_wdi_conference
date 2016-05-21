@@ -13,7 +13,12 @@ module Api
         event = Event.new
         event.name = params[:name]
         event.time = params[:time]
+        event.total_seats = params[:total_seats].to_id
         if event.save
+          # generate seats after add event
+          tatal_seats = event.total_seats
+          seats_per_row = 10
+          seats_arr = generate_seats(tatal_seats, seats_per_row,event)
           redirect_to '/events'
         else
           render :new
@@ -23,24 +28,20 @@ module Api
       def edit
         @event = Event.find(params[:id])
         render json: @event.to_json
-
       end
 
       def update
         event = Event.find(params[:id])
         event.name = params[:name]
         event.time = params[:time]
-        if event.save
-          redirect_to '/events'
-        else
-          render :edit
-        end
+        event.save
+        render json: event.to_json
       end
 
       def destroy
         event = Event.find(params[:id])
         event.destroy
-        redirect_to '/events'
+        render json: 200.to_json
       end
 
     end

@@ -13,6 +13,16 @@
   }
 }
 
+#login-icon, #logout-icon {
+  float:left;
+  margin-top:6px;
+  transition:0.5s;
+}
+
+#login-icon:hover, #logout-icon:hover {
+  color:orange;
+}
+
 #show-menu {
   height: 100vh;
   width: 100%;
@@ -59,7 +69,7 @@
   transition: .5s;
 }
 
-.fa-bars:hover, .fa-close:hover {
+.fa-bars:hover, .fa-close:hover, .fa-user:hover {
   color:#f39c12;
 }
 

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :tickets
     resources :events
     resources :users
+    resources :seats
   end
 
   get '/login' => 'sessions#loginpage'
@@ -24,4 +25,5 @@ Rails.application.routes.draw do
 
   put '/api/apply' => 'api/applyings#update'
   delete '/api/apply' => 'api/applyings#destroy'
+  # put '/api/seats/update' => 'api/seats#update'
 end

@@ -1,26 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>WDIConference</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Roboto:400,300' %>
-  <%= stylesheet_link_tag 'application', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>WDIConference</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Roboto:400,300' %>
+    <%= stylesheet_link_tag 'application', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="<%= @tickets_page ? 'ticketspage' : ''%>">
+    <%= yield %>
 
-  <div class="login-div" style="<%= 'display: none;' if request.path == '/login'%>">
-    <% if (logged_in?) %>
-      <button class="login-btn"><a href="/logout">Log Out</a></button>
-    <% end %>
-
-    <% if (!logged_in?) %>
-      <a href="/login"><button class="login-btn">Log In</button></a>
-    <% end %>
-  </div>
-
-<%= yield %>
-
-</body>
+  </body>
 </html>

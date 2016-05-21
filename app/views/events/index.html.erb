@@ -1,72 +1,63 @@
-<div class="events-handler">
-  <h1>All Events</h1>
-  <ul>
-    <% @events.each do |event| %>
-       <li>
-          <span><%= event.name %>
-          </span>
-          <span><%= event.time %></span>
-          <a href="/events/<%= event.id%>/edit">edit</a>
-          <form action="/events/<%= event.id %>" method="post">
-            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-           <input type="hidden" value="delete" name="_method">
-           <button>delete</button>
-         </form>
-       </li>
-    <% end %>
-  </ul>
+<%= render partial: "addevents" %>
+<%= render partial: "editevent" %>
+<div class="events-application-container">
+  <div class="events-handler">
+    <h1>Events List</h1>
+    <button class="add-event-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add Event</button>
+    <table>
+      <tr>
+        <th class="event-name-td">Event Name</th>
+        <th class="event-time-td">Event Time</th>
+        <th>Actions</th>
+      </tr>
+      <% @events.each do |event| %>
+        <tr class="admin-event-list" data-event-id="<%= event.id %>">
+          <td class="event-name-td"><%= event.name %></td>
+          <td class="event-time-td"><%= event.time %></td>
+          <td>
+            <button class="event-edit-btn"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></button>
+            <form action="/events/<%= event.id %>" method="post">
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+               <input type="hidden" value="delete" name="_method">
+               <button class="event-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+            </form>
+          </td>
+        <tr>
+      <% end %>
 
-  <a href="/events/new">Add Event</a>
+    </table>
+  </div>
+  <br />
+  <br />
+  <div class="applying-users-handler">
+    <h1>Pending Applications</h1>
+
+    <table class="applying-list">
+      <tr>
+        <th>Name</th>
+        <th>Topic</th>
+        <th>Content</th>
+        <th>Event</th>
+        <th>Actions</th>
+      </tr>
+      <% @event_speakers.each do | event_speaker | %>
+        <tr class="applying-item" data-event-speaker-id="<%= event_speaker.id%>">
+          <td class="applying-user-name"><%= event_speaker.user.name %></td>
+          <td class="applying-topic"><%= event_speaker.topic %></td>
+          <td  class="applying-content"><%= event_speaker.content%></td>
+          <td  class="applying-event-name"><%= event_speaker.event.name%></td>
+          <td class="applying-actions">
+            <button class="reject-button">Reject</button>
+            <button class="approve-button">Approve</button>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
-<br />
-<br />
-<div class="applying-users-handler">
-  <h1>Pending Applications</h1>
-  <ul>
-    <% @event_speakers.each do | event_speaker | %>
-      <li data-event-speaker-id="<%= event_speaker.id%>">
-        <span><%= event_speaker.user.name %>: </span>
-        <span><%= event_speaker.topic %> | </span>
-        <span><%= event_speaker.content%> | </span>
-        <span><%= event_speaker.event.name%></span>
-        <button class="approve-button">Approve</button>
-        <button class="reject-button">Reject</button>
-      </li>
-    <% end %>
-  </ul>
-</div>
 
-<style type="text/css">
-  button {
-    color:black;
-  }
-</style>
 
-<script type="text/javascript">
-  $('.approve-button').on('click',function(event){
-    var event_speaker_id = $(this).closest('li').data('event-speaker-id');
-    $.ajax({
-      url: '/api/apply',
-      data: {id: event_speaker_id, status: 'approved'},
-      method: 'put'
-    }).done(function(response) {
-      // $(this).closest('li').css('display','none');
-      // delete this item manually
-    });
-  });
 
-  $('.reject-button').on('click',function(event){
-    var event_speaker_id = $(this).closest('li').data('event-speaker-id');
-    $.ajax({
-      url: '/api/apply',
-      data: {id: event_speaker_id, status: 'rejected'},
-      method: 'delete'
-    }).done(function(response) {
-      // $(this).closest('li').css('display','none');
-      // delete this item manually
-    });
-    
-  });
-</script>
+
 
 

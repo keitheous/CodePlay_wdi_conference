@@ -42,7 +42,7 @@ Event.create(name:"html", time:"2016-7-23 00:00:00", total_seats:"40");
 # # seat type table
 SeatType.create(group:"Premium", price:"125");
 SeatType.create(group:"General", price:"75");
-# seat_type
+
 #     seat_type = SeatType.new
 #     seat_type.group = "Premium"
 #     seat_type.price = 125
@@ -116,9 +116,9 @@ def generate_seats(num_of_tickets, seats_per_row)
     seat.seat_num = seats_arr[seat_num]
     seat.status = "available"
     if seats_arr[seat_num][0] == "A"
-      seat.seat_type_id = 9
+      seat.seat_type_id =  SeatType.find_by(group: "Premium").id
     else
-      seat.seat_type_id = 10
+      seat.seat_type_id =  SeatType.find_by(group: "General").id
     end
     seat.save
   end

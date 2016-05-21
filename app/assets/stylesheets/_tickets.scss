@@ -74,14 +74,6 @@
   font-size: 20px;
 }
 
-
-// #tickets-page {
-//   padding:1em;
-//
-//   a:hover {
-//     color:#f39c12;
-//   }
-
 #display-total {
   margin: 30px auto;
 }
@@ -126,4 +118,12 @@
   /*color: #2980b9;*/
   color: #222;
   transition: 0.5s;
+}
+
+#tickets-page {
+  padding:1em;
+
+  a:hover {
+    color:#f39c12;
+  }
 }

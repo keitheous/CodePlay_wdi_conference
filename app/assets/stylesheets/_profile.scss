@@ -19,6 +19,9 @@
 }
 
 #edit-page {
+  background-image: image-url('seating-bg.jpg');
+  background-size:cover;
+  height:100vh;
   padding:1em;
 
   a:hover {
@@ -41,20 +44,23 @@
 
 #desc-section {
   position:absolute;
-  bottom:15%;
+  bottom:20%;
   left:50%;
   transform: translate(-50%, -50%);
 }
 
 #speaker-form {
+  background-image: image-url('seating-bg.jpg');
+  background-size:cover;
   height:100vh;
   display: none;
   position:relative;
+  padding-top:5em;
 }
 
 .application-form{
   width: 60%;
-  margin:5em auto;
+  margin:0 auto;
   background-color: black;
   border-radius: 20px;
   padding:1em;
@@ -81,6 +87,9 @@
 }
 
 #view-page {
+  background-image: image-url('seating-bg.jpg');
+  background-size:cover;
+  height:100vh;
   padding:1em;
 
   form {

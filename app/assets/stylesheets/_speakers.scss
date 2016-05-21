@@ -1,50 +1,37 @@
 #speakers {
-  height: 100vh;
-  background-color: white;
-  padding-top: 5em;
-  padding-left: 5em;
-  padding-right: 5em;
-  padding-bottom: 7em;
-  background-color: aliceblue;
-}
-
-#speakers h1{
-  font-size: 2em;
-  text-align: center;
-  color: #808080;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  height: auto;
+  background-color:aliceblue;
+  color:#808080;
+  text-align:center;
+  padding-top:5em;
 }
 
 .speakers-card {
-  float: left;
-  margin:10px;
-  padding:10px;
-  text-align: center;
-  transition: .3s;
-  height: 250px;
-  width: 175px;
-  overflow: hidden;
-  color:black;
-}
 
-.speakers-card .image {
-  text-align: center;
-}
-.speakers-card .image img{
-  border:3px solid skyblue;
-  border-radius: 140px;
-  width: 135px;
-  height: 140px;
+  margin-top:2em;
+  margin-bottom:3em;
+  display:inline-block;
+  text-align:center;
+  width:20%;
+  opacity: 0;
+  transform: translateX(-20px);
+
+  img {
+    border:3px solid #f39c12;
+    border-radius: 140px;
+    width: 70%;
+    height: auto;
+  }
 
 }
 
-.speakers-card .speaker-info {
-  height: 120px;
-  line-height: 30px;
-  color: #808080;
+.speakers-card:hover {
+  -webkit-animation: rubberBand 1s;
+  animation: rubberBand 1s;
 }
 
-.speakers-card .speaker-name {
-  font-size: 1.5em;
+.appear {
+  opacity: 1;
+    transform: translateY(0px);
+    transition: 1s;
 }

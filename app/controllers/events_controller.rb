@@ -34,7 +34,7 @@ class EventsController < ApplicationController
     event.time = params[:time]
     if event.save
       redirect_to '/events'
-    else 
+    else
       render :edit
     end
   end

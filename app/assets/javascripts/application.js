@@ -25,3 +25,4 @@
 //= require forms
 //= require profile
 //= require adminpage
+//= require checkout

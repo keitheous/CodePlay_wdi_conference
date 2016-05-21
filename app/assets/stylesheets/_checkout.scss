@@ -1,15 +1,19 @@
 .order-summary {
-  width: 100%;
+  width: 50%;
   margin: 70px auto;
   text-align: center;
+  // background-color: white
+  border: 1px solid white ;
+  border-radius: 6px;
 }
 
 .order-title {
   font-size: 40px;
+  margin: 50px auto;
 }
 
 #order-checkout {
-  width: 30%;
+  width: 80%;
   margin: 50px auto;
   border: 1px solid white;
 }
@@ -24,4 +28,69 @@
 
 .total-checkout {
   margin: 20px auto;
+}
+
+.pay-now-btn {
+  margin: 50px auto;
+}
+
+.thank-you-msg-wrap{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 25vw;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ECECEC;
+  border-radius: 6px;
+  z-index: 100;
+}
+
+.thank-you-msg{
+  height: 23vw;
+  position: absolute;
+  width: 96%;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #333;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 6px;
+  padding-top: 12px;
+}
+
+.thank-you {
+  left: 50%;
+  margin-bottom: 20px;
+  font-size: 40px;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #333;
+  position: relative;
+  margin-top: 22px;
+}
+
+.thank-you2 {
+  margin-bottom: 20px;
+  left: 50%;
+  font-size: 26px;
+  transform: translateX(-50%);
+  text-align: center;
+  position: relative;;
+  color: #888;
+  width: 100%;
+  margin-top: 26px;
+}
+
+#canvas {
+  position: absolute;
+  top: 0px;
+}
+
+canvas {
+  display: block;
+  margin: 0px auto;
 }

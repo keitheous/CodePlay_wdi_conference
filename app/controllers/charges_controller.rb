@@ -50,23 +50,12 @@ class ChargesController < ApplicationController
       current_seat.status = "Taken"
       current_seat.ticket_id = new_ticket.id
       current_seat.save
-      # new_ticket = ticket[:seat_num]
     end
 
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      # raise 'erer'
       redirect_to new_charge_path
-
-    # num_of_tickets = params[:num_of_tickets].to_i
-    # num_of_tickets.times do
-    #   ticket = Ticket.new
-    #   ticket.seat_no =
-    #   ticket.event_id = Event.first.id
-    #   ticket.user_id = User.first.id
-    #   ticket.save
-    # end
 
   end
 

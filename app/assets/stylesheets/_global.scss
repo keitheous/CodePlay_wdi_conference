@@ -22,6 +22,19 @@ input {
   display:block;
 }
 
+tr {
+  line-height: 40px;
+}
+
+table, th, td {
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
 /*.conf-name {
   color: white;
   font-size: 45px;

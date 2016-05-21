@@ -58,15 +58,15 @@
 #     event4.location = 'CBD'
 
 # seat_type
-    # seat_type = SeatType.new
-    # seat_type.group = "Premium"
-    # seat_type.price = 125
-    # seat_type.save
-    #
-    # seat_type = SeatType.new
-    # seat_type.group = "General"
-    # seat_type.price = 75
-    # seat_type.save
+    seat_type = SeatType.new
+    seat_type.group = "Premium"
+    seat_type.price = 125
+    seat_type.save
+
+    seat_type = SeatType.new
+    seat_type.group = "General"
+    seat_type.price = 75
+    seat_type.save
 
 # create seats in Seats table
 
@@ -109,9 +109,9 @@ def generate_seats(num_of_tickets, seats_per_row)
     seat.seat_num = seats_arr[seat_num]
     seat.status = "available"
     if seats_arr[seat_num][0] == "A"
-      seat.seat_type_id = 9
+      seat.seat_type_id =  SeatType.find_by(group: "Premium").id
     else
-      seat.seat_type_id = 10
+      seat.seat_type_id =  SeatType.find_by(group: "General").id
     end
     seat.save
   end

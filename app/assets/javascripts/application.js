@@ -15,6 +15,7 @@
 //= require jquery.knob
 //= require jquery.throttle
 //= require jquery.countdown
+//= require handlebars.js
 //= require countdown
 //= require typed
 //= require smoothscroll
@@ -22,3 +23,4 @@
 //= require tickets
 //= require hamburger
 //= require forms
+//= require adminpage

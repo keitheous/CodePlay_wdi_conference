@@ -58,7 +58,13 @@
     padding-right: 10px;
     cursor: pointer;
   }
-
+  .edit-hover {
+    display: none;
+  }
+  
+  .event-edit-btn:hover {
+    
+  }
   .fa-pencil-square-o, .fa-trash {
     color:white;
   }

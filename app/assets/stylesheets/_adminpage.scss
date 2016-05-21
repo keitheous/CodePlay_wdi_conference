@@ -5,6 +5,12 @@
     background-color: #5cb85c;
     padding: 5px 8px;
     margin-left: 81px;
+    border:none;
+    height: 35px;
+    font-size: 1em;
+    float: right;
+    margin-right: 120px;
+    margin-bottom: 10px;
   }
 
   h1 {
@@ -23,10 +29,6 @@
     border-collapse: collapse;
     width: 80%;
   }
-  table .save {
-    display: none;
-  }
-
   th {
     text-align: left;
     background-color: #2980b9;
@@ -48,9 +50,13 @@
   .event-delete-tbn {
     border:none;
     background-color: #222222;
+    cursor: pointer;
   }
   .event-edit-btn {
+    border:none;
+    background-color: #222222;
     padding-right: 10px;
+    cursor: pointer;
   }
 
   .fa-pencil-square-o, .fa-trash {
@@ -65,40 +71,48 @@
     text-align: center;
     padding:20px;
   }
-  ul {
-    margin: 10px auto;
-    color:gray;
+  th {
+    text-align: center;
+    background-color: #2980b9;
   }
-  li {
-    border:1px solid gray;
-    background-color: aliceblue;
+  table, td, th {
+    border: 1px solid white;
+  }
+  td {
     padding:10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 2px;
-
   }
-  span {
-    margin-right: 20px;
+  .applying-user-name {
+    text-align: center;
+  }
+  .applying-topic {
+    text-align: center;
+  }
+  .applying-content {
+    // padding-left: 10px;
+  }
+  .applying-actions {
+    text-align: center;
+  }
+  table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    padding:10px 0px 10px 15px;
   }
 
   .approve-button {
-    float: right;
     border:none;
-    background-color: skyblue;
+    background-color: CornflowerBlue;
     border-radius: 5px;
-    margin-right: 10px;
     padding:3px;
     height: 25px;
     width: 50px;
     color:white;
   }
   .reject-button {
-    float: right;
     border:none;
-    background-color: plum;
+    background-color: tomato;
     border-radius: 5px;
-    margin-right: 10px;
     padding:3px;
     height: 25px;
     width: 50px;
@@ -109,9 +123,63 @@
     background-color: royalblue;
   }
   .reject-button:hover {
-    background-color: tomato;
+    background-color: #CC00FF;
   }
 
+}
+
+.add-events-form {
+  display: none;
+  #close-add-event {
+    margin:10px;
+  }
+  form {
+    margin:20px auto;
+    width: 300px;
+    text-align: left;
+  }
+  #total-seats {
+    margin-top: 10px;
+    width: 210px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 5px;
+    height: 27px;
+  }
+  .add-event-submit {
+    background-color: #f4b555;
+    margin-top: 20px;
+    color:white;
+    font-weight: bold;
+    font-size: 0.8em;
+  }
+  .add-event-submit:hover {
+    background-color: #f39c12;
+  }
+}
+
+.edit-events-form {
+  display: none;
+  #close-edit-event {
+    margin:10px;
+  }
+  form {
+    margin:20px auto;
+    width: 300px;
+    text-align: left;
+  }
+  .edit-event-submit {
+    background-color: #f4b555;
+    margin-top: 20px;
+    color:white;
+    font-weight: bold;
+    font-size: 0.8em;
+  }
+  .edit-event-submit:hover {
+    background-color: #f39c12;
+  }
 }
 
 

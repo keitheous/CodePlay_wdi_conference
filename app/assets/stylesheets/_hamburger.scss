@@ -19,7 +19,7 @@
 }
 
 #login-icon:hover, #logout-icon:hover {
-  color:#f39c12;
+  color:$california;
 }
 
 #show-menu {
@@ -48,7 +48,7 @@
   border:2px solid white;
   border-radius:50%;
   text-align:center;
-  transition:0.5s;
+  transition:1s;
 }
 
 .icons {
@@ -69,17 +69,17 @@
 }
 
 .fa-bars:hover, .fa-close:hover, .fa-user:hover {
-  color:#f39c12;
+  color:$california;
 }
 
 .circle-div:hover .icons{
-  color:#f39c12;
+  color:$california;
 }
 
 .circle-div:hover .icon-desc{
-  color:#f39c12;
+  color:$california;
 }
 
 .circle-div:hover{
-  border-color:#f39c12;
+  border-color:$california;
 }

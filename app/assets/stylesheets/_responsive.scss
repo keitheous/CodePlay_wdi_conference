@@ -1,0 +1,70 @@
+@media screen and (max-width: 767px) {
+
+  .conf-name {
+    margin-top:1.5em;
+    font-size:5em;
+  }
+
+  #countdown {
+    display:none;
+  }
+
+  #navbar {
+
+    #icon-list {
+      margin-top:6em;
+      position:static;
+      transform: none;
+      width:100%;
+    }
+
+    li {
+      display:inline-block;
+    }
+
+    .circle-div {
+      height:7em;
+      width:7em;
+    }
+
+    .circle-div .icons {
+      font-size:2em;
+    }
+  }
+
+  #speakers {
+    .speakers-card {
+      display:block;
+      margin-top:2em;
+      margin-bottom:0;
+      text-align:center;
+      width:100%;
+
+    }
+
+    img {
+      height:20em;
+      width:20em;
+    }
+
+  }
+
+  #profile-section {
+
+    ul {
+      position:absolute;
+      top:65%;
+      left:55%;
+      transform: translate(-50%, -50%);
+      width:100%;
+    }
+  }
+
+  #speaker-form {
+    .application-form {
+      margin-top:5em;
+      width:100%;
+    }
+  }
+
+}

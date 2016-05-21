@@ -49,9 +49,15 @@ $(document).ready(function() {
       $('.seats-list').val(getSelectedSeats());
 
       // Append summary total to html:
-      $('.orders-bar').html(displaySummary());
-
+      $('.orders-bar').html(displaySummary())
+      if ($('.orders-bar').html() != '') {
+        console.log(true);
+        $('.orders-bar').addClass('show');
+      } else {
+        $('.orders-bar').removeClass('show');
+      };
     })
+
   })
 
   // Function for calculating total charges
@@ -83,14 +89,25 @@ $(document).ready(function() {
     var selectedPremium = $('.selected.premium').length
     var selectedGeneral = $('.selected').not('.premium').length
     var selectedTotal = calculateTotal().toFixed(2);
-    if (selectedPremium === 0) {
-      var summary = selectedGeneral + '&nbsp; x &nbsp; General &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Total : &nbsp; $ ' + selectedTotal;
+    var summary = '';
+
+    if (selectedPremium === 0 && selectedGeneral === 0) {
+      summary = '';
+      return summary;
+    } else if (selectedPremium === 0) {
+      summary = selectedGeneral + '&nbsp; x &nbsp; General &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Total : &nbsp; $ ' + selectedTotal;
+      console.log(selectedGeneral);
+      console.log(selectedPremium);
       return summary;
     } else if (selectedGeneral === 0) {
-      var summary = selectedPremium + '&nbsp; x &nbsp; Premium &nbsp;&nbsp;&nbsp;|   &nbsp;&nbsp;&nbsp; Total : &nbsp; $ ' + selectedTotal;
+      summary = selectedPremium + '&nbsp; x &nbsp; Premium &nbsp;&nbsp;&nbsp;|   &nbsp;&nbsp;&nbsp; Total : &nbsp; $ ' + selectedTotal;
+      console.log(selectedGeneral);
+      console.log(selectedPremium);
       return summary;
     } else {
-      var summary = selectedPremium + '&nbsp; x &nbsp; Premium, &nbsp;' + selectedGeneral + '&nbsp; x &nbsp;General &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Total : &nbsp; $ ' + selectedTotal;
+      summary = selectedPremium + '&nbsp; x &nbsp; Premium, &nbsp;' + selectedGeneral + '&nbsp; x &nbsp;General &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Total : &nbsp; $ ' + selectedTotal;
+      console.log(selectedGeneral);
+      console.log(selectedPremium);
       return summary;
     }
   }

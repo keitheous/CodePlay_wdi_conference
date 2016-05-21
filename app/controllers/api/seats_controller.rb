@@ -3,7 +3,7 @@ module Api
 
     def index
       @seats = Seat.order(:id)
-      render json: @seats.to_json(include: :ticket)
+      render json: @seats.to_json(include: [:ticket, :seat_type])
     end
 
     def update

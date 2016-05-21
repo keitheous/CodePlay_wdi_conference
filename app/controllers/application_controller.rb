@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     # converting the object to true/false
-    !!current_user 
+    !!current_user
   end
-  
+
 end

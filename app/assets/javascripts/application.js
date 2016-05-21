@@ -23,4 +23,5 @@
 //= require tickets
 //= require hamburger
 //= require forms
+//= require profile
 //= require adminpage

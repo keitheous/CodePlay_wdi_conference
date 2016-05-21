@@ -1,0 +1,98 @@
+#greeting {
+  position:absolute;
+  margin-top:0.5em;
+  font-size:4em;
+}
+
+#show-profile {
+  position:absolute;
+  top:45%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+#img-profile {
+  border:3px solid white;
+  border-radius:50%;
+  height:auto;
+  width:250px;
+}
+
+#edit-page {
+  background-image: image-url('seating-bg.jpg');
+  background-size:cover;
+  height:100vh;
+  padding:1em;
+
+  a:hover {
+    color:#f39c12;
+  }
+}
+
+#edit-profile {
+  position:absolute;
+  bottom:30%;
+  left:50%;
+  transform: translate(-50%, -50%);
+
+  li {
+    display:inline-block;
+    margin-left:10px;
+  }
+
+}
+
+#desc-section {
+  position:absolute;
+  bottom:20%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+#speaker-form {
+  background-image: image-url('seating-bg.jpg');
+  background-size:cover;
+  height:100vh;
+  display: none;
+  position:relative;
+  padding-top:5em;
+}
+
+.application-form{
+  width: 60%;
+  margin:0 auto;
+  background-color: black;
+  border-radius: 20px;
+  padding:1em;
+  text-align:left;
+
+  form {
+    padding:2em;
+  }
+
+  label {
+    margin:0;
+  }
+
+  button {
+    margin-top:2em;
+  }
+}
+
+.close-btn {
+  text-align:right;
+  float:right;
+  position:relative;
+  bottom:10%;
+}
+
+#view-page {
+  background-image: image-url('seating-bg.jpg');
+  background-size:cover;
+  height:100vh;
+  padding:1em;
+
+  form {
+    margin-top:6em;
+  }
+}

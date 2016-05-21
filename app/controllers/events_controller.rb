@@ -64,9 +64,9 @@ class EventsController < ApplicationController
         seat.status = "available"
         seat.event_id = event.id
         if seats_arr[seat_num][0] == "A"
-          seat.seat_type_id = SeatType.first.id
+          seat.seat_type_id =  SeatType.find_by(group: "Premium").id
         else
-          seat.seat_type_id = SeatType.last.id
+          seat.seat_type_id = SeatType.find_by(group: "General").id
         end
         seat.save
       end

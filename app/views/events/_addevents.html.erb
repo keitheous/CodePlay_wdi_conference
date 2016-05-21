@@ -1,0 +1,18 @@
+<div class="add-events-form">
+  <i id="close-add-event" class="fa fa-close fa-2x" aria-hidden="true"></i>
+  <form action="/events" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <label for="">Event Name</label>
+    <input type="text" name="name">
+    <label for="">Start Time</label>
+    <input type="datetime-local" name="time">
+    <label for="">Total Seats</label>
+    <select name="total_seats" id="total-seats">
+      <% 11.times do |num| %>
+      <% seats = 40 + num * 10 %>
+        <option value="<%= seats%>"><%= seats%></option>
+      <% end %>
+    </select>
+    <input class="add-event-submit" type="submit">
+  </form>
+</div>

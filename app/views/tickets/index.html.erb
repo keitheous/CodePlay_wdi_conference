@@ -1,34 +1,37 @@
-<% content_for :body_classes do %>
-  ticketspage
-<% end %>
+<div id="tickets-page">
 
-<a href="/"><button class="back-btn-two">Back</button></a>
+  <a href="/">Back To Main</a>
 
-<div class="seating-wrap">
-  <h1>BUY TICKETS</h1>
-  <div id="seating-plan">
+  <% content_for :body_classes do %>
+    ticketspage
+  <% end %>
+
+  <div class="seating-wrap">
+    <h1>BUY TICKETS</h1>
+    <div id="seating-plan">
+    </div>
+
+    <form action="/charges/" method="get" enctype="multipart/form-data">
+
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+      <input type="hidden" name="seats_list" value="" class="seats-list">
+
+      <button class="checkout-button ">Check Out</button>
+    </form>
+
+    <div class="orders-bar"></div>
+
   </div>
 
-  <form action="/charges/" method="get" enctype="multipart/form-data">
+    <article>
+      <%# if flash[:error].present? %>
+        <!-- <div id="error_explanation">
+          <p><%#= flash[:error] %></p>
+        </div> -->
+      <%# end %>
+      </label>
+    </article>
 
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-    <input type="hidden" name="seats_list" value="" class="seats-list">
-
-    <button class="checkout-button ">Check Out</button>
-  </form>
-
-  <div class="orders-bar"></div>
-
-</div>
-
-  <article>
-    <%# if flash[:error].present? %>
-      <!-- <div id="error_explanation">
-        <p><%#= flash[:error] %></p>
-      </div> -->
-    <%# end %>
-    </label>
-  </article>
-
+  </div>
 </div>

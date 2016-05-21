@@ -1,7 +1,7 @@
 #speakers {
   height: auto;
-  background-color:aliceblue;
-  color:#808080;
+  background-color:$denim;
+  color:white;
   text-align:center;
   padding-top:5em;
 }
@@ -17,7 +17,7 @@
   transform: translateX(-20px);
 
   img {
-    border:3px solid #f39c12;
+    border:3px solid $caribbean-green;
     border-radius: 50%;
     height:10em;
     width:10em;

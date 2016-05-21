@@ -10,7 +10,7 @@ class EventsController < ApplicationController
 
   def create
     event = Event.new
-    event.name = params[:name]
+    event.name = Event.first
     event.time = params[:time]
     event.total_seats = params[:total_seats].to_i
     if event.save
@@ -30,7 +30,7 @@ class EventsController < ApplicationController
 
   def update
     event = Event.find(params[:id])
-    event.name = params[:name]
+    event.name = Event.first
     event.time = params[:time]
     if event.save
       redirect_to '/events'

@@ -13,15 +13,18 @@ class ChargesController < ApplicationController
       end
       {type: type, price: price, seat_num: seat_num}
     end
+
     @total = 0
     @seats.each do |seat|
       @total = @total + seat[:price]
     end
+
     render :new
   end
 
   def create
     # Amount in cents
+    # raise 'sdfdsf'
     @amount = params[:total].to_i*100
 
     customer = Stripe::Customer.create(
@@ -36,19 +39,25 @@ class ChargesController < ApplicationController
       :currency    => 'aud'
     )
 
-    ticket_list = eval(params[:tickets_list])
-    ticket_list.each do |ticket|
-      new_ticket = Ticket.new
-      new_ticket.seat_no = ticket[:seat_num]
-      
-      # new_ticket.event_id = Event.first.id
-      new_ticket.save
+    new_ticket = Ticket.new
+    new_ticket.email = params[:stripeEmail]
+    new_ticket.stripe_token = params[:stripeToken]
+    new_ticket.save
+
+    seats_list = eval(params[:tickets_list])
+    seats_list.each do |seat|
+      current_seat = Seat.find_by(seat_num: seat[:seat_num])
+      current_seat.status = "Taken"
+      current_seat.ticket_id = new_ticket.id
+      current_seat.save
+      # new_ticket = ticket[:seat_num]
     end
+
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
+      # raise 'erer'
       redirect_to new_charge_path
-
 
     # num_of_tickets = params[:num_of_tickets].to_i
     # num_of_tickets.times do
@@ -58,7 +67,6 @@ class ChargesController < ApplicationController
     #   ticket.user_id = User.first.id
     #   ticket.save
     # end
-
 
   end
 

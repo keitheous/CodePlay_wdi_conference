@@ -10,7 +10,7 @@ module Api
     def destroy
       event_speaker = EventSpeaker.find(params[:id])
       event_speaker.destroy
-      render json: event_speaker.to_json
+      render json: 200.to_json
     end
   end
 end

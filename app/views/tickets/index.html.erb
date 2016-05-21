@@ -1,47 +1,28 @@
 <div id="tickets-page">
+
   <a href="/">Back To Main</a>
 
+  <% content_for :body_classes do %>
+    ticketspage
+  <% end %>
+
   <div class="seating-wrap">
-    <div id="seating-plan"></div>
-    <div id="selected-seats"></div>
-    <div class="tickets-breakdown">
-
-      <table id="tickets-breakdown" style="width:100%">
-        <tr>
-          <td>Quantity</td>
-          <td>Seat No</td>
-          <td>Ticket Type</td>
-          <td>Price</td>
-        </tr>
-      </table>
-
-      <div id="display-total"></div>
-
+    <h1>BUY TICKETS</h1>
+    <div id="seating-plan">
     </div>
 
-<% content_for :body_classes do %>
-  ticketspage
-<% end %>
+    <form action="/charges/" method="get" enctype="multipart/form-data">
 
-<a href="/"><button class="back-btn-two">Back</button></a>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-<div class="seating-wrap">
-  <h1>BUY TICKETS</h1>
-  <div id="seating-plan">
+      <input type="hidden" name="seats_list" value="" class="seats-list">
+
+      <button class="checkout-button ">Check Out</button>
+    </form>
+
+    <div class="orders-bar"></div>
+
   </div>
-
-  <form action="/charges/" method="get" enctype="multipart/form-data">
-
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-    <input type="hidden" name="seats_list" value="" class="seats-list">
-
-    <button class="checkout-button ">Check Out</button>
-  </form>
-
-  <div class="orders-bar"></div>
-
-</div>
 
     <article>
       <%# if flash[:error].present? %>
@@ -51,15 +32,6 @@
       <%# end %>
       </label>
     </article>
-
-    <form action="/charges/" method="get" enctype="multipart/form-data">
-
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-      <input type="hidden" name="seats_list" value="" class="seats-list">
-
-      <button>Check Out</button>
-    </form>
 
   </div>
 </div>

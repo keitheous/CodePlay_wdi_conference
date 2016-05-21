@@ -1,13 +1,14 @@
-<h1>SPEAKERS</h1>
-<% @speakers.each do |speaker| %>
-  <div class="speakers-card">
-    <div class="image">
-      <img src="<%= speaker.img%>" alt="">
-    </div>
-    <div class="speaker-info">
-      <p class="speaker-name"><strong><%= speaker.name%></strong></p>
-      <p><%= speaker.email%></p>
-      <p><%= speaker.desc%></p>
-    </div>
-  </div>
-<% end %>
+
+<h1 class="section-title">Speakers</h1>
+
+<div id="display-speakers">
+  <ul>
+    <% @speakers.each do |speaker| %>
+      <li class="speakers-card">
+          <img src="<%= speaker.img%>" alt="">
+          <p class="speaker-name"><strong><%= speaker.name%></strong></p>
+          <p><%= speaker.email%></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

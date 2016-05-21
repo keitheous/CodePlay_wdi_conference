@@ -15,6 +15,10 @@ module Api
         event.time = params[:time]
         event.total_seats = params[:total_seats].to_id
         if event.save
+          # generate seats after add event
+          tatal_seats = event.total_seats
+          seats_per_row = 10
+          seats_arr = generate_seats(tatal_seats, seats_per_row,event)
           redirect_to '/events'
         else
           render :new

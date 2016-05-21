@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @user.email = params[:email]
     @user.password = params[:password]
     @user.desc = params[:desc]
+    @user.user_type_id = 2
     @user.img = "https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Pig-512.png"
     if @user.save
       session[:user_id] = @user.id

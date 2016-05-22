@@ -1,23 +1,24 @@
 <div id="view-page">
-  <a href="/users">Back To Profile</a>
 
-  <div class="form-type">
-    <form action="/users/<%= @user.id %>" method="post">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <input type ="hidden" value ="put" name="_method">
+  <div class="form-type-two">
+      <a class="close-btn-two" href="/users"><i class="fa fa-close fa-2x" aria-hidden="true"></i></a>
+      <h1 class="form-title-two">Edit Profile</h1>
+      <form action="/users/<%= @user.id %>" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type ="hidden" value ="put" name="_method">
 
-      <label for="">Username</label>
-      <input type="text" name="name" value="<%= @user.name %>">
-      <label for="">Email</label>
-      <input type="email" name="email" value="<%= @user.email %>">
-      <label for="">Password</label>
-      <input type="password" name="password" value="<%= @user.password %>">
-      <label for="">Description</label>
-      <textarea name="desc" id="" cols="30" rows="10" value="<%= @user.desc%>"></textarea>
-      <label for="">Image URL</label>
-      <input type="text" name="img" value="<%= @user.img%>">
+        <label for="">Username</label>
+        <input type="text" name="name" value="<%= @user.name %>">
+        <label for="">Email</label>
+        <input type="email" name="email" value="<%= @user.email %>">
+        <label for="">Password</label>
+        <input type="password" name="password" value="<%= @user.password %>">
+        <label for="">Description</label>
+        <input name="desc" id="" cols="30" rows="10" value="<%= @user.desc%>"></input>
+        <label for="">Image URL</label>
+        <input type="text" name="img" value="<%= @user.img%>">
 
-      <button class="sign-in-btn">Update</button>
-    </form>
+        <button class="sign-in-btn">Update</button>
+      </form>
   </div>
 </div>

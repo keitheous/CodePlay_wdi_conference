@@ -1,5 +1,12 @@
 
 <h1>SCHEDULE</h1>
-<div class="events-schedule">
-
+<div class="schedule-events">
+   <% @events.each do |event| %>
+      <hr class='vertical'>
+      <div class="events-card">
+          <h3><%=event.name%></h3>
+          <p>Start Time: <%=event.time%></p>
+          <p>Total ( <%=event.total_seats%> )seats</p>
+      </div>
+   <% end %>
 </div>

@@ -13,12 +13,12 @@
     margin-top:4em;
   }
 
-  #sponsors-img {
+  .sponsors-img {
     height:auto;
     width:15em;
   }
 
-  #sponsors-img:hover {
+  .sponsors-img:hover {
     -webkit-animation: tada 1s;
     animation: tada 1s;
   }
@@ -30,6 +30,11 @@
     a {
       color:black;
     }
+  }
+
+  #panda {
+    width:13em;
+    padding-bottom:1.5em;
   }
 
 }

@@ -5,9 +5,9 @@
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim earum, voluptas labore ullam consectetur, eligendi nisi similique fugit ad blanditiis pariatur ipsum expedita deserunt adipisci molestias excepturi id doloremque aperiam.</p>
 
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim earum, voluptas labore ullam consectetur, eligendi nisi similique fugit ad blanditiis pariatur ipsum expedita deserunt adipisci molestias excepturi id doloremque aperiam.</p>
-  
+
   <div class="address-map-container">
-    <div id="map"> 
+    <div id="map">
     </div>
 
     <div class="address">
@@ -18,5 +18,16 @@
     </div>
   </div>
 </div>
+
+<script>
+  function initMap() {
+    var mapDiv = document.getElementById('map');
+    var map = new google.maps.Map(mapDiv, {
+      center: {lat: -37.81853869, lng: 144.95923134},
+      zoom: 18
+    });
+  }
+</script>
+
 <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
        async defer></script>

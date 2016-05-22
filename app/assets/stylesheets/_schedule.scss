@@ -1,7 +1,78 @@
 #schedule {
-  height: auto;
+  height: 100vh;
   background-color:$vivid-violet;
   color:white;
   text-align:center;
   padding-top:5em;
+}
+#schedule h1{
+  font-size: 2em;
+  text-align: center;
+  color: #808080;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+#schedule hr.vertical{
+  width: 5px;
+  height: 20px;
+  background-color: white;
+  margin-top: 0;
+  margin-bottom: 0;
+  clear: both;
+}
+
+#schedule .talk-card{
+  height: 64px;
+  *{
+    box-sizing: border-box;
+  }
+
+  img {
+    border:3px solid white;
+    border-radius: 50%;
+    height:4em;
+    width:4em;
+    display: inline-block;
+  }
+
+  img:hover{
+    -webkit-animation: rubberBand 1s;
+    animation: rubberBand 1s;
+  }
+
+  .left{
+    text-align: right;
+    display: inline-block;
+    width: 45%;
+    height: 64px;
+    float: left;
+    vertical-align: middle;
+    padding: 20px;;
+  }
+
+  .right{
+    display: inline-block;
+    width: 45%;
+    height: 64px;
+    float: left;
+  }
+
+  .right p{
+     height: 100%;
+     overflow: hidden;
+     width: 0;
+     transition: 1s;
+     background-color: rgba(255, 255, 255, 0.5);
+     border-radius: 10px;
+     padding-top: 10px;
+  }
+
+  .middle{
+    display: inline-block;
+    width: 10%;
+    float: left;
+  }
+
+
 }

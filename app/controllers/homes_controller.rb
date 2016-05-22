@@ -6,5 +6,9 @@ class HomesController < ApplicationController
       @speakers << event_speaker.user
     end
     @speakers.uniq!
+
+    # ====== show all speakers on the schedule of homepage====
+    event = Event.first
+    @talks = event.event_speakers
   end
 end

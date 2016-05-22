@@ -8,6 +8,10 @@ smoothScroll.init();
 		var scrollLength = $(this).scrollTop();
     console.log(scrollLength);
 
+		if (scrollLength > 300) {
+			$('.address-map-container').addClass('appear');
+		}
+
 		if (scrollLength > 850) {
 			$('.speakers-card').each(function(index) {
 				setTimeout(function() {

@@ -2,6 +2,11 @@
   position:absolute;
   margin-top:0.5em;
   font-size:4em;
+  -webkit-animation: slide-in 1s;
+      -moz-animation: slide-in 1s;
+       -ms-animation: slide-in 1s;
+        -o-animation: slide-in 1s;
+           animation: slide-in 1s;
 }
 
 #show-profile {
@@ -14,8 +19,10 @@
 #img-profile {
   border:3px solid white;
   border-radius:50%;
-  height:auto;
-  width:250px;
+  border:3px solid $california;
+  border-radius: 50%;
+  height:15em;
+  width:15em;
 }
 
 #img-profile:hover {
@@ -43,15 +50,21 @@
   li {
     display:inline-block;
     margin-left:10px;
+    -webkit-animation: slide-in-left 1s;
+        -moz-animation: slide-in-left 1s;
+         -ms-animation: slide-in-left 1s;
+          -o-animation: slide-in-left 1s;
+             animation: slide-in-left 1s;
   }
 
 }
 
 #desc-section {
-  position:absolute;
-  bottom:20%;
-  left:50%;
-  transform: translate(-50%, -50%);
+  width: 70%;
+  margin: 0 auto;
+  margin-top:32em;
+
+  text-align:center;
 }
 
 #speaker-form {
@@ -60,7 +73,7 @@
   height:100vh;
   display: none;
   position:relative;
-  padding-top:5em;
+  padding-top:8em;
 }
 
 .application-form{
@@ -87,7 +100,13 @@
   text-align:right;
   float:right;
   position:relative;
-  bottom:10%;
+  right:6%;
+}
+
+.form-title {
+  position:relative;
+  width:80%;
+  left:5%;
 }
 
 #view-page {
@@ -99,4 +118,35 @@
   form {
     margin-top:6em;
   }
+}
+
+.close-btn-two {
+  text-align:right;
+  float:right;
+  position:relative;
+  margin-top:2em;
+}
+
+.form-title-two {
+  position:absolute;
+  top:5%;
+}
+
+.form-type-two {
+  width:60%;
+  text-align:left;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes slide-in {
+    from { transform: translateY(-500px); }
+    to   { transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+    from { transform: translateX(-1000px); }
+    to   { transform: translateX(0); }
 }

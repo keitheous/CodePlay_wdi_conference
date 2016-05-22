@@ -1,5 +1,16 @@
 @media screen and (max-width: 767px) {
 
+  #vid {
+    display:none;
+  }
+
+  #video-overlay {
+    background-image: url('bg3.jpg');
+    background-position:right;
+    background-size:cover;
+  }
+
+
   .conf-name {
     margin-top:1.5em;
     font-size:5em;
@@ -49,22 +60,81 @@
 
   }
 
-  #profile-section {
-
-    ul {
-      position:absolute;
-      top:65%;
-      left:55%;
-      transform: translate(-50%, -50%);
-      width:100%;
+  #edit-page {
+    h1 {
+      font-size:3em;
     }
   }
 
-  #speaker-form {
-    .application-form {
-      margin-top:5em;
+  #show-profile {
+    width:100%;
+    text-align:center;
+  }
+
+  #img-profile {
+    margin-top:5em;
+    height:20em;
+    width:25em;
+  }
+
+  #profile-section {
+    ul {
+      position:absolute;
+      top:75%;
+      left:48%;
+      transform: translate(-50%, -50%);
       width:100%;
+      text-align:center;
+
     }
+  }
+
+  #desc-section {
+    position:static !important;
+    margin-top:35em !important;
+    text-align:center;
+
+  }
+
+  #speaker-form {
+    padding-top:4em !important;
+
+    .form-title {
+      width: 70%;
+      left:10%;
+    }
+
+    .application-form {
+      width:90%;
+    }
+  }
+
+  #map {
+    width:100% !important;
+    margin:0 !important;
+    margin-top:1em !important;
+  }
+
+  .address {
+    width:80% !important;
+    text-align:center !important;
+  }
+}
+
+@media screen and (device-aspect-ratio: 40/71) {
+
+  #desc-section {
+    position:static !important;
+    margin-top:31em !important;
+    text-align:center;
+  }
+
+  .conf-name {
+    font-size:3.5em;
+  }
+
+  .form-title-two {
+    font-size:2em;
   }
 
 }

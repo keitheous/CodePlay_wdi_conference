@@ -26,3 +26,4 @@
 //= require profile
 //= require adminpage
 //= require checkout
+//= require googlemaps

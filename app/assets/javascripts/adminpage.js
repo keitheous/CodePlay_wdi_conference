@@ -57,5 +57,10 @@ $(document).ready(function() {
     $('.events-application-container').fadeIn(500);
   });
 
+  // add hover text for edit/delete button
+  $('.event-edit-btn').hover(function(event){
+    $(this).find('.edit-hover').css({"display":"block","color":"white"});
+  });
+
 });
 

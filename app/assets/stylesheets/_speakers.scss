@@ -6,6 +6,11 @@
   padding-top:5em;
 }
 
+.speaker-title {
+  opacity: 0;
+  transform: translateY(-200px);
+}
+
 .speakers-card {
 
   margin-top:2em;
@@ -17,7 +22,7 @@
   transform: translateX(-20px);
 
   img {
-    border:3px solid $caribbean-green;
+    border:3px solid white;
     border-radius: 50%;
     height:10em;
     width:10em;
@@ -32,6 +37,6 @@
 
 .appear {
   opacity: 1;
-    transform: translateY(0px);
-    transition: 1s;
+  transform: translateY(0px);
+  transition: 1s;
 }

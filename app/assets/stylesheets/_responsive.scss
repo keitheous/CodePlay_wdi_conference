@@ -80,17 +80,43 @@
 
   #desc-section {
     position:static !important;
-    margin-top:33em;
+    margin-top:35em !important;
     text-align:center;
 
   }
 
   #speaker-form {
-    padding:0;
+    padding-top:4em !important;
+
+    .form-title {
+      width: 70%;
+      left:10%;
+    }
 
     .application-form {
-      width:100%;
+      width:90%;
     }
   }
+
+  #map {
+    width:100% !important;
+    margin:0 !important;
+    margin-top:1em !important;
+  }
+
+  .address {
+    width:80% !important;
+    text-align:center !important;
+  }
+}
+
+@media screen and (device-aspect-ratio: 40/71) {
+
+  #desc-section {
+    position:static !important;
+    margin-top:31em !important;
+    text-align:center;
+  }
+
 
 }

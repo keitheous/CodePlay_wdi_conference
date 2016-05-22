@@ -3,7 +3,8 @@ function initMap() {
   var mapDiv = document.getElementById('map');
   var map = new google.maps.Map(mapDiv, {
     center: gaLocation,
-    zoom: 18
+    zoom: 18,
+    scrollwheel:false
   });
 
   var contentString = "<div id='map-marker-info'>General Assembly</div>";
@@ -23,7 +24,7 @@ function initMap() {
     infowindow.close();
   });
   marker.addListener('click',function() {
-    window.location.href = marker.url;
+    window.open(marker.url,'_blank');
   });
 }
 

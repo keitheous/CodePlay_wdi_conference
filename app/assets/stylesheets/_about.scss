@@ -22,3 +22,28 @@
 #speakers {
   height:100vh;
 }
+
+#map {
+  width: 50%;
+  height: 360px;
+  background-color: #CCC;
+  margin:30px 30px 30px 20px;
+  padding:10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.address {
+  margin:30px 30px 30px 20px;
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.address p {
+  font-size: 0.8em;
+  color:linen;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

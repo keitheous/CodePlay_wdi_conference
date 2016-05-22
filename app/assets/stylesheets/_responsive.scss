@@ -78,9 +78,17 @@
     }
   }
 
+  #desc-section {
+    position:static !important;
+    margin-top:33em;
+    text-align:center;
+
+  }
+
   #speaker-form {
+    padding:0;
+
     .application-form {
-      margin-top:5em;
       width:100%;
     }
   }

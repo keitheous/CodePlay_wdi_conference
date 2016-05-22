@@ -4,13 +4,17 @@
   .add-event-btn {
     background-color: #5cb85c;
     padding: 5px 8px;
-    margin-left: 81px;
+    // margin-left: 81px;
     border:none;
     height: 35px;
     font-size: 1em;
     float: right;
-    margin-right: 120px;
-    margin-bottom: 10px;
+    margin-right: 102px;
+    margin-bottom: 20px;
+  }
+
+  .add-event-btn:hover {
+    background-color: $california;
   }
 
   h1 {
@@ -182,4 +186,10 @@
   }
 }
 
+.events-application-container {
+  padding:1em;
 
+  a:hover {
+    color:$california;
+  }
+}

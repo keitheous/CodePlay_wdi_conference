@@ -11,7 +11,11 @@
     <ul id="edit-profile">
       <li><a href="/users/<%= @user.id %>/edit">Edit Profile </a></li>
       <li><a class="apply-btn" href="">Apply to be a Speaker</a></li>
-      <li><a href="/tickets">Buy Tickets</a></li>
+      <% if @user.user_type_id == 1 %>
+        <li><a href="/events">Manage Speakers &amp; Events</a></li>
+      <% else %>
+        <li><a href="/tickets">Buy Tickets</a></li>
+      <% end %>
     </ul>
   </div>
 

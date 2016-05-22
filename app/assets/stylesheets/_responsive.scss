@@ -49,14 +49,32 @@
 
   }
 
-  #profile-section {
+  #edit-page {
+    h1 {
+      font-size:3em;
+    }
+  }
 
+  #show-profile {
+    width:100%;
+    text-align:center;
+  }
+
+  #img-profile {
+    margin-top:5em;
+    height:20em;
+    width:25em;
+  }
+
+  #profile-section {
     ul {
       position:absolute;
-      top:65%;
-      left:55%;
+      top:75%;
+      left:48%;
       transform: translate(-50%, -50%);
       width:100%;
+      text-align:center;
+
     }
   }
 

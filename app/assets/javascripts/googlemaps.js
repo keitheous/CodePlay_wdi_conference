@@ -12,6 +12,7 @@ function initMap() {
   });
   var marker = new google.maps.Marker({
     position: gaLocation,
+    url: 'https://www.google.com.au/maps/place/45+William+St,+Melbourne+VIC+3000/@-37.818111,144.9570576,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad65d4ce20528e5:0xd989acb313fcb5b2!8m2!3d-37.818111!4d144.959246',
     map: map
   });
 
@@ -20,6 +21,9 @@ function initMap() {
   });
   marker.addListener('mouseout', function() {
     infowindow.close();
+  });
+  marker.addListener('click',function() {
+    window.location.href = marker.url;
   });
 }
 

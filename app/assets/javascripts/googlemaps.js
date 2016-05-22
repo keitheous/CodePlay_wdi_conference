@@ -26,5 +26,13 @@ function initMap() {
   marker.addListener('click',function() {
     window.open(marker.url,'_blank');
   });
+
+  google.maps.event.addListener(map, 'click', function (event) {
+    this.setOptions({scrollwheel:true});
+  });
+
+  google.maps.event.addListener(map, 'mouseout', function (event) {
+    this.setOptions({scrollwheel:false});
+  });
 }
 

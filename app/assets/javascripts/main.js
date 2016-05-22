@@ -2,12 +2,13 @@ $(document).ready(function(){
 
 smoothScroll.init();
 
+	//slide in speaker images
 	$(window).scroll(function() {
 
 		var scrollLength = $(this).scrollTop();
     console.log(scrollLength);
 
-		if (scrollLength > 800) {
+		if (scrollLength > 850) {
 			$('.speakers-card').each(function(index) {
 				setTimeout(function() {
 					$('.speakers-card').eq(index).addClass('appear');

@@ -3,7 +3,8 @@ function initMap() {
   var mapDiv = document.getElementById('map');
   var map = new google.maps.Map(mapDiv, {
     center: gaLocation,
-    zoom: 18
+    zoom: 18,
+    scrollwheel:false
   });
 
   var contentString = "<div id='map-marker-info'>General Assembly</div>";

@@ -1,11 +1,27 @@
 <h1 class="section-title">Schedule</h1>
-<div class="schedule-events">
-   <% @events.each do |event| %>
-      <hr class='vertical'>
-      <div class="events-card">
-          <h3><%=event.name%></h3>
-          <p>Start Time: <%=event.time%></p>
-          <p>Total ( <%=event.total_seats%> )seats</p>
-      </div>
-   <% end %>
+<div class="event-speakers">
+     <% @talks.each do |talk| %>
+       <hr class="vertical">
+       <div class="talk-card">
+           <div class='left'><%=talk.user.name%></div>
+           <div class="middle">
+             <img src="<%= talk.user.img%>" alt="">
+           </div>
+           <div class='right'>
+               <p>
+                 <%= talk.topic%>
+               </p>
+           </div>
+       </div>
+     <% end %>
 </div>
+
+
+<script type="text/javascript">
+
+   $('.event-speakers').on('click','img',function(){
+     $(this).closest('.middle').next('.right').find('p').css('width','90%');
+   });
+
+
+</script>

@@ -14,9 +14,17 @@
   font-size: 2em;
 }
 
+.about-title{
+  opacity: 0;
+  transform: translateY(-200px);
+}
+
 .about-content {
   margin:0 auto;
   width: 80%;
+  padding-top:1em;
+  opacity: 0;
+  transform: translateX(200px);
 }
 
 .address-map-container {
@@ -55,4 +63,10 @@
   color:linen;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.appear-content {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: 1s;
 }

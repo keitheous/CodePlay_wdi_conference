@@ -38,3 +38,30 @@
   }
 
 }
+
+.sponsors-title {
+  opacity: 0;
+  transform: translateY(-200px);
+}
+
+.sponsors-content {
+  opacity: 0;
+  transform: translateX(200px);
+}
+
+.sponsors-img {
+  opacity: 0;
+  transform: translateX(-200px);
+}
+
+.appear-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition:1s;
+}
+
+.appear-sponsors {
+  opacity: 1;
+  transform: translateX(0);
+  transition:1s;
+}

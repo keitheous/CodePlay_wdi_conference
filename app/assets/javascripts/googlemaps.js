@@ -23,7 +23,7 @@ function initMap() {
     infowindow.close();
   });
   marker.addListener('click',function() {
-    window.location.href = marker.url;
+    window.open(marker.url,'_blank');
   });
 }
 

@@ -31,7 +31,7 @@ smoothScroll.init();
 			});
 		}
 
-		if (scrollLength > 1150) {
+		if (scrollLength > 1600) {
 			$('.schedule-title').addClass('appear-title');
 
 			$('.talk-card').each(function(index) {
@@ -47,7 +47,7 @@ smoothScroll.init();
 			});
 		}
 
-		if (scrollLength > 1850) {
+		if (scrollLength > 2300) {
 			$('.sponsors-title').addClass('appear-title');
 
 			$('.sponsors-content').addClass('appear-sponsors');

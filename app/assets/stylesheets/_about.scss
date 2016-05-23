@@ -4,14 +4,23 @@
 
 #about {
   height: auto;
-  background-color:$caribbean-green;
-  color:white;
+  background-color: white;
+  color: #222;
   text-align:center;
-  padding-top:5em;
+
+}
+#location {
+  height: auto;
+  background-color: white;
+  color: #222;
+  text-align:center;
+
 }
 
 .section-title {
   font-size: 2em;
+  padding-top:1.2em;
+  padding-bottom:0.8em;
 }
 
 .about-title{
@@ -32,10 +41,9 @@
   transform: translateX(-200px);
 }
 
-
 #map {
-  width: 50%;
-  height: 360px;
+  width: 45%;
+  height: 250px;
   background-color: #CCC;
   margin:30px 30px 30px 20px;
   padding:10px;
@@ -43,6 +51,7 @@
   vertical-align: middle;
   border:3px solid lavender;
   border-radius: 3px;
+
 }
 
 #map-marker-info {
@@ -54,15 +63,15 @@
   display: inline-block;
   vertical-align: middle;
   width: 30%;
-  font-size: 1.5em;
+  font-size: 1.2em;
   text-align: left;
 }
 
 .address p {
   font-size: 0.8em;
-  color:linen;
+  color: #666;
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .appear-content {
@@ -71,14 +80,27 @@
   transition: 1s;
 }
 
+.about-footer {
+  position: relative;
+}
+
 .tram {
-  opacity: 0;
+  opacity: 0.8;
   height: 50px;
+  position: absolute;
+  top: 102px;
+  left: 0;
 }
 
 .move-tram {
   opacity: 1;
-  transform: translateX(200px);
-  transition: 4s;
+  transform: translateX(2000px);
+  transition: 25s;
+}
 
+.city-vector {
+  width: 60%;
+  height: 150px;
+  margin-bottom: -5px;
+  // position: absolute;
 }

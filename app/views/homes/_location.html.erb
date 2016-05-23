@@ -1,0 +1,25 @@
+<h1 class="section-title location-title">Location</h1>
+
+<div class="address-map-container">
+
+  <div class="address">
+    <h2><strong>Address:</strong></h2>
+    <p>L12A 45 William Street,</p>
+    <p>Melbourne VIC 3000, </p>
+    <p>Australia</p></br>
+    <h2><strong>Transport: </strong></h2>
+    <p>Tram routes 55/11/12/48/109 </p>
+    <p>Stop Collins Street</p>
+  </div>
+
+  <div id="map"></div>
+
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
+<div class="about-footer">
+
+  <img src="<%= asset_path('city.png') %>" class="city-vector">
+  <img src="<%= asset_path('tram.png') %>" class="tram">
+</div>

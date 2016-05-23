@@ -6,12 +6,12 @@ smoothScroll.init();
 	$(window).scroll(function() {
 
 		var scrollLength = $(this).scrollTop();
-    console.log(scrollLength);
+    // console.log(scrollLength);
 
 		if (scrollLength > 80) {
 			$('.about-title').addClass('appear');
 			$('.about-content').addClass('appear-content');
-
+			$('.about-image-wrap').addClass('appear-image');
 		}
 
 		if (scrollLength > 500) {

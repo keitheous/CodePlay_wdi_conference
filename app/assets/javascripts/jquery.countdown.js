@@ -167,7 +167,7 @@
                 $(this).css('height', $(this).width() + 'px');
             });
             if (settings.style.textResponsive) {
-                element.find('.ClassyCountdown-value').css('font-size', Math.floor(element.find('> div').eq(0).width() * settings.style.textResponsive / 25) + 'px');
+                element.find('.ClassyCountdown-value').css('font-size', Math.floor(element.find('> div').eq(0).width() * settings.style.textResponsive / 20) + 'px');
                 element.find('.ClassyCountdown-value').each(function() {
                     $(this).css('margin-top', Math.floor(0 - (parseInt($(this).height()) / 2)) + 'px');
                 });
@@ -181,7 +181,7 @@
                 $(this).css('height', $(this).width() + 'px');
             });
             if (settings.style.textResponsive) {
-                element.find('.ClassyCountdown-value').css('font-size', Math.floor(element.find('> div').eq(0).width() * settings.style.textResponsive / 25) + 'px');
+                element.find('.ClassyCountdown-value').css('font-size', Math.floor(element.find('> div').eq(0).width() * settings.style.textResponsive / 20) + 'px');
             }
             element.find('.ClassyCountdown-value').each(function() {
                 $(this).css("margin-top", Math.floor(0 - (parseInt($(this).height()) / 2)) + 'px');

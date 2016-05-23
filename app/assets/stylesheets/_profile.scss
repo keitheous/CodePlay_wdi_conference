@@ -2,6 +2,11 @@
   position:absolute;
   margin-top:0.5em;
   font-size:4em;
+  -webkit-animation: slide-in 1s;
+      -moz-animation: slide-in 1s;
+       -ms-animation: slide-in 1s;
+        -o-animation: slide-in 1s;
+           animation: slide-in 1s;
 }
 
 #show-profile {
@@ -45,6 +50,11 @@
   li {
     display:inline-block;
     margin-left:10px;
+    -webkit-animation: slide-in-left 1s;
+        -moz-animation: slide-in-left 1s;
+         -ms-animation: slide-in-left 1s;
+          -o-animation: slide-in-left 1s;
+             animation: slide-in-left 1s;
   }
 
 }
@@ -63,7 +73,7 @@
   height:100vh;
   display: none;
   position:relative;
-  padding-top:5em;
+  padding-top:8em;
 }
 
 .application-form{
@@ -129,4 +139,14 @@
   top:50%;
   left:50%;
   transform: translate(-50%, -50%);
+}
+
+@keyframes slide-in {
+    from { transform: translateY(-500px); }
+    to   { transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+    from { transform: translateX(-1000px); }
+    to   { transform: translateX(0); }
 }

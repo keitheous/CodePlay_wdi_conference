@@ -14,14 +14,24 @@
   font-size: 2em;
 }
 
+.about-title{
+  opacity: 0;
+  transform: translateY(-200px);
+}
+
 .about-content {
   margin:0 auto;
   width: 80%;
+  padding-top:1em;
+  opacity: 0;
+  transform: translateX(200px);
 }
 
-#speakers {
-  height:100vh;
+.address-map-container {
+  opacity: 0;
+  transform: translateX(-200px);
 }
+
 
 #map {
   width: 50%;
@@ -34,9 +44,11 @@
   border:3px solid lavender;
   border-radius: 3px;
 }
+
 #map-marker-info {
   color:black;
 }
+
 .address {
   margin:30px 30px 30px 20px;
   display: inline-block;
@@ -51,4 +63,10 @@
   color:linen;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.appear-content {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: 1s;
 }

@@ -70,10 +70,6 @@
     display: none;
     color:$california;
   }
-  
-  .event-edit-btn:hover {
-    
-  }
   .fa-pencil-square-o, .fa-trash {
     color:white;
   }
@@ -226,4 +222,9 @@
   a:hover {
     color:$california;
   }
+}
+
+.no-pending-msg, .no-event-msg {
+  text-align: center;
+  color:gray;
 }

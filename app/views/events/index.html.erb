@@ -6,58 +6,65 @@
   <div class="events-handler">
     <h1>Events List</h1>
     <button class="add-event-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add Event</button>
-    <table>
-      <tr>
-        <th class="event-name-td">Event Name</th>
-        <th class="event-time-td">Event Time</th>
-        <th>Actions</th>
-      </tr>
-      <% @events.each do |event| %>
-        <tr class="admin-event-list" data-event-id="<%= event.id %>">
-          <td class="event-name-td"><%= event.name %></td>
-          <td class="event-time-td"><%= event.time.to_formatted_s(:long)  %></td>
-          <td>
-            <button class="event-edit-btn"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i><span class="edit-hover">edit</span></button>
-            <form action="/events/<%= event.id %>" method="post">
-              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-               <input type="hidden" value="delete" name="_method">
-               <button class="event-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i><span class="delete-hover">delete</span></button>
-            </form>
-          </td>
+    <% if @events.length != 0 %>
+      <table>
         <tr>
-      <% end %>
-
-    </table>
+          <th class="event-name-td">Event Name</th>
+          <th class="event-time-td">Event Time</th>
+          <th>Actions</th>
+        </tr>
+        <% @events.each do |event| %>
+          <tr class="admin-event-list" data-event-id="<%= event.id %>">
+            <td class="event-name-td"><%= event.name %></td>
+            <td class="event-time-td"><%= event.time.to_formatted_s(:long)  %></td>
+            <td>
+              <button class="event-edit-btn"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i><span class="edit-hover">edit</span></button>
+              <form action="/events/<%= event.id %>" method="post">
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                 <input type="hidden" value="delete" name="_method">
+                 <button class="event-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i><span class="delete-hover">delete</span></button>
+              </form>
+            </td>
+          <tr>
+        <% end %>
+      </table>
+    <% else %>
+      <p class="no-event-msg">There's no event, add event please.</p>
+    <% end %> 
   </div>
   <br />
   <br />
   <div class="applying-users-handler">
     <h1>Pending Applications</h1>
-
-    <table class="applying-list">
-      <tr>
-        <th>Name</th>
-        <th>Topic</th>
-        <th>Content</th>
-        <th>Event</th>
-        <th>Time</th>
-        <th>Actions</th>
-      </tr>
-      <% @event_speakers.each do | event_speaker | %>
-        <tr class="applying-item" data-event-speaker-id="<%= event_speaker.id%>">
-          <td class="applying-user-name"><%= event_speaker.user.name %></td>
-          <td class="applying-topic"><%= event_speaker.topic %></td>
-          <td  class="applying-content"><%= event_speaker.content%></td>
-          <td  class="applying-event-name"><%= event_speaker.event.name%></td>
-          <td class="talk-time-schedule">
-            <input type="time" class="schedule-time">
-          </td>
-          <td class="applying-actions">
-            <button class="reject-button">Reject</button>
-            <button class="approve-button">Approve</button>
-          </td>
+    
+    <% if @event_speakers.length != 0 %>
+      <table class="applying-list">
+        <tr>
+          <th>Name</th>
+          <th>Topic</th>
+          <th>Content</th>
+          <th>Event</th>
+          <th>Time</th>
+          <th>Actions</th>
         </tr>
-      <% end %>
-    </table>
+        <% @event_speakers.each do | event_speaker | %>
+          <tr class="applying-item" data-event-speaker-id="<%= event_speaker.id%>">
+            <td class="applying-user-name"><%= event_speaker.user.name %></td>
+            <td class="applying-topic"><%= event_speaker.topic %></td>
+            <td  class="applying-content"><%= event_speaker.content%></td>
+            <td  class="applying-event-name"><%= event_speaker.event.name%></td>
+            <td class="talk-time-schedule">
+              <input type="time" class="schedule-time">
+            </td>
+            <td class="applying-actions">
+              <button class="reject-button">Reject</button>
+              <button class="approve-button">Approve</button>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+      <% else %>
+      <p class="no-pending-msg">There's no pending application.</p>
+    <% end %>
   </div>
 </div>

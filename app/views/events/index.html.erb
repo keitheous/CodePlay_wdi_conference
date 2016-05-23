@@ -15,13 +15,13 @@
       <% @events.each do |event| %>
         <tr class="admin-event-list" data-event-id="<%= event.id %>">
           <td class="event-name-td"><%= event.name %></td>
-          <td class="event-time-td"><%= event.time %></td>
+          <td class="event-time-td"><%= event.time.to_formatted_s(:long)  %></td>
           <td>
             <button class="event-edit-btn"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i><span class="edit-hover">edit</span></button>
             <form action="/events/<%= event.id %>" method="post">
               <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                <input type="hidden" value="delete" name="_method">
-               <button class="event-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+               <button class="event-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i><span class="delete-hover">delete</span></button>
             </form>
           </td>
         <tr>
@@ -40,6 +40,7 @@
         <th>Topic</th>
         <th>Content</th>
         <th>Event</th>
+        <th>Time</th>
         <th>Actions</th>
       </tr>
       <% @event_speakers.each do | event_speaker | %>
@@ -48,6 +49,9 @@
           <td class="applying-topic"><%= event_speaker.topic %></td>
           <td  class="applying-content"><%= event_speaker.content%></td>
           <td  class="applying-event-name"><%= event_speaker.event.name%></td>
+          <td class="talk-time-schedule">
+            <input type="time" class="schedule-time">
+          </td>
           <td class="applying-actions">
             <button class="reject-button">Reject</button>
             <button class="approve-button">Approve</button>

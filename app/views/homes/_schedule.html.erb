@@ -1,17 +1,35 @@
 <h1 class="section-title schedule-title">Schedule</h1>
 <div class="event-speakers">
-     <% @talks.each do |talk| %>
+     <% @talks.each_with_index do |talk,index| %>
        <hr class="vertical">
        <div class="talk-card">
-           <div class='left'><%=talk.user.name%></div>
+
+         <% if index%2==0%>
+           <div class='left'>
+           </div>
            <div class="middle">
              <img src="<%= talk.user.img%>" alt="">
            </div>
            <div class='right'>
                <p>
+                 <strong>( <%= talk.user.name%> )</strong><%=talk.talk_time.to_formatted_s(:long)%><br/>
                  <%= talk.topic%>
                </p>
            </div>
+         <%else%>
+           <div class='left'>
+             <p>
+               <strong>( <%= talk.user.name%> )</strong><%=talk.talk_time.to_formatted_s(:long)%><br/>
+               <%= talk.topic%>
+             </p>
+           </div>
+           <div class="middle">
+             <img src="<%= talk.user.img%>" alt="">
+           </div>
+           <div class='right'>
+           </div>
+         <%end%>
+
        </div>
      <% end %>
 </div>
@@ -19,13 +37,16 @@
 
 <script type="text/javascript">
 
-   $('.event-speakers').on('click','img',function(){
-     $(this).closest('.middle').next('.right').find('p').css('width','90%');
+   $('.event-speakers').on('mouseenter','img',function(){
+     $(this).css('border','3px solid #F39C12');
+     $(this).closest('.middle').prev('.left').find('p').css('width','70%');
+     $(this).closest('.middle').next('.right').find('p').css('width','70%');
    });
 
    $('.event-speakers').on('click','p',function(){
+     $(this).closest('.talk-card').find('img').css('border','3px solid white');
      $(this).css('width','0');
-   });
 
+   });
 
 </script>

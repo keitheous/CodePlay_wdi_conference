@@ -36,6 +36,7 @@
     height:4em;
     width:4em;
     display: inline-block;
+    transition: 1s;
   }
 
   img:hover{
@@ -44,13 +45,10 @@
   }
 
   .left{
-    text-align: right;
     display: inline-block;
     width: 45%;
     height: 64px;
     float: left;
-    vertical-align: middle;
-    padding: 20px;;
   }
 
   .right{
@@ -68,15 +66,27 @@
      background-color: rgba(255, 255, 255, 0.5);
      border-radius: 10px;
      padding-top: 10px;
+     height: 90px;
+  }
+
+  .left p{
+     height: 100%;
+     overflow: hidden;
+     width: 0;
+     transition: 1s;
+     background-color: rgba(255, 255, 255, 0.5);
+     border-radius: 10px;
+     padding-top: 10px;
+     float:right;
+     height: 90px;
   }
 
   .middle{
     display: inline-block;
     width: 10%;
     float: left;
+    height: 64px;
   }
-
-
 }
 
 .schedule-title {

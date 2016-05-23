@@ -2,9 +2,11 @@ $(document).ready(function() {
   $('.approve-button').on('click',function(event){
     var $applyingList = $(this).closest('.applying-item');
     var event_speaker_id = $applyingList.data('event-speaker-id');
+    var scheduledTime = $applyingList.find('.schedule-time').val();
+    debugger
     $.ajax({
       url: '/api/apply',
-      data: {id: event_speaker_id, status: 'approved'},
+      data: {id: event_speaker_id, time: scheduledTime,status: 'approved'},
       method: 'put'
     }).done(function(response) {
       $applyingList.css('display','none');
@@ -29,6 +31,7 @@ $(document).ready(function() {
   $('.add-event-btn').on('click',function(event) {
     $('.add-events-form').slideDown("fast");
     $('.events-application-container').fadeOut(100);
+    // jQuery('#add-event-date-picker').datetimepicker();
 
   });
 
@@ -58,8 +61,17 @@ $(document).ready(function() {
   });
 
   // add hover text for edit/delete button
-  $('.event-edit-btn').hover(function(event){
-    $(this).find('.edit-hover').css({"display":"block","color":"white"});
+  $('.event-edit-btn').on('mouseover',function(event){
+    $(this).find('.edit-hover').css({"display":"block"});
+  });
+  $('.event-edit-btn').on('mouseout',function(event){
+    $(this).find('.edit-hover').css({"display":"none"})
+  });
+  $('.event-delete-tbn').on('mouseover',function(event) {
+    $(this).find('.delete-hover').css({"display":"block"});
+  });
+  $('.event-delete-tbn').on('mouseout',function(event) {
+    $(this).find('.delete-hover').css({"display":"none"});
   });
 
 });

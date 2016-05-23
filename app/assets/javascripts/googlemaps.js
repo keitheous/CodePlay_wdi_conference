@@ -3,7 +3,7 @@ function initMap() {
   var mapDiv = document.getElementById('map');
   var map = new google.maps.Map(mapDiv, {
     center: gaLocation,
-    zoom: 18,
+    zoom: 17,
     scrollwheel:false
   });
 
@@ -26,5 +26,12 @@ function initMap() {
   marker.addListener('click',function() {
     window.open(marker.url,'_blank');
   });
-}
 
+  google.maps.event.addListener(map, 'click', function (event) {
+    this.setOptions({scrollwheel:true});
+  });
+
+  google.maps.event.addListener(map, 'mouseout', function (event) {
+    this.setOptions({scrollwheel:false});
+  });
+}

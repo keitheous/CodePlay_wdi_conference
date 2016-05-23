@@ -9,6 +9,7 @@ class HomesController < ApplicationController
 
     # ====== show all speakers on the schedule of homepage====
     event = Event.first
-    @talks = event.event_speakers
+    @approved_speakers = event.event_speakers.where(application_status: "approved")
+    @talks = @approved_speakers.sort_by{|talk| talk[:talk_time]}
   end
 end

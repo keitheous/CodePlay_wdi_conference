@@ -3,7 +3,7 @@ function initMap() {
   var mapDiv = document.getElementById('map');
   var map = new google.maps.Map(mapDiv, {
     center: gaLocation,
-    zoom: 18,
+    zoom: 17,
     scrollwheel:false
   });
 
@@ -35,4 +35,3 @@ function initMap() {
     this.setOptions({scrollwheel:false});
   });
 }
-

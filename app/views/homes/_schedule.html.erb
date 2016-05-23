@@ -37,14 +37,16 @@
 
 <script type="text/javascript">
 
-   $('.event-speakers').on('click','img',function(){
+   $('.event-speakers').on('mouseenter','img',function(){
+     $(this).css('border','3px solid #F39C12');
      $(this).closest('.middle').prev('.left').find('p').css('width','70%');
      $(this).closest('.middle').next('.right').find('p').css('width','70%');
    });
 
    $('.event-speakers').on('click','p',function(){
+     $(this).closest('.talk-card').find('img').css('border','3px solid white');
      $(this).css('width','0');
-   });
 
+   });
 
 </script>

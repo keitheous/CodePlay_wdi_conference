@@ -28,6 +28,8 @@ gem 'bcrypt'
 
 gem 'stripe'
 
+gem 'tlsmail'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

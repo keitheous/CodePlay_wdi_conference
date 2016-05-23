@@ -35,6 +35,7 @@
     height:4em;
     width:4em;
     display: inline-block;
+    transition: 1s;
   }
 
   img:hover{
@@ -43,13 +44,6 @@
   }
 
   .left{
-    // text-align: right;
-    // display: inline-block;
-    // width: 45%;
-    // height: 64px;
-    // float: left;
-    // vertical-align: middle;
-    // padding: 20px;;
     display: inline-block;
     width: 45%;
     height: 64px;
@@ -71,6 +65,7 @@
      background-color: rgba(255, 255, 255, 0.5);
      border-radius: 10px;
      padding-top: 10px;
+     height: 90px;
   }
 
   .left p{
@@ -82,6 +77,7 @@
      border-radius: 10px;
      padding-top: 10px;
      float:right;
+     height: 90px;
   }
 
   .middle{

@@ -40,6 +40,7 @@
         <th>Topic</th>
         <th>Content</th>
         <th>Event</th>
+        <th>Time</th>
         <th>Actions</th>
       </tr>
       <% @event_speakers.each do | event_speaker | %>
@@ -48,6 +49,9 @@
           <td class="applying-topic"><%= event_speaker.topic %></td>
           <td  class="applying-content"><%= event_speaker.content%></td>
           <td  class="applying-event-name"><%= event_speaker.event.name%></td>
+          <td class="talk-time-schedule">
+            <input type="time" class="schedule-time">
+          </td>
           <td class="applying-actions">
             <button class="reject-button">Reject</button>
             <button class="approve-button">Approve</button>

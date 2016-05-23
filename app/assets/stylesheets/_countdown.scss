@@ -5,8 +5,9 @@
 .ClassyCountdown-wrapper > div {
   display: inline-block;
   position: relative;
-  width: calc(10% - 20px);
+  // width: calc(10% - 20px);
   margin: 20px;
+  width: 130px;
 }
 
 .ClassyCountdown-wrapper .ClassyCountdown-value {

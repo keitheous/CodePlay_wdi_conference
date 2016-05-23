@@ -4,22 +4,22 @@
 
 #about {
   height: auto;
-  background-color: white;
+  background-color: $caribbean-green;
   color: #222;
   text-align:center;
-
+  padding-bottom: 80px;
 }
+
 #location {
   height: auto;
   background-color: white;
   color: #222;
   text-align:center;
-
 }
 
 .section-title {
   font-size: 2em;
-  padding-top:1.2em;
+  padding-top:2.2em;
   padding-bottom:0.8em;
 }
 
@@ -31,7 +31,6 @@
 .about-content {
   margin:0 auto;
   width: 80%;
-  padding-top:1em;
   opacity: 0;
   transform: translateX(200px);
 }
@@ -39,19 +38,20 @@
 .address-map-container {
   opacity: 0;
   transform: translateX(-200px);
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 #map {
-  width: 45%;
+  width: 30%;
   height: 250px;
   background-color: #CCC;
-  margin:30px 30px 30px 20px;
-  padding:10px;
   display: inline-block;
   vertical-align: middle;
   border:3px solid lavender;
   border-radius: 3px;
-
+  border: 0;
 }
 
 #map-marker-info {
@@ -59,10 +59,9 @@
 }
 
 .address {
-  margin:30px 30px 30px 20px;
   display: inline-block;
   vertical-align: middle;
-  width: 30%;
+  width: 20%;
   font-size: 1.2em;
   text-align: left;
 }

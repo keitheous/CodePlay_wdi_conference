@@ -55,7 +55,7 @@ $(document).ready(function() {
     //   showCursor: false
     // });
     $(".conf-name").typed({
-      strings: ["$ WDI CONF 2016"],
+      strings: ["WDI CONF 2016"],
       typeSpeed: 150,
       // startDelay: 2000,
       showCursor: true

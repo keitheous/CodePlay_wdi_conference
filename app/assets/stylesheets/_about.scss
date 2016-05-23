@@ -70,3 +70,15 @@
   transform: translateX(0px);
   transition: 1s;
 }
+
+.tram {
+  opacity: 0;
+  height: 50px;
+}
+
+.move-tram {
+  opacity: 1;
+  transform: translateX(200px);
+  transition: 4s;
+
+}

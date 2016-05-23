@@ -16,6 +16,7 @@ smoothScroll.init();
 
 		if (scrollLength > 500) {
 			$('.address-map-container').addClass('appear');
+			$('.tram').addClass('move-tram');
 		}
 
 		if (scrollLength > 760) {

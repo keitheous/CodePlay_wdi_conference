@@ -58,8 +58,17 @@ $(document).ready(function() {
   });
 
   // add hover text for edit/delete button
-  $('.event-edit-btn').hover(function(event){
-    $(this).find('.edit-hover').css({"display":"block","color":"white"});
+  $('.event-edit-btn').on('mouseover',function(event){
+    $(this).find('.edit-hover').css({"display":"block"});
+  });
+  $('.event-edit-btn').on('mouseout',function(event){
+    $(this).find('.edit-hover').css({"display":"none"})
+  });
+  $('.event-delete-tbn').on('mouseover',function(event) {
+    $(this).find('.delete-hover').css({"display":"block"});
+  });
+  $('.event-delete-tbn').on('mouseout',function(event) {
+    $(this).find('.delete-hover').css({"display":"none"});
   });
 
 });

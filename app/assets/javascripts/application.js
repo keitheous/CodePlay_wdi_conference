@@ -15,6 +15,7 @@
 //= require jquery.knob
 //= require jquery.throttle
 //= require jquery.countdown
+//= require jquery.datetimepicker
 //= require handlebars.js
 //= require countdown
 //= require typed

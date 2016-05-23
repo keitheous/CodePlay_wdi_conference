@@ -64,6 +64,11 @@
   }
   .edit-hover {
     display: none;
+    color:$california;
+  }
+  .delete-hover {
+    display: none;
+    color:$california;
   }
   
   .event-edit-btn:hover {
@@ -72,6 +77,13 @@
   .fa-pencil-square-o, .fa-trash {
     color:white;
   }
+  .fa-pencil-square-o:hover {
+    color: $california;
+  }
+  .fa-trash:hover {
+    color: $california;
+  }
+
 }
 .applying-users-handler {
   margin: 50px auto;
@@ -140,13 +152,20 @@
 
 .add-events-form {
   display: none;
+  padding-top: 50px;
   #close-add-event {
     margin:10px;
+    float:right;
+    position:relative;
+    right:30%;
   }
   form {
     margin:20px auto;
     width: 300px;
     text-align: left;
+  }
+  form input {
+    font-size: 0.9em;
   }
   #total-seats {
     margin-top: 10px;
@@ -172,13 +191,20 @@
 
 .edit-events-form {
   display: none;
+  padding-top: 50px;
   #close-edit-event {
     margin:10px;
+    float:right;
+    position:relative;
+    right:30%;
   }
   form {
     margin:20px auto;
     width: 300px;
     text-align: left;
+  }
+  form input {
+    font-size: 0.9em;
   }
   .edit-event-submit {
     background-color: #f4b555;

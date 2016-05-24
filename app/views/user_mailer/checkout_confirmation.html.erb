@@ -1,0 +1,11 @@
+<h1>Hi, <%= @ticket.email %></h1>
+<p>
+  Thank you for your booking.
+</p>
+<p>Your Ticket Number is : <%= @ticket.id%></p>
+<div>
+  <p>Your Seats are:</p>
+  <% @ticket.seats.each do |seat| %>
+    <p><%= seat.seat_num %></p>
+  <% end %>
+</div>

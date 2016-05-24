@@ -66,36 +66,6 @@
     }
   }
 
-  #show-profile {
-    width:100%;
-    text-align:center;
-  }
-
-  #img-profile {
-    margin-top:5em;
-    height:20em;
-    width:25em;
-  }
-
-  #profile-section {
-    ul {
-      position:absolute;
-      top:75%;
-      left:48%;
-      transform: translate(-50%, -50%);
-      width:100%;
-      text-align:center;
-
-    }
-  }
-
-  #desc-section {
-    position:static !important;
-    margin-top:35em !important;
-    text-align:center;
-
-  }
-
   #speaker-form {
     padding-top:4em !important;
 
@@ -119,15 +89,11 @@
     width:80% !important;
     text-align:center !important;
   }
+
+
 }
 
 @media screen and (device-aspect-ratio: 40/71) {
-
-  #desc-section {
-    position:static !important;
-    margin-top:31em !important;
-    text-align:center;
-  }
 
   .conf-name {
     font-size:3.5em;
@@ -135,6 +101,49 @@
 
   .form-title-two {
     font-size:2em;
+  }
+
+  #img-profile {
+    bottom:25% !important;
+    right:5% !important;
+  }
+
+}
+
+@media screen and (max-width: 1165px) {
+
+  #img-profile {
+    right:15%;
+    height:18em !important;
+    width:18em !important;
+  }
+
+  #description {
+    position:static !important;
+    padding-top:10em;
+    text-align:center;
+  }
+
+  #profile-section {
+    color:$california;
+    top:180% !important;
+    right:11% !important;
+    text-align:center !important;
+
+
+    li {
+      padding:0 !important;
+      border: none !important;
+      text-align:center !important;
+    }
+
+  }
+
+  .speaker-status {
+    margin: 0 auto;
+    width:70%;
+    margin-top:10em !important;
+    padding:0 0 1em 0 !important;
   }
 
 }

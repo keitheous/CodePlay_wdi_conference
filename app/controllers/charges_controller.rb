@@ -52,6 +52,7 @@ class ChargesController < ApplicationController
       current_seat.save
     end
 
+    UserMailer.checkout_confirmation(new_ticket).deliver_now
 
     rescue Stripe::CardError => e
       flash[:error] = e.message

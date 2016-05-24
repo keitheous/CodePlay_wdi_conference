@@ -23,7 +23,7 @@ smoothScroll.init();
 			$('.speaker-title').addClass('appear');
 		}
 
-		if (scrollLength > 850) {
+		if (scrollLength > 1450) {
 			$('.speakers-card').each(function(index) {
 				setTimeout(function() {
 					$('.speakers-card').eq(index).addClass('appear');
@@ -31,7 +31,7 @@ smoothScroll.init();
 			});
 		}
 
-		if (scrollLength > 1600) {
+		if (scrollLength > 2550) {
 			$('.schedule-title').addClass('appear-title');
 
 			$('.talk-card').each(function(index) {
@@ -47,7 +47,7 @@ smoothScroll.init();
 			});
 		}
 
-		if (scrollLength > 2300) {
+		if (scrollLength > 3600) {
 			$('.sponsors-title').addClass('appear-title');
 
 			$('.sponsors-content').addClass('appear-sponsors');

@@ -37,7 +37,7 @@
   min-height:100vh;
   height:auto;
   max-width:100vw;
-  overflow:hidden;
+  overflow-x:hidden;
 }
 
 #profile-section {
@@ -45,6 +45,8 @@
   top:70%;
   right:10%;
   text-align:right;
+  transition:0.5s;
+
   li {
     display:inline-block;
     padding:1em;
@@ -74,12 +76,14 @@
   min-height:50vh;
   height:auto;
   background-color: $denim;
+  transition:0.5s;
 }
 
 #description {
   position:relative;
   top:10%;
   left:30%;
+  transition:0.5s;
 }
 
 #speaker-form {
@@ -158,7 +162,7 @@
 
 .speaker-status {
   text-align:left;
-  margin-top:8em;
+  padding-top:8em;
   padding-left:2em;
   -webkit-animation: slide-in-left 1s;
       -moz-animation: slide-in-left 1s;

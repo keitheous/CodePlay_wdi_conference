@@ -1,0 +1,84 @@
+.bottom, p, h4 {
+  margin: 0;
+}
+
+.bottom, p {
+  margin-bottom: 10px;
+}
+
+.user-ticket-wrap {
+  text-align: center;
+}
+
+.ticket-info, .ticket-itinerary {
+  display: inline-block;
+  width: 350px;
+  height: 500px;
+  border: 1px solid #222;
+  border-radius: 20px;
+  margin: 50px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+  background-color: #ECECEC;
+  vertical-align: top;
+  text-align: center;
+  overflow: hidden;
+}
+
+.top {
+  background-image: image-url('city-vector.png');
+  height: 40%;
+  width: 100%;
+  background-size: contain;
+  background-color: #243953;
+}
+
+.bottom {
+  height: 60%;
+  text-align: center;
+}
+
+.email-conf-name, .email-conf-time {
+  width: 50%;
+  display: inline-block;
+  text-align: left;
+  /*border: 1px solid #222;*/
+  height: 110px;
+  vertical-align: top;
+}
+
+.email-seat-class, .email-seat-num {
+  display: inline-block;
+  text-align: left;
+  height: 110px;
+  /*border: 1px solid #222;*/
+  width: 50%;
+  margin-left: -4px;
+  vertical-align: top;
+}
+
+.barcode {
+  height: 78px;
+  width: 100%;
+  background-color: #F7F7F5;
+  background-image: url('http://www.wpclipart.com/signs_symbol/business/barcodes/barcode_code39.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 10px solid transparent;
+}
+
+.email-conf-name, .email-seat-class {
+  margin-left: -2px;
+  padding: 24px 30px;
+  background-color: #F7F7F5;
+  /*margin-top: 2px;*/
+}
+.email-conf-time, .email-seat-num {
+  margin-left: -4px;
+  padding: 24px 30px;
+  background-color: #F7F7F5;
+  /*margin-top: 2px;*/
+}
+.email-conf-name, .email-conf-time, .email-seat-class, .email-seat-num {
+  border-bottom: 1px solid #ECECEC;
+}

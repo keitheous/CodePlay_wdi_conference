@@ -3,6 +3,16 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @event_speakers = EventSpeaker.where(application_status: 'applying')
+    if session[:user_id] == nil
+      redirect_to '/'
+    else
+      @user = User.find(session[:user_id])
+      if @user.user_type.group == 'admin'
+        render :index
+      else 
+        redirect_to '/'
+      end
+    end
   end
 
   def new

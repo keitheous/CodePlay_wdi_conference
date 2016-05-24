@@ -14,7 +14,8 @@ module Api
     def destroy
       event_speaker = EventSpeaker.find(params[:id])
       event_speaker.destroy
-      render json: 200.to_json
+      @pendingApplyings = EventSpeaker.where(application_status: "applying")
+      render json: @pendingApplyings.to_json
     end
   end
 end

@@ -154,6 +154,7 @@ def generate_seats(num_of_tickets, seats_per_row)
 
   num_of_tickets.times do |seat_num|
     seat = Seat.new
+    seat.event_id = Event.first.id
     seat.seat_num = seats_arr[seat_num]
     seat.status = "available"
     if seats_arr[seat_num][0] == "A"

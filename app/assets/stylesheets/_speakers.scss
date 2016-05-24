@@ -3,13 +3,14 @@
   background-color:$denim;
   text-align:center;
   overflow:hidden;
-  color: #222;
-  padding-bottom: 3em;
+  color: #CFF6FE;
+  padding-bottom: 5em;
 }
 
 #speakers h1::after {
   content: "";
-  background-color: #F67C57;
+  background-color: #CFF6FE;
+  opacity: 0.5;
   display: block;
   width: 158px;
   height: 3px;
@@ -24,6 +25,10 @@
   transform: translateY(-200px);
 }
 
+#speakers h1 {
+  padding-bottom: 2em;
+}
+
 #display-speakers {
   width: 80%;
   margin: 0 auto;
@@ -36,19 +41,60 @@
   width:30%;
   opacity: 0;
   transform: translateX(-20px);
+  position: relative;
 
   img {
-    border:3px solid white;
-    border-radius: 6px;
-    height:10em;
-    width:10em;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    border-radius: 5px;
+    height:20vw;
+    width:20vw;
   }
 
 }
 
-.speakers-card:hover {
-  -webkit-animation: rubberBand 1s;
-  animation: rubberBand 1s;
+.speakers-card:hover .speaker-box {
+  opacity: 0.8;
+}
+.speakers-card:hover .speaker-box p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.speakers-card:hover img {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.speaker-box {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: white;
+  height: 20vw;
+  width: 20vw;
+  position: absolute;
+  z-index: 500;
+  left: 2vw;
+  border-radius: 5px;
+  opacity: 0;
+  color: #555;
+  line-height: 1.6;
+  font-size: 1.1vw;
+}
+
+.speaker-box p {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  width: 70%;
+  font-size: 1.1vw !important;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
 }
 
 .appear {

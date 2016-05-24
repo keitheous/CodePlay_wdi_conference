@@ -5,7 +5,7 @@
 #about {
   height: auto;
   background-color: $caribbean-green;
-  color: #222;
+  color: #DDFDE0;
   text-align:center;
   padding-bottom: 80px;
   overflow:hidden;
@@ -27,7 +27,7 @@
 
 #location h1::after {
   content: "";
-  background-color: #F67C57;
+  background-color: $denim;
   display: block;
   width: 158px;
   height: 3px;
@@ -38,7 +38,8 @@
 }
 #about h1::after {
   content: "";
-  background-color: #F67C57;
+  background-color: #DDFDE0;
+  opacity: 0.5;
   display: block;
   width: 118px;
   height: 3px;

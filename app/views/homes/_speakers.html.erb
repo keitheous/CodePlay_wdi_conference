@@ -5,9 +5,11 @@
   <ul>
     <% @speakers.each do |speaker| %>
       <li class="speakers-card">
-          <img src="<%= speaker.img%>" alt="">
-          <p class="speaker-name"><strong><%= speaker.name%></strong></p>
-          <p><%= speaker.email%></p>
+        <div class="speaker-box">
+          <p><%= speaker.desc %></p>
+        </div>
+        <img src="<%= speaker.img%>" alt="">
+        <p class="speaker-name"><strong><%= speaker.name%></strong></p>
       </li>
     <% end %>
   </ul>

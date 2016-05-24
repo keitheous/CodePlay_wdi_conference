@@ -14,6 +14,7 @@ $(document).ready(function() {
   });
 
   $('.reject-button').on('click',function(event){
+    var $applyingTable = $(this).closest('.applying-list');
     var $applyingList = $(this).closest('.applying-item');
     var event_speaker_id = $applyingList.data('event-speaker-id');
     debugger
@@ -21,9 +22,11 @@ $(document).ready(function() {
       url: '/api/apply',
       data: {id: event_speaker_id},
       method: 'delete'
-    }).done(function() {
-      debugger
+    }).done(function(response) {
       $applyingList.css('display','none');
+      if (response === null) {
+        $applyingTable.css('display','none');
+      }
     });
   });
 

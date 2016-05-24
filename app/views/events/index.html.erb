@@ -8,16 +8,16 @@
 
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#1" class="nav__link c-blue"><i class="fa fa-camera-retro"></i></a>
+              <a href="#1" class="nav__link c-blue"><i class="fa fa-calendar-o" aria-hidden="true"></i></a>
             </li>
             <li class="nav__item">
-              <a href="#2" class="nav__link c-yellow scrolly"><i class="fa fa-bolt"></i></a>
+              <a href="#2" class="nav__link c-yellow scrolly"><i class="fa fa-paper-plane"></i></a>
             </li>
             <li class="nav__item">
-              <a href="#3" class="nav__link c-red"><i class="fa fa-music"></i></a>
+              <a href="#3" class="nav__link c-red"><i class="fa fa-user" aria-hidden="true"></i></a>
             </li>
             <li class="nav__item">
-              <a href="#4" class="nav__link c-green"><i class="fa fa-paper-plane"></i></a>
+              <a href="#4" class="nav__link c-green"><i class="fa fa-ticket" aria-hidden="true"></i></a>
             </li>
           </ul>
         </nav>
@@ -25,7 +25,7 @@
         <section class="panel b-blue" id="1">
           <article class="panel__wrapper">
             <div class="panel__content">
-              <h1 class="panel__headline"><i class="fa fa-camera-retro"></i>&nbsp;Events</h1>
+              <h1 class="panel__headline"><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;Events</h1>
               <div class="panel__block"></div>
        <!--============================events ================================  -->
                     <div class="events-handler">
@@ -42,28 +42,27 @@
                               <td class="event-name-td"><%= event.name %></td>
                               <td class="event-time-td"><%= event.time.to_formatted_s(:long)  %></td>
                               <td>
-                                <button class="event-edit-btn"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i><span class="edit-hover">edit</span></button>
+                                <button class="event-edit-btn"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></button>
                                 <form action="/events/<%= event.id %>" method="post">
                                   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                                    <input type="hidden" value="delete" name="_method">
-                                   <button class="event-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i><span class="delete-hover">delete</span></button>
+                                   <button class="event-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
                                 </form>
                               </td>
-                            <tr>
+                            </tr>
                           <% end %>
                         </table>
                       <% else %>
                         <p class="no-event-msg">There's no event, add event please.</p>
                       <% end %>
                     </div>
-                  <!--=============================================================  -->
             </div>
           </article>
         </section>
         <section class="panel b-yellow" id="2">
           <article class="panel__wrapper">
             <div class="panel__content">
-              <h1 class="panel__headline"><i class="fa fa-bolt"></i>&nbsp;Appending applications</h1>
+              <h1 class="panel__headline"><i class="fa fa-paper-plane"></i>&nbsp;Pending applications</h1>
               <div class="panel__block"></div>
                  <!--=========================appending applications================================-->
                  <div class="applying-users-handler">
@@ -104,10 +103,25 @@
         <section class="panel b-red" id="3">
           <article class="panel__wrapper">
             <div class="panel__content">
-              <h1 class="panel__headline"><i class="fa fa-music"></i>&nbsp;Music</h1>
+              <h1 class="panel__headline"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Speakers</h1>
               <div class="panel__block"></div>
               <!--=========================================================-->
-
+              <table class="speakers-list-form">
+                <tr>
+                  <th>Name</th>
+                  <th>Topic</th>
+                  <th>Time</th>
+                  <th>Event</th>
+                </tr>
+                <% @speakers.each do |speaker| %>
+                  <tr>
+                    <td><%=speaker.user.name%></td>
+                    <td><%=speaker.topic%></td>
+                    <td><%=speaker.talk_time.hour%>:<%=speaker.talk_time.min%></td>
+                    <td><%=speaker.event.name%></td>
+                  </tr>
+                <% end %>
+              </table>
               <!--===========================================================-->
             </div>
           </article>
@@ -115,9 +129,11 @@
         <section class="panel b-green" id="4">
           <article class="panel__wrapper">
             <div class="panel__content">
-              <h1 class="panel__headline"><i class="fa fa-paper-plane"></i>&nbsp;Paper</h1>
+              <h1 class="panel__headline"><i class="fa fa-ticket" aria-hidden="true"></i>&nbsp;Tickets</h1>
               <div class="panel__block"></div>
               <!--=========================================================-->
+              <div>Total Seats: <%= @seats.size%></div>
+              <div>Sold Seats: <%= @taken_seats.size %></div>
               <!--===========================================================-->
             </div>
           </article>

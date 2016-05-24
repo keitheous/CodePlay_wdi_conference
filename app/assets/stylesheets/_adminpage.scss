@@ -24,14 +24,18 @@
   }
 
   table, td, th {
-    border: 1px solid white;
     padding:10px 0px 10px 15px;
   }
-
   table {
     margin: 20px auto;
-    border-collapse: collapse;
     width: 80%;
+    border-collapse: collapse;
+    border-radius: 6px;
+    border-style: hidden;
+    box-shadow: 0 0 0 2px white;
+  }
+  td{
+    border: 1px solid white;
   }
   th {
     text-align: left;
@@ -53,12 +57,12 @@
   }
   .event-delete-tbn {
     border:none;
-    background-color: #222222;
+    background-color: inherit;
     cursor: pointer;
   }
   .event-edit-btn {
     border:none;
-    background-color: #222222;
+    background-color: inherit;
     padding-right: 10px;
     cursor: pointer;
   }
@@ -91,13 +95,24 @@
   }
   th {
     text-align: center;
-    background-color: #2980b9;
+    background-color: CornflowerBlue;
+    line-height: 60px;
   }
   table, td, th {
-    border: 1px solid white;
+    padding:5px 20px 5px 20px;
+  }
+  table {
+    border-collapse: collapse;
+    border-radius: 6px;
+    border-style: hidden;
+    box-shadow: 0 0 0 2px white;
   }
   td {
     padding:10px;
+    border: 1px solid white;
+  }
+  tr {
+    line-height: 25px;
   }
   .applying-user-name {
     text-align: center;
@@ -227,4 +242,31 @@
 .no-pending-msg, .no-event-msg {
   text-align: center;
   color:gray;
+}
+
+.speakers-list-form {
+  margin: 50px auto;
+  th {
+    text-align: center;
+    background-color: CornflowerBlue;
+    line-height: 60px;
+  }
+  table, td, th {
+    padding:5px 20px 5px 20px;
+  }
+  table {
+    margin: 20px auto;
+    width: 80%;
+    border-collapse: collapse;
+    border-radius: 6px;
+    border-style: hidden;
+    box-shadow: 0 0 0 2px white;
+  }
+  td {
+    padding:10px;
+    border: 1px solid white;
+  }
+  tr {
+    line-height: 25px;
+  }
 }

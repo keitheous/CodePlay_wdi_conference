@@ -1,11 +1,39 @@
 <h1>Hi, <%= @ticket.email %></h1>
-<p>
-  Thank you for your booking.
-</p>
-<p>Your Ticket Number is : <%= @ticket.id%></p>
+<p>Thank you for your booking.</p>
+<p>Your Order Number is : <%= @ticket.id%></p>
 <div>
-  <p>Your Seats are:</p>
   <% @ticket.seats.each do |seat| %>
     <p><%= seat.seat_num %></p>
   <% end %>
+</div>
+
+<div class="user-ticket-wrap">
+  <div class="ticket-info">
+    <div class="top">
+    </div>
+    <div class="bottom">
+      <div class="email-conf-name">
+        <p>Event</p>
+        <h4>WDI CONF</h4>
+        <h4>2016</h4>
+      </div>
+      <div class="email-conf-time">
+        <p>Time</p>
+        <h4>9AM to 6PM</h4>
+      </div>
+      <div class="email-seat-class">
+        <p>Class</p>
+        <h4>PREMIUM</h4>
+      </div>
+      <div class="email-seat-num">
+        <p>Seat</p>
+        <h4>A1</h4>
+      </div>
+      <div class="barcode"></div>
+    </div>
+  </div>
+  <div class="ticket-itinerary">
+    <div class="top"></div>
+    <div class="bottom"></div>
+  </div>
 </div>

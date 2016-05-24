@@ -1,18 +1,23 @@
 #schedule {
-  height: 100vh;
+  height: auto;
   background-color:$vivid-violet;
-  color:white;
   text-align:center;
-  padding-top:5em;
   overflow:hidden;
+  color: #222;
+  padding-bottom: 5em;
 }
 
-#schedule h1{
-  font-size: 2em;
-  text-align: center;
-  color: white;
-  padding-top: 10px;
-  padding-bottom: 20px;
+#schedule h1::after {
+  content: "";
+  background-color: #F67C57;
+  display: block;
+  width: 158px;
+  height: 3px;
+  top: 20px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
 }
 
 #schedule hr.vertical{

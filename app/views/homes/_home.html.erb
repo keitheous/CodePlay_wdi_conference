@@ -9,8 +9,9 @@
 <div id="home" class="container">
   <nav id="navbar">
     <ul id="navmenu">
-      <% if current_user %>
-        <li id="logout-icon"><a href="/logout">Log Out</a></li>
+      <% if logged_in? %>
+        <li><a href="/users/<%= session[:user_id] %>" class="header-link login-name"><img src="/assets/user.png" class="login-avatar"></a></li>
+        <li id="logout-icon"><a href="/logout"><button class="logout-button">Log Out</button></a></li>
       <% else %>
         <li id="login-icon">Log In</li>
       <% end %>

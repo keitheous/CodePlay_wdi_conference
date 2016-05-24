@@ -9,7 +9,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
+
   <body class="<%= @tickets_page ? 'ticketspage' : ''%>">
+
     <%= yield %>
 
   </body>

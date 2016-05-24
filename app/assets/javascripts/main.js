@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-smoothScroll.init();
+smoothScroll.init({offset: 49});
 
 	//transitions
 	$(window).scroll(function() {

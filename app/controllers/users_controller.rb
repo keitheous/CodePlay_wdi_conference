@@ -27,7 +27,8 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @user = current_user
+    render :index
   end
 
   def edit

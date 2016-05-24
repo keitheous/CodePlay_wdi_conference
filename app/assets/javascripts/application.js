@@ -24,6 +24,7 @@
 //= require hamburger
 //= require forms
 //= require profile
+//= require adminpage_vertical
 //= require adminpage
 //= require checkout
 //= require googlemaps

@@ -3,6 +3,9 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @event_speakers = EventSpeaker.where(application_status: 'applying')
+    @speakers = EventSpeaker.where(application_status: 'approved')
+    @seats = Seat.all
+    @taken_seats = @seats.where(status: 'Taken')
     if session[:user_id] == nil
       redirect_to '/'
     else

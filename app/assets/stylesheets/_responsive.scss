@@ -110,12 +110,12 @@
 
 }
 
-@media screen and (max-width: 1165px) {
+@media screen and (max-width: 767px) {
 
   #img-profile {
-    right:15%;
     height:18em !important;
     width:18em !important;
+    left:15% !important;
   }
 
   #description {
@@ -127,13 +127,63 @@
   #profile-section {
     color:$california;
     top:180% !important;
-    right:11% !important;
+    right:12% !important;
     text-align:center !important;
 
 
     li {
+      margin-left:4em !important;
       padding:0 !important;
       border: none !important;
+      text-align:center !important;
+    }
+
+  }
+
+  .speaker-status {
+    margin: 0 auto;
+    width:70%;
+    margin-top:10em !important;
+    padding:0 0 1em 0 !important;
+  }
+
+}
+
+@media screen and (max-width: 796px) {
+
+    #profile-section {
+      li {
+        display:block !important;
+        padding:0 !important;
+        border: none !important;
+        text-align:center !important;
+      }
+    }
+
+}
+
+@media screen and (max-width: 1165px) {
+
+  #img-profile {
+    right: 0%;
+    left: 10%;
+    height:18em !important;
+    width:18em !important;
+  }
+
+  #description {
+    position:static !important;
+    padding-top:10em;
+    text-align:center;
+  }
+
+  #profile-section {
+    top:180% !important;
+    right:6% !important;
+    text-align:center !important;
+
+
+    li {
       text-align:center !important;
     }
 

@@ -23,7 +23,30 @@
 .section-title {
   font-size: 2em;
   padding-top:2em;
-  padding-bottom:2em;
+  padding-bottom:2.5em;
+}
+
+#location h1::after {
+  content: "";
+  background-color: #F67C57;
+  display: block;
+  width: 158px;
+  height: 3px;
+  top: 20px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#about h1::after {
+  content: "";
+  background-color: #F67C57;
+  display: block;
+  width: 158px;
+  height: 3px;
+  top: 20px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .about-wrap {

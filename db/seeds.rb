@@ -32,6 +32,24 @@ User.create(name:"emily",password:"pudding",email:"emily@email.com",img:"http://
 User.create(name:"dt",password:"pudding",email:"dt@email.com",img:"https://lh6.googleusercontent.com/-NexV0Dm1_F0/AAAAAAAAAAI/AAAAAAAAHGI/7DvCNSvabw4/s0-c-k-no-ns/photo.jpg",desc:"a wizard", user_type_id:3);
 User.create(name:"swanny",password:"pudding",email:"dt@email.com",img:"http://www.eonline.com/eol_images/Entire_Site/2010614/293.ruffalo.mark.lc.071410.jpg",desc:"the hulk", user_type_id:3);
 
+User.create(name:"Adam Wathan", password:"pudding", email:"aw@email.com", img:"/images/speakers/adam-wathan.jpg", desc:"Senior Developer at Tighten Co. and host of Full Stack Radio Podcast", user_type_id:3);
+
+User.create(name:"Ben Ramsey", password:"pudding", email:"br@email.com", img:"/images/speakers/ben-ramsey.jpg", desc:"Software Architect @ShootProof, author, speaker, & FOSS advocate. Founder of @AtlantaPHP & organizer of @NashvillePHP. Maintainer of ramsey/uuid & league/oauth2-client.", user_type_id:3);
+
+User.create(name:"Chris Fidao", password:"pudding", email:"cf@email.com", img:"/images/speakers/chris-fidao.jpg", desc:"Coding and servers. @UserScape-er. Open-sorcery and learning. Breakfast tacos. @srvrsforhackers", user_type_id:3);
+
+User.create(name:"Chuck Reeves", password:"pudding", email:"cr@email.com", img:"/images/speakers/chuck-reeves.jpg", desc:"A PHP developer for the past 14 years, contributor to many projects ranging from: online sweepstakes, custom CMS, eCommerce and Marketing, and Custom software.", user_type_id:3);
+
+User.create(name:"Amanda Folson", password:"pudding", email:"af@email.com", img:"/images/speakers/dank-folson.jpg", desc:"Developer Evangelist at PagerDuty with a background in computer forensics. Proud moped owner and servant of 2 awesome cats.", user_type_id:3);
+
+User.create(name:"Evan You", password:"pudding", email:"ey@email.com", img:"/images/speakers/evan-you.jpg", desc:"Design, code & things in between. Core developer @meteorjs, creator of @vuejs, ex-Googler, Parsons alumnus.", user_type_id:3);
+
+User.create(name:"Jack Mcdada", password:"pudding", email:"jm@email.com", img:"/images/speakers/jack-mcdade.jpg", desc:"Fully grown human being and founder of Satamic, a pretty good Laravel-powered CMS.", user_type_id:3);
+
+User.create(name:"Jason-McCreary", password:"pudding", email:"jmc@email.com", img:"/images/speakers/jason-mccreary.jpg", desc:"PHP/iOS application developer. Creator @PocketBracket, @wadlapp, and @laravelshift. An active geek with a passion for tech & the great outdoors.", user_type_id:3);
+
+User.create(name:"Matthew Machuga", password:"pudding", email:"mm@email.com", img:"/images/speakers/machuga.jpg", desc:"Father, husband, nerd. Senior software developer at Think Through Math.", user_type_id:3);
+
 # # events table
 
 Event.create(name:"WDICONF2016", time:"2016-7-23 08:00:00", total_seats:50);
@@ -71,23 +89,6 @@ Event.create(name:"WDICONF2016", time:"2016-7-23 16:00:00", total_seats:40);
 SeatType.create(group:"Premium", price:"125");
 SeatType.create(group:"General", price:"75");
 
-#     seat_type = SeatType.new
-#     seat_type.group = "Premium"
-#     seat_type.price = 125
-#     seat_type.save
-#
-#     seat_type = SeatType.new
-#     seat_type.group = "General"
-#     seat_type.price = 75
-#     seat_type.save
-
-
-
-# # ticket table
-# Ticket.create(email:"keith@ga.com",stripe_token:"stripetoken1");
-# Ticket.create(email:"chris@ga.com",stripe_token:"stripetoken2");
-# leaving this out cause its not related to other functions
-
 # # event speakers table
 EventSpeaker.create(topic:"Enthusiastically target equity invested e-commerce ",event_id:1,application_status:"applying",content:"As cross as a sanger no dramas lets throw a fairy floss. He's got a massive ropeable flamin gutful of bull bar. As cunning as a cracker how she'll be right dead dingo's donger. She'll be right bottlo my lets throw a rack off. As cross as a two up how as cunning as a clucky. She'll be right esky my stands out like a cut lunch commando. It'll be postie no worries grab us a pig's arse. Lets throw a rego to she'll be right not my bowl of rice. Grab us a piker with get a dog up ya christmas. She'll be right shit house flamin as cunning as a cut lunch commando.
 
@@ -103,6 +104,28 @@ EventSpeaker.create(topic:"uniquely target client-cantered",event_id:1,applicati
 
 EventSpeaker.create(topic:"proactively grow bleeding-edge methods of empowerment ",event_id:1,application_status:"applying",content:" Felis cappuccino catcher helllloooo um yesbaby brad pitt? Educated helllloooo vincent price clive dunn kris kristofferson. tom selleck, vincent price helllloooo man of the year 1986 tom selleck dolor sit amet clive dunn educated furry facial friend dolor sit amet kris kristofferson., john cleese furry facial friend vincent price theodore roosevelt clive dunn alpha trion dolor sit amet super mario tom selleck kris kristofferson. dolor sit amet man of the year 1986 admiral educated helllloooo.",user_id:3);
 
+################ BEV's #####################
+
+EventSpeaker.create(topic:"Test Driven Laravel", event_id:1, application_status:"applying", content:"As a PHP developer, you may use the Test-Driven Development (TDD) technique to develop your software by writing tests. Typically, TDD will divide each task of the development into individual units. A test is then written to ensure that the unit behaves as expected.", user_id:5);
+
+EventSpeaker.create(topic:"Long Live HTTP/2", event_id:1, application_status:"applying", content:"Request for Comments (RFC) 2616 reigned supreme as the specification for the hypertext transfer protocol (HTTP) for fifteen years. Now, it’s been obsoleted by a handful of new RFCs, and HTTP/2 is a reality. In this talk, we’ll take a look at the new RFCs, discuss the differences and clarifications they make, and take a look at what’s new in HTTP/2 and what it means for you.", user_id:6);
+
+EventSpeaker.create(topic:"Servers For Hackers", event_id:1, application_status:"applying", content:"Don't get stuck at 3am with a broken server, or in the middle of your workday fighting configuration. Learn how to administer your servers!", user_id:7);
+
+EventSpeaker.create(topic:"Practical Software Estimation", event_id:1, application_status:"applying", content:"Practical Software Estimation brings together today's most valuable tips, techniques, and best practices for accurately estimating software project efforts, costs, and schedules. Written by a leading expert in the field, it addresses the full spectrum of real-world challenges faced by those who must develop reliable estimates.", user_id:8);
+
+EventSpeaker.create(topic:"Give Me A REST!", event_id:1, application_status:"applying", content:"This talk centers around designing and developing a REST API for you and your users to consume, and will have a heavy focus on best practices for doing so.", user_id:9);
+
+EventSpeaker.create(topic:"Vue Router & Vuex", event_id:1, application_status:"applying", content:"Evan talks about his time at Google Creative Lab and the sort of work that inspired him to create Vue. He also explains in depth how data binding works in Vue, and how it's different and more performant than Angular. Additionally, Evan discusses the benefits of Vue over React, why Vue works so well in both SPAs and traditional server-side web applications, and strategies for testing Vue components.", user_id:10);
+
+EventSpeaker.create(topic:"Storytime with Jack McDade", event_id:1, application_status:"applying", content:"Let's talk about Statamic, the flat file CMS that makes building websites fun again.", user_id:11);
+
+EventSpeaker.create(topic:"YAGNI With Laravel", event_id:1, application_status:"applying", content:"Laravel can take the best from Laravel to their other projects. This is also a quick introduction to using Illuminate components in non-Laravel applications.", user_id:12);
+
+EventSpeaker.create(topic:" Tests Should Tell A Story", event_id:1, application_status:"applying", content:"In this interactive presentation, Matthew will share why testing is the vital heartbeat of development. Development Teams are underpinning these technological advancements, delivering products and solutions into the world. A key factor in a product’s success is the regular testing activities within development, considered as the heartbeat of development.", user_id:13);
+
+################ BEV's #####################
+
 # EventSpeaker.create(topic:"Enthusiastically target equity invested e-commerce ",event_id:"1",application_status:"applying",content:"As cross as a sanger no dramas lets throw a fairy floss. He's got a massive ropeable flamin gutful of bull bar. As cunning as a cracker how she'll be right dead dingo's donger. She'll be right bottlo my lets throw a rack off. As cross as a two up how as cunning as a clucky. She'll be right esky my stands out like a cut lunch commando. It'll be postie no worries grab us a pig's arse. Lets throw a rego to she'll be right not my bowl of rice. Grab us a piker with get a dog up ya christmas. She'll be right shit house flamin as cunning as a cut lunch commando.
 #
 # He's got a massive hottie when built like a tinny. He hasn't got a mozzie with as dry as a muster. He's got a massive vee dub with as busy as a bush oyster. Trent from punchy tucker-bag heaps stands out like a no-hoper. He hasn't got a gutta mate grab us a his blood's worth bottling. Get a dog up ya dunny mate flat out like a pretty spiffy. Trent from punchy rotten flamin bush bash. Built like a jug where you little ripper mate's rate. ",user_id:"3");
@@ -117,30 +140,6 @@ EventSpeaker.create(topic:"proactively grow bleeding-edge methods of empowerment
 #
 # EventSpeaker.create(topic:"proactively grow bleeding-edge methods of empowerment ",event_id:"3",application_status:"applying",content:" Felis cappuccino catcher helllloooo um yesbaby brad pitt? Educated helllloooo vincent price clive dunn kris kristofferson. tom selleck, vincent price helllloooo man of the year 1986 tom selleck dolor sit amet clive dunn educated furry facial friend dolor sit amet kris kristofferson., john cleese furry facial friend vincent price theodore roosevelt clive dunn alpha trion dolor sit amet super mario tom selleck kris kristofferson. dolor sit amet man of the year 1986 admiral educated helllloooo.",user_id:"3");
 
-# # Seats table ??
-
-# seats_arr = []
-# row_arr = ('A'..'Z').to_a
-#
-# 5.times do |row|
-#   10.times do |seat_num|s
-#     seat_num = seat_num + 1
-#     seats_arr<<row_arr[row]+seat_num.to_s
-#   end
-# end
-#
-# 50.times do |seat_num|
-#   seat = Seat.new
-#   seat.seat_num = seats_arr[seat_num]
-#   seat.status = "available"
-#   if seats_arr[seat_num][0] == "A"
-#     seat.seat_type_id = 9
-#   else
-#     seat.seat_type_id = 10
-#   end
-#   seat.save
-# end
-# ???? dynamic seats size allocation
 def generate_seats(num_of_tickets, seats_per_row)
   seats_arr = []
   row_arr = ('A'..'Z').to_a

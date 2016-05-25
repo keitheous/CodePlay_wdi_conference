@@ -1,5 +1,5 @@
 <h1 class="section-title schedule-title">SCHEDULE</h1>
-<section class="timeline">
+<div class="timeline">
   <% @talks.each do |talk|%>
 
     <% if talk.id%2 == 0 %>
@@ -35,6 +35,7 @@
     <% end %>
 
   <% end %>
+</div>
 
 <script type="text/javascript">
   (function() {

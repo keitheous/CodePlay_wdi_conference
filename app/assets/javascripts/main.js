@@ -47,7 +47,6 @@ smoothScroll.init({offset: 49});
 			});
 
 			// ================
-			$('.talk-card .middle img').css('border','3px solid #F39C12');
 			$('.talk-card').find('p').css('width','70%');
 			// =================
 		}

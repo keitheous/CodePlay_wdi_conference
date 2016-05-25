@@ -1,15 +1,15 @@
 #schedule {
   height: auto;
-  background-color:$vivid-violet;
+  background-color: white;
   text-align:center;
   overflow:hidden;
-  color: #EDE2F3;
-  padding-bottom: 5em;
+  color: white;
+  padding-bottom: 7em;
 }
 
 #schedule h1::after {
   content: "";
-  background-color: #EDE2F3;
+  background-color: #456990;
   display: block;
   width: 158px;
   height: 3px;
@@ -20,103 +20,167 @@
   margin-bottom: 20px;
 }
 
-#schedule hr.vertical{
-  width: 5px;
-  height: 20px;
-  background-color: white;
-  margin-top: 0;
-  margin-bottom: 0;
-  clear: both;
-}
-
-#schedule .talk-card{
-  height: 64px;
-  *{
-    box-sizing: border-box;
-  }
-
-  img {
-    border:3px solid white;
-    border-radius: 50%;
-    height:4em;
-    width:4em;
-    display: inline-block;
-    transition: 1s;
-  }
-
-  img:hover{
-    -webkit-animation: rubberBand 1s;
-    animation: rubberBand 1s;
-  }
-
-  .left{
-    display: inline-block;
-    width: 45%;
-    height: 64px;
-    float: left;
-  }
-
-  .right{
-    display: inline-block;
-    width: 45%;
-    height: 64px;
-    float: left;
-  }
-
-  .right p{
-     height: 100%;
-     overflow: hidden;
-     width: 0;
-     transition: 1s;
-     background-color: rgba(255, 255, 255, 0.5);
-     border-radius: 10px;
-     padding-top: 10px;
-     height: 90px;
-  }
-
-  .left p{
-     height: 100%;
-     overflow: hidden;
-     width: 0;
-     transition: 1s;
-     background-color: rgba(255, 255, 255, 0.5);
-     border-radius: 10px;
-     padding-top: 10px;
-     float:right;
-     height: 90px;
-  }
-
-  .middle{
-    display: inline-block;
-    width: 10%;
-    float: left;
-    height: 64px;
-  }
-}
-
 .schedule-title {
   opacity: 0;
   transform: translateY(-200px);
-}
-
-.talk-card {
-  opacity: 0;
-  transform: translateX(-200px);
-}
-
-.vertical {
-  opacity: 0;
-  transform: translateY(-200px);
+  color: #456990;
 }
 
 .appear-title {
   opacity: 1;
   transform: translateY(0);
-  transition:1s;
+  transition:0.5s;
 }
 
-.appear-card {
+.timeline ul {
+  background-color: white;
+}
+
+.timeline-left, .timeline-right {
+  display: flex;
+}
+
+.timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 6px;
+  margin: 0 auto;
+  padding-top: 20px;
+  background: #456990;
+}
+
+.timeline ul li::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.timeline ul li div {
+  position: relative;
+  bottom: 0;
+  width: 400px;
+  padding: 15px;
+  background: #F45B69;
+}
+
+.timeline ul li div::before {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline img {
+  width: 100px;
+  margin-left: 20px;
+  border-radius: 50%;
+}
+
+.timeline p {
+  text-align: left;
+  margin-left: 30px;
+  margin-bottom: 0;
+  line-height: 1.8;
+}
+.speaker-image img{
+
+}
+.speaker-info {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-left {
+  left: 45px;
+  border-radius: 6px;
+}
+
+.timeline-left::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent #F45B69 transparent transparent;
+}
+
+.timeline-right {
+  left: -439px;
+  border-radius: 6px;
+}
+
+.timeline-right::before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent #F45B69;
+}
+
+
+
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul li::after {
+  transition: background .5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+  background: #F45B69;
+}
+
+.timeline ul li div {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+
+.timeline-left {
+  transform: translate3d(200px, 0, 0);
+}
+
+.timeline-right {
+  transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+  transform: none;
+  visibility: visible;
   opacity: 1;
-  transform: translateX(0px);
-  transition: 1s;
+}
+
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 900px) {
+  .timeline ul li div {
+    width: 250px;
+  }
+  .timeline-right {
+    left: -289px;
+    /*250+45-6*/
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeline ul li {
+    margin-left: 20px;
+  }
+  .timeline ul li div {
+    width: calc(100vw - 91px);
+  }
+  .timeline-right {
+    left: 45px;
+  }
+  .timeline-right::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #F45B69 transparent transparent;
+  }
 }

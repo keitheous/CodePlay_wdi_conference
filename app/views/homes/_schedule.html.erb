@@ -1,54 +1,74 @@
 <h1 class="section-title schedule-title">SCHEDULE</h1>
-<div class="event-speakers">
-     <% @talks.each_with_index do |talk,index| %>
-       <hr class="vertical">
-       <div class="talk-card">
+<div class="timeline">
+  <% @talks.each do |talk|%>
 
-         <% if index%2==0%>
-           <div class='left'>
-           </div>
-           <div class="middle">
-             <img src="<%= talk.user.img%>" alt="">
-           </div>
-           <div class='right'>
-               <p>
-                 <strong>( <%= talk.user.name%> )</strong><%=talk.talk_time.to_formatted_s(:long)%><br/>
-                 <%= talk.topic%>
-               </p>
-           </div>
-         <%else%>
-           <div class='left'>
-             <p>
-               <strong>( <%= talk.user.name%> )</strong><%=talk.talk_time.to_formatted_s(:long)%><br/>
-               <%= talk.topic%>
-             </p>
-           </div>
-           <div class="middle">
-             <img src="<%= talk.user.img%>" alt="">
-           </div>
-           <div class='right'>
-           </div>
-         <%end%>
+    <% if talk.id%2 == 0 %>
+      <ul>
+        <li>
+         <div class="timeline-right">
+            <speaker class="speaker-image">
+              <img src="<%= talk.user.img %>" alt="">
+            </speaker>
+            <speaker class="speaker-info">
+              <p><strong><%= talk.user.name %></strong></p>
+              <p><%= talk.talk_time.strftime("@ %I:%M %p") %></p>
+              <p><%= talk.topic%></p>
+            </speaker>
+          </div>
+        </li>
+      </ul>
+    <% else %>
+      <ul>
+        <li>
+         <div class="timeline-left">
+           <speaker class="speaker-image">
+             <img src="<%= talk.user.img %>" alt="">
+           </speaker>
+           <speaker class="speaker-info">
+             <strong><p><%= talk.user.name %></p></strong>
+             <p><%= talk.talk_time.strftime("@ %I:%M %p") %></p>
+             <p><%= talk.topic%></p>
+           </speaker>
+          </div>
+        </li>
+      </ul>
+    <% end %>
 
-       </div>
-     <% end %>
+  <% end %>
 </div>
 
-
 <script type="text/javascript">
+  (function() {
 
-  //  $('.event-speakers').on('mouseenter','img',function(){
-  //    $(this).css('border','3px solid #F39C12');
-  //    $(this).closest('.middle').prev('.left').find('p').css('width','70%');
-  //    $(this).closest('.middle').next('.right').find('p').css('width','70%');
-  //  });
+  'use strict';
 
-   $('.event-speakers').on('click','img',function(){
-     $(this).css('border','3px solid white');
-    //  $(this).css('width','0');
-    $(this).closest('.middle').prev('.left').find('p').css('width','0');
-    $(this).closest('.middle').next('.right').find('p').css('width','0');
+  // define variables
+  var items = $(".timeline li");
 
-   });
+  // check if an element is in viewport
+  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  function isElementInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+    }
 
+  function callbackFunc() {
+    for (var i = 0; i < items.length; i++) {
+      if (isElementInViewport(items[i])) {
+        items[i].classList.add("in-view");
+      }
+    }
+  }
+
+  // listen for events
+  window.addEventListener("load", callbackFunc);
+  window.addEventListener("resize", callbackFunc);
+  window.addEventListener("scroll", callbackFunc);
+
+  })();
 </script>

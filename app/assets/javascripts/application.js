@@ -28,3 +28,4 @@
 //= require adminpage
 //= require checkout
 //= require googlemaps
+//= require speakers

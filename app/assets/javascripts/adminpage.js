@@ -8,8 +8,20 @@ $(document).ready(function() {
       url: '/api/apply',
       data: {id: event_speaker_id, time: scheduledTime,status: 'approved'},
       method: 'put'
-    }).done(function(response) {
+    }).done(function(data) {
       $applyingList.css('display','none');
+      //  add approved item into speakers list
+       $('.speakers-list-form');
+       var $tr = $('<tr>');
+       var $speaker_name = $('<td>').html(data.speaker.name);
+       var $topic = $('<td>').html(data.event_speaker.topic);
+       var $talk_time = $('<td>').html(data.hour+ ':'+data.min);
+       var $event_name = $('<td>').html(data.event.name);
+       $tr.append($speaker_name);
+       $tr.append($topic);
+       $tr.append($talk_time);
+       $tr.append($event_name);
+       $('.speakers-list-form').append($tr);
     });
   });
 

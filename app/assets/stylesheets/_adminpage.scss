@@ -197,6 +197,9 @@
 .edit-events-form {
   display: none;
   padding-top: 50px;
+  background-image: image-url('seating-bg.jpg');
+  background-size:cover;
+  height:100vh;
   #close-edit-event {
     margin:10px;
     float:right;
@@ -223,9 +226,10 @@
   }
 }
 
-.no-pending-msg, .no-event-msg {
+.no-pending-msg, .no-event-msg,.no-speakers {
   text-align: center;
   color:gray;
+  padding:20px;
 }
 
 .speakers-list-form {

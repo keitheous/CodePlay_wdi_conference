@@ -25,7 +25,7 @@
     <h1 class="admin-title"><i class="fa fa-ticket" aria-hidden="true"></i>&nbsp;Tickets</h1>
 
     <div class="ticket-status">
-      <span>Total Seats: <%= @seats.size%></span>
+      <span>Total Seats: 50</span>
       <br/>
       <span>Sold Seats: <%= @taken_seats.size %></span>
     </div>
@@ -101,30 +101,44 @@
 
       <div data-scroll id="event-speakers">
         <h1 class="admin-title"><i class="fa fa-microphone" aria-hidden="true"></i>&nbsp;Speakers</h1>
-          <table class="speakers-list-form">
-            <tr>
-              <th>Name</th>
-              <th>Topic</th>
-              <th>Time</th>
-              <th>Event</th>
-              <th>Action</th>
-            </tr>
-            <% @speakers.each do |speaker| %>
+          <% if @speakers == nil || @speakers.length == 0 %>
+            <p class="no-speakers">There's no speakers.</p>
+          <% else %>
+            <table class="speakers-list-form">
               <tr>
-                <td><%=speaker.user.name%></td>
-                <td><%=speaker.topic%></td>
-                <td><%=speaker.talk_time.strftime('%H')%>:<%=speaker.talk_time.strftime('%M')%></td>
-                <td><%=speaker.event.name%></td>
-
-                <td>
-                  <form action="/event_speaker/<%= speaker.id %>" method="post">
-                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                     <input type="hidden" value="delete" name="_method">
-                     <button class="speaker-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
-                  </form>
-                </td>
+                <th>Name</th>
+                <th>Topic</th>
+                <th>Time</th>
+                <th>Event</th>
+                <th>Action</th>
               </tr>
-            <% end %>
-          </table>
+              <% @speakers.each do |speaker| %>
+                <tr>
+                  <td><%=speaker.user.name%></td>
+                  <td><%=speaker.topic%></td>
+                  <td><%=speaker.talk_time.strftime('%H')%>:<%=speaker.talk_time.strftime('%M')%></td>
+                  <td><%=speaker.event.name%></td>
+
+                  <td>
+                    <form action="/event_speaker/<%= speaker.id %>" method="post">
+                      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                       <input type="hidden" value="delete" name="_method">
+                       <button class="speaker-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+                    </form>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+          <% end %>
       </div>
 </div>
+
+<script id="form-template" type="text/x-handlebars-template">
+  <td>
+    <form action="/event_speaker/{{event_speaker_id}}" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+       <input type="hidden" value="delete" name="_method">
+       <button class="speaker-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+    </form>
+  </td>
+</script>

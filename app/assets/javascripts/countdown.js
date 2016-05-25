@@ -11,7 +11,7 @@ $(document).ready(function() {
       textResponsive: .5,
       days: {
         gauge: {
-          thickness: .14,
+          thickness: .1,
           bgColor: "rgba(255,255,255,0.2)",
           fgColor: "#1abc9c"
         },
@@ -19,7 +19,7 @@ $(document).ready(function() {
       },
       hours: {
         gauge: {
-          thickness: .14,
+          thickness: .1,
           bgColor: "rgba(255,255,255,0.2)",
           fgColor: "#2980b9"
         },
@@ -27,7 +27,7 @@ $(document).ready(function() {
       },
       minutes: {
         gauge: {
-          thickness: .14,
+          thickness: .1,
           bgColor: "rgba(255,255,255,0.2)",
           fgColor: "#F65966"
         },
@@ -35,7 +35,7 @@ $(document).ready(function() {
       },
       seconds: {
         gauge: {
-          thickness: .14,
+          thickness: .1,
           bgColor: "rgba(255,255,255,0.2)",
           fgColor: "#f39c12"
         },

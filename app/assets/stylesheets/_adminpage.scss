@@ -2,7 +2,7 @@
   margin-top: 50px;
 
   .add-event-btn {
-    background-color: #5cb85c;
+    background-color: $caribbean-green;
     padding: 5px 8px;
     margin-left: 50px;
     border:none;
@@ -11,10 +11,11 @@
     float: right;
     margin-right: 150px;
     margin-bottom: 20px;
+    border:1px solid white;
   }
 
   .add-event-btn:hover {
-    background-color: $california;
+    background-color: royalblue;
   }
 
   h1 {
@@ -28,6 +29,7 @@
   }
   table {
     margin: 20px auto;
+    margin-bottom:0;
     width: 80%;
     border-collapse: collapse;
     border-radius: 6px;
@@ -39,7 +41,7 @@
   }
   th {
     text-align: left;
-    background-color: #2980b9;
+    background-color: $caribbean-green;
   }
 
   .event-name-td {
@@ -78,15 +80,17 @@
     color:white;
   }
   .fa-pencil-square-o:hover {
-    color: $california;
+    color: $caribbean-green;
   }
   .fa-trash:hover {
-    color: $california;
+    color: #B30000;
   }
 
 }
 .applying-users-handler {
   margin: 50px auto;
+  margin-bottom:0;
+  padding-bottom:8em;
 
   h1 {
     font-size:1.6em;
@@ -128,6 +132,7 @@
   }
   table {
     margin: 20px auto;
+    margin-bottom:0;
     border-collapse: collapse;
     width: 80%;
     padding:10px 0px 10px 15px;
@@ -144,7 +149,7 @@
   }
   .reject-button {
     border:none;
-    background-color: tomato;
+    background-color:#ff0000;
     border-radius: 5px;
     padding:3px;
     height: 25px;
@@ -156,14 +161,18 @@
     background-color: royalblue;
   }
   .reject-button:hover {
-    background-color: #CC00FF;
+    background-color: #B30000;
   }
 
 }
 
 .add-events-form {
   display: none;
-  padding-top: 50px;
+  padding-top: 12em;
+  background-image: image-url('seating-bg.jpg');
+  background-size:cover;
+  height:100vh;
+
   #close-add-event {
     margin:10px;
     float:right;
@@ -189,14 +198,14 @@
     height: 27px;
   }
   .add-event-submit {
-    background-color: #f4b555;
+    background-color: $denim;
     margin-top: 20px;
     color:white;
     font-weight: bold;
     font-size: 0.8em;
   }
   .add-event-submit:hover {
-    background-color: #f39c12;
+    background-color: $caribbean-green;
   }
 }
 
@@ -229,16 +238,6 @@
   }
 }
 
-.events-application-container {
-  padding:1em;
-  background-image: image-url('bg3.jpg');
-  background-size:cover;
-
-  a:hover {
-    color:$california;
-  }
-}
-
 .no-pending-msg, .no-event-msg {
   text-align: center;
   color:gray;
@@ -246,9 +245,11 @@
 
 .speakers-list-form {
   margin: 50px auto;
+  margin-bottom:0;
+
   th {
     text-align: center;
-    background-color: CornflowerBlue;
+    background-color: $caribbean-green;
     line-height: 60px;
   }
   table, td, th {

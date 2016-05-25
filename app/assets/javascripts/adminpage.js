@@ -34,6 +34,7 @@ $(document).ready(function() {
   $('.add-event-btn').on('click',function(event) {
     $('.add-events-form').slideDown("fast");
     $('.events-application-container').fadeOut(100);
+    $('#navmenu').hide();
     // jQuery('#add-event-date-picker').datetimepicker();
 
   });
@@ -41,6 +42,7 @@ $(document).ready(function() {
   $("#close-add-event").on('click',function(event) {
     $('.add-events-form').slideUp("fast");
     $('.events-application-container').fadeIn(500);
+    $('#navmenu').show(100);
   });
   // edit event form
   $('.event-edit-btn').on('click',function(event) {
@@ -57,7 +59,7 @@ $(document).ready(function() {
       $('.events-application-container').fadeOut(100);
     });
   });
-  
+
   $("#close-edit-event").on('click',function(event){
     $('.edit-events-form').slideUp("fast");
     $('.events-application-container').fadeIn(500);
@@ -78,4 +80,3 @@ $(document).ready(function() {
   });
 
 });
-

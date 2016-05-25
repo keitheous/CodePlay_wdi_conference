@@ -16,6 +16,7 @@
   padding:1em;
 }
 
+
 #img-profile {
   position:absolute;
   bottom:31%;
@@ -60,12 +61,12 @@
              animation: slide-in-left 1s;
   }
 
-  li:hover a {
-    color:$california;
+  a:hover li {
+    color:$baby-blue;
   }
 
   li:hover {
-    border-color:$california;
+    border-color:$baby-blue;
   }
 
 }

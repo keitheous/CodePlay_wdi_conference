@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-smoothScroll.init({offset: 49});
+smoothScroll.init({offset: 48});
 
 	//transitions
 	$(window).scroll(function() {
@@ -51,7 +51,7 @@ smoothScroll.init({offset: 49});
 			// =================
 		}
 
-		if (scrollLength > 3600) {
+		if (scrollLength > 4050) {
 			$('.sponsors-title').addClass('appear-title');
 
 			$('.sponsors-content').addClass('appear-sponsors');

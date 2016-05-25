@@ -112,7 +112,7 @@
               <tr>
                 <td><%=speaker.user.name%></td>
                 <td><%=speaker.topic%></td>
-                <td><%=speaker.talk_time.hour%>:<%=speaker.talk_time.min%></td>
+                <td><%=speaker.talk_time.strftime('%H')%>:<%=speaker.talk_time.strftime('%M')%></td>
                 <td><%=speaker.event.name%></td>
               </tr>
             <% end %>

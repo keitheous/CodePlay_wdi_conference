@@ -30,13 +30,13 @@ module Api
     def revert_seats
       seat_numbers = params[:seats_num]
       revert_seats = []
-      seat_numbers.each do |seat_num|
-        seat = Seat.find_by(seat_num: seat_num)
+      seat_numbers.each do |num|
+        seat = Seat.find_by(seat_num: num)
         seat.status = 'available'
         seat.save
         revert_seats << seat
       end
-      render json: revert_seats.to_json
+       render json: revert_seats.to_json
     end
 
   end

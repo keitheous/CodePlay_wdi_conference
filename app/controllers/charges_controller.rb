@@ -3,6 +3,14 @@ class ChargesController < ApplicationController
   def index
     @seats = params[:seats_list]
     @seats = @seats.split(',')
+    
+    # change seat status
+    @seats.each do |seat_num|
+      seat = Seat.find_by(seat_num: seat_num)
+      seat.status = 'reserved'
+      seat.save
+    end
+
     @seats = @seats.map do |seat_num|
       if seat_num[0] == "A"
         type = "Premium"

@@ -15,7 +15,16 @@ Rails.application.routes.draw do
     resources :tickets
     resources :events
     resources :users
-    resources :seats
+    resources :seats do
+    collection do
+      put '/revert' => 'seats#revert_seats'
+    end
+
+      # member do
+      #   put '/revert' => 'seats#revert_seats'
+      # end
+
+    end
   end
 
   get '/login' => 'sessions#loginpage'
@@ -25,5 +34,4 @@ Rails.application.routes.draw do
 
   put '/api/apply' => 'api/applyings#update'
   delete '/api/apply' => 'api/applyings#destroy'
-  # put '/api/seats/update' => 'api/seats#update'
 end

@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     $.each(seats, function(index, seat) {
 
-      if (seat.status.toLowerCase() === "taken") {
+      if (seat.status.toLowerCase() === "taken" || seat.status.toLowerCase() === 'reserved') {
         var $seat = $("[data-seat='" + seat.seat_num + "']");
         $seat.addClass('taken');
       }

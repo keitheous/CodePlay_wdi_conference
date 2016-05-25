@@ -255,3 +255,15 @@ table {
 td{
   border: 1px solid white;
 }
+
+
+.speaker-delete-tbn {
+  border:none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.speaker-delete-tbn:hover{
+  background-color: red;
+  border-radius: 20px;
+}

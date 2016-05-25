@@ -1,6 +1,6 @@
 #schedule {
   height: auto;
-  background-color: white;
+  background-color: $denim;
   text-align:center;
   overflow:hidden;
   color: white;
@@ -9,7 +9,7 @@
 
 #schedule h1::after {
   content: "";
-  background-color: #456990;
+  background-color: white;
   display: block;
   width: 158px;
   height: 3px;
@@ -23,7 +23,8 @@
 .schedule-title {
   opacity: 0;
   transform: translateY(-200px);
-  color: #456990;
+  // color: #456990;
+  color: white;
 }
 
 .appear-title {
@@ -33,7 +34,7 @@
 }
 
 .timeline ul {
-  background-color: white;
+  background-color: $denim;
 }
 
 .timeline-left, .timeline-right {
@@ -46,7 +47,7 @@
   width: 6px;
   margin: 0 auto;
   padding-top: 20px;
-  background: #456990;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .timeline ul li::after {
@@ -66,17 +67,17 @@
   bottom: 0;
   width: 400px;
   padding: 15px;
-  background: #F45B69;
+  background: rgba(255, 255, 255, 0.5);
 }
-
-.timeline ul li div::before {
-  content: '';
-  position: absolute;
-  bottom: 7px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-}
+//
+// .timeline ul li div::before {
+//   content: '';
+//   position: absolute;
+//   bottom: 7px;
+//   width: 0;
+//   height: 0;
+//   border-style: solid;
+// }
 
 .timeline img {
   width: 100px;
@@ -105,9 +106,15 @@
 }
 
 .timeline-left::before {
-  left: -15px;
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  left: -16px;
   border-width: 8px 16px 8px 0;
-  border-color: transparent #F45B69 transparent transparent;
+  border-color: transparent rgba(255, 255, 255, 0.5) transparent transparent;
 }
 
 .timeline-right {
@@ -116,9 +123,15 @@
 }
 
 .timeline-right::before {
-  right: -15px;
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  right: -16px;
   border-width: 8px 0 8px 16px;
-  border-color: transparent transparent transparent #F45B69;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.5);
 }
 
 
@@ -131,7 +144,7 @@
 }
 
 .timeline ul li.in-view::after {
-  background: #F45B69;
+  background: white;
 }
 
 .timeline ul li div {
@@ -181,6 +194,6 @@
   .timeline-right::before {
     left: -15px;
     border-width: 8px 16px 8px 0;
-    border-color: transparent #F45B69 transparent transparent;
+    border-color: transparent rgba(255, 255, 255, 0.5) transparent transparent;
   }
 }

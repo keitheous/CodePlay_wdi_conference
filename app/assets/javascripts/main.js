@@ -45,6 +45,11 @@ smoothScroll.init();
 					$('.vertical').eq(index).addClass('appear-title');
 				}, 200 * (index + 1));
 			});
+
+			// ================
+			$('.talk-card .middle img').css('border','3px solid #F39C12');
+			$('.talk-card').find('p').css('width','70%');
+			// =================
 		}
 
 		if (scrollLength > 3600) {

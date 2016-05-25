@@ -57,7 +57,7 @@ $(document).ready(function() {
       $('.events-application-container').fadeOut(100);
     });
   });
-  
+
   $("#close-edit-event").on('click',function(event){
     $('.edit-events-form').slideUp("fast");
     $('.events-application-container').fadeIn(500);
@@ -78,4 +78,3 @@ $(document).ready(function() {
   });
 
 });
-

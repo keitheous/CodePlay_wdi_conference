@@ -1,39 +1,32 @@
 <h1>Hi, <%= @ticket.email %></h1>
-<p>Thank you for your booking.</p>
-<p>Your Order Number is : <%= @ticket.id%></p>
-<div>
-  <% @ticket.seats.each do |seat| %>
-    <p><%= seat.seat_num %></p>
-  <% end %>
-</div>
-
-<div class="user-ticket-wrap">
-  <div class="ticket-info">
-    <div class="top">
+<h3>Thank you for your booking.</h3>
+<h3>Your Order Number is : <%= @ticket.id%></h3>
+<div class="user-ticket-wrap" style="text-align: center;">
+  <div class="ticket-info" style="display: inline-block;width: 350px;height: 500px;border: 1px solid #222;border-radius: 20px;margin: 50px 20px;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);background-color: #ECECEC;vertical-align: top;text-align: center;overflow: hidden;">
+    <div class="top" style="background-color:#09325d;height: 180px;width: 100%;background-size: contain;background-color: #243953;">
     </div>
-    <div class="bottom">
-      <div class="email-conf-name">
-        <p>Event</p>
-        <h4>WDI CONF</h4>
-        <h4>2016</h4>
+    <div class="bottom" style="margin: 0;margin-bottom: 10px;height: 300px;text-align: center;">
+      <div class="email-conf-name" style="width: 100px;display: inline-block;text-align: left;height: 100px;vertical-align: top;margin-left: -2px;padding: 24px 30px;background-color: #F7F7F5;border-bottom: 1px solid #ECECEC;">
+        <p style="margin: 0;margin-bottom: 10px;">Event</p>
+        <h4 style="margin: 0;">WDI CONF</h4>
+        <h4 style="margin: 0;">2016</h4>
       </div>
-      <div class="email-conf-time">
-        <p>Time</p>
-        <h4>9AM to 6PM</h4>
+      <div class="email-conf-time" style="width: 100px;display: inline-block;text-align: left;height: 100px;vertical-align: top;margin-left: -4px;padding: 24px 30px;background-color: #F7F7F5;border-bottom: 1px solid #ECECEC;">
+        <p style="margin: 0;margin-bottom: 10px;">Time</p>
+        <h4 style="margin: 0;">August 30th, 2016</h4>
       </div>
-      <div class="email-seat-class">
-        <p>Class</p>
-        <h4>PREMIUM</h4>
+      <div class="email-seat-class" style="display: inline-block;text-align: left;height: 110px;width: 100px;margin-left: -2px;vertical-align: top;padding: 24px 30px;background-color: #F7F7F5;border-bottom: 1px solid #ECECEC;">
+        <p style="margin: 0;margin-bottom: 10px;">Class</p>
+        <% @ticket.seats.each do |seat| %>
+          <h4 style="margin: 0;"><%= seat.seat_type.group %></h4>
+        <% end %>    
       </div>
-      <div class="email-seat-num">
-        <p>Seat</p>
-        <h4>A1</h4>
+      <div class="email-seat-num" style="display: inline-block;text-align: left;height: 110px;width: 100px;margin-left: -4px;vertical-align: top;padding: 24px 30px;background-color: #F7F7F5;border-bottom: 1px solid #ECECEC;">
+        <p style="margin: 0;margin-bottom: 10px;">Seat</p>
+        <% @ticket.seats.each do |seat| %>
+          <h4 style="margin: 0;"><%= seat.seat_num %></h4>
+        <% end %>  
       </div>
-      <div class="barcode"></div>
     </div>
-  </div>
-  <div class="ticket-itinerary">
-    <div class="top"></div>
-    <div class="bottom"></div>
   </div>
 </div>

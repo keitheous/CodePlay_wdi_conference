@@ -8,6 +8,6 @@ class UserMailer < ApplicationMailer
 
   def checkout_confirmation(ticket)
     @ticket = ticket
-    mail to: ticket.email, subject: "Purchase WDICONF Ticket Confrimation"
+    mail to: ticket.email, subject: "Purchase WDICONF Ticket Confrimation", content_type: "text/html"
   end
 end

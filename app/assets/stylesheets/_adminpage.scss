@@ -168,7 +168,11 @@
 
 .add-events-form {
   display: none;
-  padding-top: 50px;
+  padding-top: 12em;
+  background-image: image-url('seating-bg.jpg');
+  background-size:cover;
+  height:100vh;
+
   #close-add-event {
     margin:10px;
     float:right;
@@ -194,14 +198,14 @@
     height: 27px;
   }
   .add-event-submit {
-    background-color: #f4b555;
+    background-color: $denim;
     margin-top: 20px;
     color:white;
     font-weight: bold;
     font-size: 0.8em;
   }
   .add-event-submit:hover {
-    background-color: #f39c12;
+    background-color: $caribbean-green;
   }
 }
 

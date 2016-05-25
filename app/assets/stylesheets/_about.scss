@@ -14,7 +14,7 @@
 
 #location {
   height: auto;
-  background-color: white;
+  background-color: linen;
   color: #F65966;
   text-align:center;
   overflow:hidden;
@@ -29,7 +29,7 @@
 #location h1::after {
   content: "";
   background-color: #F4757C;
-  opacity: 0.5;
+  opacity: 0.3;
   display: block;
   width: 180px;
   height: 3px;

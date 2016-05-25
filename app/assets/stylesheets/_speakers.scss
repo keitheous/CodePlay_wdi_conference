@@ -1,4 +1,5 @@
 #speakers {
+  position: relative;
   height: auto;
   background-color: $froly;
   text-align:center;
@@ -101,4 +102,15 @@
   opacity: 1;
   transform: translateY(0px);
   transition: 2s;
+}
+
+#speakers-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#schedule-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

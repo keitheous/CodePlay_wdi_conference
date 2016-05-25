@@ -5,7 +5,8 @@
 #about {
   height: auto;
   background-color: $caribbean-green;
-  color: #DDFDE0;
+  // color: #DDFDE0;
+  color: white;
   text-align:center;
   padding-bottom: 80px;
   overflow:hidden;
@@ -14,23 +15,23 @@
 #location {
   height: auto;
   background-color: white;
-  color: $denim;
+  color: #F65966;
   text-align:center;
   overflow:hidden;
 }
 
 .section-title {
   font-size: 2em;
-  padding-top:1.5em;
-  padding-bottom:2.5em;
+  padding-top:1.8em;
+  padding-bottom:2.8em;
 }
 
 #location h1::after {
   content: "";
-  background-color: $denim;
+  background-color: #F4757C;
   opacity: 0.5;
   display: block;
-  width: 158px;
+  width: 180px;
   height: 3px;
   top: 20px;
   position: relative;
@@ -123,6 +124,8 @@
   transform: translateX(200px);
   vertical-align: top;
   text-align: left;
+  line-height: 1.5;
+
 }
 
 .appear-content {

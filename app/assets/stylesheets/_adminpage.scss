@@ -24,21 +24,6 @@
     padding:20px;
   }
 
-  table, td, th {
-    padding:10px 0px 10px 15px;
-  }
-  table {
-    margin: 20px auto;
-    margin-bottom:0;
-    width: 80%;
-    border-collapse: collapse;
-    border-radius: 6px;
-    border-style: hidden;
-    box-shadow: 0 0 0 2px white;
-  }
-  td{
-    border: 1px solid white;
-  }
   th {
     text-align: left;
     background-color: $caribbean-green;
@@ -99,7 +84,7 @@
   }
   th {
     text-align: center;
-    background-color: CornflowerBlue;
+    background-color: $denim;
     line-height: 60px;
   }
   table, td, th {
@@ -252,22 +237,33 @@
     background-color: $caribbean-green;
     line-height: 60px;
   }
-  table, td, th {
-    padding:5px 20px 5px 20px;
-  }
-  table {
-    margin: 20px auto;
-    width: 80%;
-    border-collapse: collapse;
-    border-radius: 6px;
-    border-style: hidden;
-    box-shadow: 0 0 0 2px white;
-  }
-  td {
-    padding:10px;
-    border: 1px solid white;
-  }
-  tr {
-    line-height: 25px;
-  }
+
+}
+
+table, td, th {
+  padding:10px 0px 10px 15px;
+}
+table {
+  margin: 20px auto;
+  margin-bottom:0;
+  width: 80%;
+  border-collapse: collapse;
+  border-radius: 6px;
+  border-style: hidden;
+  box-shadow: 0 0 0 2px white;
+}
+td{
+  border: 1px solid white;
+}
+
+
+.speaker-delete-tbn {
+  border:none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.speaker-delete-tbn:hover{
+  background-color: red;
+  border-radius: 20px;
 }

@@ -8,7 +8,14 @@ module Api
       event_speaker.talk_time = talk_time
       event_speaker.application_status = params[:status]
       event_speaker.save
-      render json: event_speaker.to_json
+
+      speaker = event_speaker.user
+      event = event_speaker.event
+      hour = event_speaker.talk_time.hour
+      min = event_speaker.talk_time.min
+      data = {event_speaker: event_speaker,speaker: speaker, event: event,hour: hour, min: min}
+
+      render json: data.to_json
     end
 
     def destroy

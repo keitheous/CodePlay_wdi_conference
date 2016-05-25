@@ -94,3 +94,20 @@ canvas {
   display: block;
   margin: 0px auto;
 }
+
+.back-to-choose-seats {
+  cursor:pointer;
+  color:white;
+  font-size: 1.1em;
+  padding:1em;
+}
+.back-to-choose-seats:hover {
+  color: $california;
+}
+.time-left {
+  color:gray;
+  text-align: center;
+  h4{
+    margin:10px;
+  }
+}

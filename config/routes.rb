@@ -34,4 +34,6 @@ Rails.application.routes.draw do
 
   put '/api/apply' => 'api/applyings#update'
   delete '/api/apply' => 'api/applyings#destroy'
+
+  delete '/event_speaker/:id' => 'users#destroy_event_speaker'
 end

@@ -2,11 +2,8 @@
 
   <input type="hidden" name="tickets_list" value="<%= @seats %>" class="tickets_list">
   <input type="hidden" name="total" value="<%= @total %>" class="total">
-
-  <div class="time-left">
-    <h4>Time left to complete page</h4>
-    <p id="counter"></p>
-  </div>
+  
+  <a class="back-to-choose-seats">Back to choose seats</a>
 
   <div class="order-summary">
 
@@ -42,6 +39,11 @@
 
   </div>
 
+  <div class="time-left">
+    <h4>Time left to complete payment</h4>
+    <p id="counter"></p>
+  </div>
+
 <% end %>
 
 <script type="text/javascript">
@@ -66,4 +68,15 @@
    }, 1000);
   }
   countDown(300);
-</script>>
+
+  $('.back-to-choose-seats').click(function(event){
+    $.ajax({
+      url: '/api/seats/revert',
+      data: {seats_num: seat_numbers},
+      method: 'put'
+    }).done(function(){
+      location.href = document.referrer
+    });
+  });
+
+</script>

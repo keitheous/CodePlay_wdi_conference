@@ -29,7 +29,7 @@ $(document).ready(function() {
         gauge: {
           thickness: .14,
           bgColor: "rgba(255,255,255,0.2)",
-          fgColor: "#8e44ad"
+          fgColor: "#F65966"
         },
         textCSS: 'font-size:25px; font-weight:100; color:#fff;'
       },

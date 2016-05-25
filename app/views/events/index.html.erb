@@ -107,6 +107,7 @@
               <th>Topic</th>
               <th>Time</th>
               <th>Event</th>
+              <th>Action</th>
             </tr>
             <% @speakers.each do |speaker| %>
               <tr>
@@ -114,6 +115,14 @@
                 <td><%=speaker.topic%></td>
                 <td><%=speaker.talk_time.hour%>:<%=speaker.talk_time.min%></td>
                 <td><%=speaker.event.name%></td>
+
+                <td>
+                  <form action="/event_speaker/<%= speaker.id %>" method="post">
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                     <input type="hidden" value="delete" name="_method">
+                     <button class="speaker-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+                  </form>
+                </td>
               </tr>
             <% end %>
           </table>

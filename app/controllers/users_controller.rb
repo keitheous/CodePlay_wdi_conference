@@ -64,4 +64,10 @@ class UsersController < ApplicationController
     redirect_to '/users'
   end
 
+  def destroy_event_speaker
+     event_speaker = EventSpeaker.find(params[:id])
+     event_speaker.destroy
+     redirect_to '/events'
+  end
+
 end

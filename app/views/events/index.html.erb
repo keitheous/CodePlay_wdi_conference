@@ -1,33 +1,26 @@
 <%= render partial: "addevents" %>
 <%= render partial: "editevent" %>
+
+<nav id="navbar">
+  <ul id="navmenu">
+    <li id="hamburger"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></li>
+    <div id="show-menu">
+      <div id="icon-list">
+          <li><a href="/users"><div class="circle-div"><i class="fa fa-user fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Profile</span>
+          </div></a></li>
+          <li><a data-scroll href="#events-section"><div class="circle-div"><i class="fa fa-calendar-o fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Events</span></div></a></li>
+          <li><a data-scroll href="#applications"><div class="circle-div"><i class="fa fa-paper-plane fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Applications</span></div></a></li>
+          <li><a data-scroll href="#event-speakers"><div class="circle-div"><i class="fa fa-microphone fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Speakers</span></div></a></li>
+          <li><a data-scroll href="#tickets"><div class="circle-div"><i class="fa fa-ticket fa-3x icons" aria-hidden="true"></i><span class ="icon-desc">Tickets</span></div></a></li>
+        </div>
+    </div>
+
+  </ul>
+</nav>
+
 <div class="events-application-container">
-        <nav class="nav">
-          <div class="burger">
-            <div class="burger__patty"></div>
-          </div>
-
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#1" class="nav__link c-blue"><i class="fa fa-calendar-o" aria-hidden="true"></i></a>
-            </li>
-            <li class="nav__item">
-              <a href="#2" class="nav__link c-yellow scrolly"><i class="fa fa-paper-plane"></i></a>
-            </li>
-            <li class="nav__item">
-              <a href="#3" class="nav__link c-red"><i class="fa fa-user" aria-hidden="true"></i></a>
-            </li>
-            <li class="nav__item">
-              <a href="#4" class="nav__link c-green"><i class="fa fa-ticket" aria-hidden="true"></i></a>
-            </li>
-          </ul>
-        </nav>
-
-        <section class="panel b-blue" id="1">
-          <article class="panel__wrapper">
-            <div class="panel__content">
-              <h1 class="panel__headline"><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;Events</h1>
-              <div class="panel__block"></div>
-       <!--============================events ================================  -->
+    <div data-scroll id="events-section">
+              <h1 class="admin-title"><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;Events</h1>
                     <div class="events-handler">
                       <button class="add-event-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add Event</button>
                       <% if @events.length != 0 %>
@@ -56,14 +49,11 @@
                         <p class="no-event-msg">There's no event, add event please.</p>
                       <% end %>
                     </div>
-            </div>
-          </article>
-        </section>
-        <section class="panel b-yellow" id="2">
-          <article class="panel__wrapper">
-            <div class="panel__content">
-              <h1 class="panel__headline"><i class="fa fa-paper-plane"></i>&nbsp;Pending applications</h1>
-              <div class="panel__block"></div>
+        </div>
+
+
+        <div data-scroll id="applications">
+              <h1 class="admin-title"><i class="fa fa-paper-plane"></i>&nbsp;Pending applications</h1>
                  <!--=========================appending applications================================-->
                  <div class="applying-users-handler">
                    <% if @event_speakers.length != 0 %>
@@ -96,15 +86,10 @@
                      <p class="no-pending-msg">There's no pending application.</p>
                    <% end %>
                  </div>
-                 <!--===========================================================-->
-            </div>
-          </article>
-        </section>
-        <section class="panel b-red" id="3">
-          <article class="panel__wrapper">
-            <div class="panel__content">
-              <h1 class="panel__headline"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Speakers</h1>
-              <div class="panel__block"></div>
+        </div>
+
+        <div data-scroll id="event-speakers">
+              <h1 class="admin-title"><i class="fa fa-microphone" aria-hidden="true"></i>&nbsp;Speakers</h1>
               <!--=========================================================-->
               <table class="speakers-list-form">
                 <tr>
@@ -123,22 +108,15 @@
                 <% end %>
               </table>
               <!--===========================================================-->
-            </div>
-          </article>
-        </section>
-        <section class="panel b-green" id="4">
-          <article class="panel__wrapper">
-            <div class="panel__content">
-              <h1 class="panel__headline"><i class="fa fa-ticket" aria-hidden="true"></i>&nbsp;Tickets</h1>
-              <div class="panel__block"></div>
-              <!--=========================================================-->
-              <div>Total Seats: <%= @seats.size%></div>
-              <div>Sold Seats: <%= @taken_seats.size %></div>
-              <!--===========================================================-->
-            </div>
-          </article>
-        </section>
-        <a href="/users" class="logo" target="_blank">
-         <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/45226/ettrics-logo.svg" alt="" />
-        </a>
+        </div>
+
+        <div data-scroll id="tickets">
+          <h1 class="admin-title"><i class="fa fa-ticket" aria-hidden="true"></i>&nbsp;Tickets</h1>
+
+          <div class="ticket-status">
+            <span>Total Seats: <%= @seats.size%></span>
+            <br/>
+            <span>Sold Seats: <%= @taken_seats.size %></span>
+          </div>
+        </div>
 </div>

@@ -6,7 +6,7 @@ smoothScroll.init({offset: 48});
 	$(window).scroll(function() {
 
 		var scrollLength = $(this).scrollTop();
-    // console.log(scrollLength);
+    console.log(scrollLength);
 
 		if (scrollLength > 80) {
 			$('.about-title').addClass('appear');
@@ -51,7 +51,7 @@ smoothScroll.init({offset: 48});
 			// =================
 		}
 
-		if (scrollLength > 4050) {
+		if (scrollLength > 3150) {
 			$('.sponsors-title').addClass('appear-title');
 
 			$('.sponsors-content').addClass('appear-sponsors');

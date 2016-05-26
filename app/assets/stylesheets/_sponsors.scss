@@ -1,7 +1,6 @@
 #sponsors {
   height: auto;
-  background-color: white;
-  color:white;
+  background-color: linen;
   text-align:center;
   overflow:hidden;
   color: #222;
@@ -38,7 +37,8 @@
 
 #sponsors h1::after {
   content: "";
-  background-color: $vivid-violet;
+  background-color: #222;
+  opacity: 0.5;
   display: block;
   width: 158px;
   height: 3px;

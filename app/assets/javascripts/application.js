@@ -20,6 +20,7 @@
 //= require countdown
 //= require typed
 //= require smoothscroll
+//= require backfix.min
 //= require main
 //= require tickets
 //= require hamburger

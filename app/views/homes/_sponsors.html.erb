@@ -13,7 +13,7 @@
   <div class="sponsor-img-wrap">
     <% @images.each do |image| %>
       <div class="sponsor-loop-image">
-        <%= image_tag "sponsors/#{image.split('/').last}" %>
+        <%= image_tag "sponsors/#{image.split('/').last}", class:"sponsors-img" %>
       </div>
     <% end %>
   </div>

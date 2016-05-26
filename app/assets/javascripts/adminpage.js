@@ -1,28 +1,4 @@
 $(document).ready(function() {
-  var sold = Number($(".sold-tickets").val());
-  var soldPercentage = (sold / 50 ).toPrecision(4) * 100;
-  var availablePercentage = 100 - soldPercentage;
-  $("#chartContainer").CanvasJSChart({  
-    axisY: { 
-      title: "Tikets in %" 
-    }, 
-    legend :{ 
-      verticalAlign: "center", 
-      horizontalAlign: "right" 
-    }, 
-    data: [ 
-    { 
-      type: "pie", 
-      showInLegend: true, 
-      toolTipContent: "{label} <br/> {y} %", 
-      indexLabel: "{y} %", 
-      dataPoints: [ 
-        { label: "Tickets Sold",  y: soldPercentage, legendText: "Tickets Sold"}, 
-        { label: "Tickets Available",    y: availablePercentage, legendText: "Tickets Available"  }
-      ] 
-    } 
-    ] 
-  }); 
 
   var undisplayApplicationTable = function() {
      var applyingItems = $('.applying-item');
@@ -44,7 +20,6 @@ $(document).ready(function() {
     var $applyingList = $(this).closest('.applying-item');
     var event_speaker_id = $applyingList.data('event-speaker-id');
     var scheduledTime = $applyingList.find('.schedule-time').val();
-    debugger
     $.ajax({
       url: '/api/apply',
       data: {id: event_speaker_id, time: scheduledTime,status: 'approved'},
@@ -82,7 +57,6 @@ $(document).ready(function() {
     var $applyingTable = $(this).closest('.applying-list');
     var $applyingList = $(this).closest('.applying-item');
     var event_speaker_id = $applyingList.data('event-speaker-id');
-    debugger
     $.ajax({
       url: '/api/apply',
       data: {id: event_speaker_id},

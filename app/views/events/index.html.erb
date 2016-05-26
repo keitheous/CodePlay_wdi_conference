@@ -21,14 +21,16 @@
 
 <div class="events-application-container">
 
-  <!-- <div data-scroll id="tickets">
+  <div data-scroll id="tickets">
     <h1 class="admin-title"><i class="fa fa-ticket" aria-hidden="true"></i>&nbsp;Tickets</h1>
 
     <div class="ticket-status">
-      <input class="sold-tickets" type="hidden" value="<%= @taken_seats.size %>">
+      <span>Total Seats Available: <%= @available_seats.size%></span>
+      </br>
+      <span>Sold Seats: <%= @taken_seats.size %></span>
     </div>
-    <div id="chartContainer" style="background-color:inherit;width: 100%; height: 300px"></div>
-  </div> -->
+ </div>
+
 
   <div data-scroll id="events-section">
       <div class="events-handler-wrap">
@@ -70,7 +72,7 @@
          <div class="applying-users-handler">
            <% if @event_speakers.length != 0 %>
              <table class="applying-list">
-               <tr>
+               <tr class="list-of-titles">
                  <th>Name</th>
                  <th>Topic</th>
                  <th>Content</th>

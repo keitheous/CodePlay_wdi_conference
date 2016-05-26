@@ -189,7 +189,7 @@
 
 .edit-events-form {
   display: none;
-  padding-top: 50px;
+  padding-top: 13em;
   background-image: image-url('seating-bg.jpg');
   background-size:cover;
   height:100vh;
@@ -208,7 +208,7 @@
     font-size: 0.9em;
   }
   .edit-event-submit {
-    background-color: #f4b555;
+    background-color: $caribbean-green;
     margin-top: 20px;
     color:white;
     font-weight: bold;

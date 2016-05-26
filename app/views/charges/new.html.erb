@@ -56,22 +56,17 @@
     seat_numbers.push(tds.eq(i).text());
   }
   var countDown = function(sec) {
-   timer = setInterval(function() {
-    // leave this page path return to tickets
-
-    // ajax call
-
-     $('#counter').text(sec-- + " seconds remaining");
-
-     if (sec === -1) {
-        $.ajax({
-          url: '/api/seats/revert',
-          data: {seats_num: seat_numbers},
-          method: 'put'
-        }).done(function(){
-          location.href = document.referrer;
-        });
-     }
+    timer = setInterval(function() {
+    $('#counter').text(sec-- + " seconds remaining");
+    if (sec === -1) {
+      $.ajax({
+        url: '/api/seats/revert',
+        data: {seats_num: seat_numbers},
+        method: 'put'
+      }).done(function(){
+        location.href = document.referrer;
+      });
+    }
    }, 1000);
   }
   countDown(300);
@@ -87,7 +82,7 @@
       location.href = document.referrer;
     });
   });
-
+  // go back button in browser or keyboard
   bajb_backdetect.OnBack = function()
   {
     // session storage to store the seat_numbers

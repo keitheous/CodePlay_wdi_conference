@@ -113,7 +113,7 @@
   cursor: pointer;
 }
 
-.checkout-button:hover {
+.checkout-button:hover:enabled {
   background-color: white;
   /*color: #2980b9;*/
   color: #222;

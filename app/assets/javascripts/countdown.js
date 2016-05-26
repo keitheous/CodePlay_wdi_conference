@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  debugger
   var conferenceDate = new Date("Aug 30, 2016 00:00:00"); // Your timezone!
   var timeEpoch = conferenceDate.getTime()/1000;
 
@@ -48,18 +48,13 @@ $(document).ready(function() {
     }
   });
 
-  $(function(){
-    // $(".conf-name").typed({
-    //   strings: ["$ WDI CONF"],
-    //   typeSpeed: 150,
-    //   showCursor: false
-    // });
+  var conferenceName = function() {
     $(".conf-name").typed({
       strings: ["WDI CONF 2016"],
       typeSpeed: 150,
       // startDelay: 2000,
       showCursor: true
     });
-  });
-
+  }
+  conferenceName();
 });

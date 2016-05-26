@@ -57,6 +57,10 @@
   }
   var countDown = function(sec) {
    timer = setInterval(function() {
+    // leave this page path return to tickets
+
+    // ajax call
+
      $('#counter').text(sec-- + " seconds remaining");
 
      if (sec === -1) {
@@ -83,5 +87,11 @@
       location.href = document.referrer;
     });
   });
+
+  bajb_backdetect.OnBack = function()
+  {
+    // session storage to store the seat_numbers
+    sessionStorage.setItem('seats_num', seat_numbers); 
+  }
 
 </script>

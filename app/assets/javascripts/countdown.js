@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  debugger
   var conferenceDate = new Date("Aug 30, 2016 00:00:00"); // Your timezone!
   var timeEpoch = conferenceDate.getTime()/1000;
 

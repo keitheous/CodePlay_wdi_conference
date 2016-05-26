@@ -14,8 +14,9 @@
 //= require jquery_ujs
 //= require jquery.knob
 //= require jquery.throttle
+//= require canvasjs
+//= require jquery.canvasjs
 //= require jquery.countdown
-//= require handlebars.js
 //= require countdown
 //= require typed
 //= require smoothscroll

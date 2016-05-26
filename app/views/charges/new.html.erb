@@ -65,7 +65,7 @@
           data: {seats_num: seat_numbers},
           method: 'put'
         }).done(function(){
-          location.href = document.referrer
+          location.href = document.referrer;
         });
      }
    }, 1000);
@@ -78,7 +78,9 @@
       data: {seats_num: seat_numbers},
       method: 'put'
     }).done(function(){
-      location.href = document.referrer
+      location.href = document.referrer;
+    }).fail(function(){
+      location.href = document.referrer;
     });
   });
 

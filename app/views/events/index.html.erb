@@ -47,11 +47,7 @@
                           <td class="event-time-td"><%= event.time.to_formatted_s(:long)  %></td>
                           <td>
                             <button class="event-edit-btn"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></button>
-                            <form action="/events/<%= event.id %>" method="post">
-                              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                               <input type="hidden" value="delete" name="_method">
-                               <button class="event-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
-                            </form>
+                            <button class="event-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
                           </td>
                         </tr>
                       <% end %>
@@ -112,18 +108,14 @@
                 <th>Action</th>
               </tr>
               <% @speakers.each do |speaker| %>
-                <tr>
+                <tr class="speaker-item" data-speaker-id="<%= speaker.id %>">
                   <td><%=speaker.user.name%></td>
                   <td><%=speaker.topic%></td>
                   <td><%=speaker.talk_time.strftime('%H')%>:<%=speaker.talk_time.strftime('%M')%></td>
                   <td><%=speaker.event.name%></td>
 
                   <td>
-                    <form action="/event_speaker/<%= speaker.id %>" method="post">
-                      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                       <input type="hidden" value="delete" name="_method">
-                       <button class="speaker-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
-                    </form>
+                    <button class="speaker-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
                   </td>
                 </tr>
               <% end %>
@@ -133,11 +125,25 @@
 </div>
 
 <script id="form-template" type="text/x-handlebars-template">
-  <td>
-    <form action="/event_speaker/{{event_speaker_id}}" method="post">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-       <input type="hidden" value="delete" name="_method">
-       <button class="speaker-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
-    </form>
-  </td>
+  <tr class="speaker-item" data-speaker-id="{{speaker_id}}">
+    <td>{{speaker_name}}</td>
+    <td>{{speaker_topic}}</td>
+    <td>{{talk_time_hour}}:{{talk_time_min}}</td>
+    <td>{{event_name}}</td>
+    <td>
+      <button class="speaker-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+    </td>
+  </tr>
+</script>
+
+<script id="speaker-template" type="text/x-handlebars-template">
+  <table class="speakers-list-form">
+      <tr>
+        <th>Name</th>
+        <th>Topic</th>
+        <th>Time</th>
+        <th>Event</th>
+        <th>Action</th>
+      </tr>
+  </table>
 </script>

@@ -94,7 +94,7 @@
                <% end %>
              </table>
              <% else %>
-             <p class="no-pending-msg">There's no pending application.</p>
+             <p class="no-pending-msg">There are currently no pending application.</p>
            <% end %>
          </div>
       </div>
@@ -102,7 +102,7 @@
       <div data-scroll id="event-speakers">
         <h1 class="admin-title"><i class="fa fa-microphone" aria-hidden="true"></i>&nbsp;Speakers</h1>
           <% if @speakers == nil || @speakers.length == 0 %>
-            <p class="no-speakers">There's no speakers.</p>
+            <p class="no-speakers">There are currently no speakers.</p>
           <% else %>
             <table class="speakers-list-form">
               <tr>

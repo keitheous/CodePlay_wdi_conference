@@ -21,46 +21,48 @@
 
 <div class="events-application-container">
 
-  <div data-scroll id="tickets">
+  <!-- <div data-scroll id="tickets">
     <h1 class="admin-title"><i class="fa fa-ticket" aria-hidden="true"></i>&nbsp;Tickets</h1>
 
     <div class="ticket-status">
       <input class="sold-tickets" type="hidden" value="<%= @taken_seats.size %>">
     </div>
-    <div id="chartContainer" style="background-color:inherit;width: 100%; height: 300px">
-  </div>
+    <div id="chartContainer" style="background-color:inherit;width: 100%; height: 300px"></div>
+  </div> -->
 
   <div data-scroll id="events-section">
+      <div class="events-handler-wrap">
       <h1 class="admin-title"><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;Events</h1>
-          <div class="events-handler">
-              <button class="add-event-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add Event</button>
-                <% if @events.length != 0 %>
-                    <table>
-                      <tr>
-                        <th class="event-name-td">Event Name</th>
-                        <th class="event-time-td">Event Time</th>
-                        <th>Actions</th>
-                      </tr>
-                      <% @events.each do |event| %>
-                        <tr class="admin-event-list" data-event-id="<%= event.id %>">
-                          <td class="event-name-td"><%= event.name %></td>
-                          <td class="event-time-td"><%= event.time.to_formatted_s(:long)  %></td>
-                          <td>
-                            <button class="event-edit-btn"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></button>
-                            <form action="/events/<%= event.id %>" method="post">
-                              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                               <input type="hidden" value="delete" name="_method">
-                               <button class="event-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
-                            </form>
-                          </td>
-                        </tr>
-                      <% end %>
-                    </table>
-                <% else %>
-                  <p class="no-event-msg">There's no event, add event please.</p>
-                <% end %>
+      <button class="add-event-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add Event</button>
       </div>
+      <div class="events-handler">
+        <% if @events.length != 0 %>
+            <table>
+              <tr>
+                <th class="event-name-td">Event Name</th>
+                <th class="event-time-td">Event Time</th>
+                <th class="event-action-td">Actions</th>
+              </tr>
+              <% @events.each do |event| %>
+                <tr class="admin-event-list" data-event-id="<%= event.id %>">
+                  <td class="event-name-td"><%= event.name %></td>
+                  <td class="event-time-td"><%= event.time.to_formatted_s(:long)  %></td>
+                  <td>
+                    <button class="event-edit-btn"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></button>
+                    <form action="/events/<%= event.id %>" method="post">
+                      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                       <input type="hidden" value="delete" name="_method">
+                       <button class="event-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+                    </form>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+        <% else %>
+          <p class="no-event-msg">There's no event, add event please.</p>
+        <% end %>
     </div>
+  </div>
 
 
     <div data-scroll id="applications">
@@ -109,7 +111,7 @@
                 <th>Topic</th>
                 <th>Time</th>
                 <th>Event</th>
-                <th>Action</th>
+                <th class="event-action-td">Action</th>
               </tr>
               <% @speakers.each do |speaker| %>
                 <tr>
@@ -130,7 +132,6 @@
             </table>
           <% end %>
       </div>
-</div>
 
 <script id="form-template" type="text/x-handlebars-template">
   <td>

@@ -1,6 +1,6 @@
 <div id="checkout-page">
 
-<a class="back-to-choose-seats">Back to seats selection</a>
+<a class="back-to-choose-seats"><button class="login-button">Back to seats selection</button></a>
 
 <%= form_tag charges_path do %>
 
@@ -15,7 +15,7 @@
       <% @seats.each do |seat|%>
         <tr>
           <td class="seat-checkout"><%= seat[:seat_num] %></td>
-          <td class="type-checkout"><%= seat[:type] %></td>
+          <td class="type-checkout"><%= seat[:type].upcase %></td>
           <td class="price-checkout"><%= number_to_currency(seat[:price]) %></td>
         </tr>
       <% end %>
@@ -91,7 +91,7 @@
   bajb_backdetect.OnBack = function()
   {
     // session storage to store the seat_numbers
-    sessionStorage.setItem('seats_num', seat_numbers); 
+    sessionStorage.setItem('seats_num', seat_numbers);
   }
 
 </script>

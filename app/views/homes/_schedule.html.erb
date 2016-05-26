@@ -2,9 +2,8 @@
 
 <h1 class="section-title schedule-title">SCHEDULE</h1>
 <div class="timeline">
-  <% @talks.each do |talk|%>
-
-    <% if talk.id%2 == 0 %>
+  <% @talks.each_with_index do |talk,index|%>
+    <% if index%2 == 0 %>
       <ul>
         <li>
          <div class="timeline-right">

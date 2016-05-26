@@ -1,29 +1,4 @@
 $(document).ready(function() {
-  // var sold = Number($(".sold-tickets").val());
-  // var soldPercentage = (sold / 50 ).toPrecision(4) * 100;
-  // var availablePercentage = 100 - soldPercentage;
-  // $("#chartContainer").CanvasJSChart({  
-  //   axisY: { 
-  //     title: "Tikets in %" 
-  //   }, 
-  //   legend :{ 
-  //     verticalAlign: "center", 
-  //     horizontalAlign: "right" 
-  //   }, 
-  //   data: [ 
-  //   { 
-  //     type: "pie", 
-  //     showInLegend: true, 
-  //     toolTipContent: "{label} <br/> {y} %", 
-  //     indexLabel: "{y} %", 
-  //     dataPoints: [ 
-  //       { label: "Tickets Sold",  y: soldPercentage, legendText: "Tickets Sold"}, 
-  //       { label: "Tickets Available",    y: availablePercentage, legendText: "Tickets Available"  }
-  //     ] 
-  //   } 
-  //   ] 
-  // }); 
-
   var undisplayApplicationTable = function() {
      var applyingItems = $('.applying-item');
      var $applyingTable = $('.applying-list');

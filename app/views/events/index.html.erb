@@ -25,10 +25,9 @@
     <h1 class="admin-title"><i class="fa fa-ticket" aria-hidden="true"></i>&nbsp;Tickets</h1>
 
     <div class="ticket-status">
-      <span>Total Seats: 50</span>
-      <br/>
-      <span>Sold Seats: <%= @taken_seats.size %></span>
+      <input class="sold-tickets" type="hidden" value="<%= @taken_seats.size %>">
     </div>
+    <div id="chartContainer" style="background-color:inherit;width: 100%; height: 300px">
   </div>
 
   <div data-scroll id="events-section">

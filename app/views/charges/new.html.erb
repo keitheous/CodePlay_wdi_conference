@@ -1,9 +1,11 @@
+<div id="checkout-page">
+
+<a class="back-to-choose-seats">Back to seats selection</a>
+
 <%= form_tag charges_path do %>
 
   <input type="hidden" name="tickets_list" value="<%= @seats %>" class="tickets_list">
   <input type="hidden" name="total" value="<%= @total %>" class="total">
-  
-  <a class="back-to-choose-seats">Back to choose seats</a>
 
   <div class="order-summary">
 
@@ -45,6 +47,7 @@
   </div>
 
 <% end %>
+</div>
 
 <script type="text/javascript">
   var seat_numbers = [];

@@ -2,7 +2,7 @@
   width: 50%;
   margin: 70px auto;
   text-align: center;
-  // background-color: white
+  background-color: black;
   border: 1px solid white ;
   border-radius: 6px;
 }
@@ -18,9 +18,17 @@
   border: 1px solid white;
 }
 
-.seat-checkout {}
-.type-checkout {}
-.price-checkout {}
+.seat-checkout {
+  background-color:$caribbean-green;
+}
+
+.type-checkout {
+  background-color:$denim;
+}
+
+.price-checkout {
+  background-color:$froly;
+}
 
 .payment-form {
   display: block;
@@ -98,16 +106,26 @@ canvas {
 .back-to-choose-seats {
   cursor:pointer;
   color:white;
-  font-size: 1.1em;
-  padding:1em;
 }
+
 .back-to-choose-seats:hover {
-  color: $california;
+  color: $froly;
 }
 .time-left {
-  color:gray;
+  color:white;
   text-align: center;
   h4{
     margin:10px;
   }
+}
+
+#checkout-page {
+  background-image: url('bg1.jpg');
+  background-size:cover;
+  height:100vh;
+  padding:1em;
+}
+
+#counter {
+  margin:0;
 }

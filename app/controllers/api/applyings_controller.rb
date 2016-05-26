@@ -11,8 +11,8 @@ module Api
 
       speaker = event_speaker.user
       event = event_speaker.event
-      hour = event_speaker.talk_time.hour
-      min = event_speaker.talk_time.min
+      hour = event_speaker.talk_time.strftime('%H')
+      min = event_speaker.talk_time.strftime('%M')
       data = {event_speaker: event_speaker,speaker: speaker, event: event,hour: hour, min: min}
 
       render json: data.to_json

@@ -14,10 +14,6 @@
   height:50vh;
   background-image:url('bg3.jpg');
   padding:1em;
-
-  a:hover {
-    color:$froly;
-  }
 }
 
 
@@ -26,7 +22,7 @@
   bottom:31%;
   border:3px solid white;
   border-radius:50%;
-  border:3px solid $denim;
+  border:3px solid $caribbean-green;
   border-radius: 50%;
   height:15em;
   width:15em;
@@ -43,6 +39,10 @@
   height:auto;
   max-width:100vw;
   overflow-x:hidden;
+
+  a:hover {
+    color:$froly;
+  }
 }
 
 #profile-section {
@@ -57,7 +57,6 @@
     padding:1em;
     border:1px solid white;
     margin-left:5em;
-    transition:0.5s;
     -webkit-animation: slide-in-left 1s;
         -moz-animation: slide-in-left 1s;
          -ms-animation: slide-in-left 1s;
@@ -65,14 +64,10 @@
              animation: slide-in-left 1s;
   }
 
-  a:hover li {
-    color:$froly;
-  }
 
   li:hover {
     border-color:$froly;
   }
-
 }
 
 #desc-section {
@@ -80,7 +75,7 @@
   margin: 0 auto;
   min-height:50vh;
   height:auto;
-  background-color: $denim;
+  background-color: $caribbean-green;
   transition:0.5s;
 }
 

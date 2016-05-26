@@ -95,6 +95,10 @@
 
 @media screen and (device-aspect-ratio: 40/71) {
 
+  .speaker-info {
+    font-size:0.6em;
+  }
+
   .conf-name {
     font-size:3.5em;
   }
@@ -126,6 +130,17 @@
 }
 
 @media screen and (max-width: 767px) {
+
+  .about-image, .ab-1 {
+    display:none;
+  }
+
+  .speaker-box {
+    height:63.5em !important;
+    width:63.5em !important;
+    left:6.5% !important;
+    top:4.5% !important;
+  }
 
   #img-profile {
     height:18em !important;
@@ -166,6 +181,19 @@
     padding:0 0 1em 0 !important;
   }
 
+  .add-events-form #close-add-event, #close-edit-event {
+    right: 11% !important;
+  }
+
+  .reject-button {
+    display:flex;
+    -webkit-display:flex;
+  }
+
+  .applying-users-handler .applying-content {
+    width: 100% !important;
+  }
+
   .events-application-container {
 
     table {
@@ -197,7 +225,13 @@
       table, thead, tbody, th, td, tr {
 		    display: block;
         text-align:left;
+        background-color:$caribbean-green;
 	    }
+
+      table {
+        border:none;
+        margin:0 1.3em 0 1.3em;
+      }
 
       .applying-list {
         padding:0;
@@ -213,31 +247,31 @@
         display:none;
       }
 
-
-    	tr { border: 1px solid #ccc; }
+    	tr { border: 1px solid white; }
 
     	td {
     		border: none;
-    		border-bottom: 1px solid #eee;
+    		border-bottom: 1px solid white;
     		position: relative;
-    		padding-left: 30%;
         max-width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
     	}
 
-    	td:before {
+    	td:after {
     		position: absolute;
     		top: 6px;
     		left: 6px;
-    		width: 50%;
-    		padding-right: 10px;
+    		width: 100%;
     		white-space: nowrap;
     	}
 
-      .reject-button {
-        margin-left:2em;
+      td:before {
+        margin-right:20px;
+        font-size:1.1em;
+        background-color:#0b4c3f;
+        padding:0.5em !important;
       }
 
       td:nth-of-type(1):before { content: "Name"; }

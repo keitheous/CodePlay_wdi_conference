@@ -24,6 +24,8 @@
 //= require hamburger
 //= require forms
 //= require profile
+//= require canvasjs
+//= require jquery.canvasjs
 //= require adminpage_vertical
 //= require adminpage
 //= require checkout

@@ -1,28 +1,28 @@
 $(document).ready(function() {
-  var sold = Number($(".sold-tickets").val());
-  var soldPercentage = (sold / 50 ).toPrecision(4) * 100;
-  var availablePercentage = 100 - soldPercentage;
-  $("#chartContainer").CanvasJSChart({  
-    axisY: { 
-      title: "Tikets in %" 
-    }, 
-    legend :{ 
-      verticalAlign: "center", 
-      horizontalAlign: "right" 
-    }, 
-    data: [ 
-    { 
-      type: "pie", 
-      showInLegend: true, 
-      toolTipContent: "{label} <br/> {y} %", 
-      indexLabel: "{y} %", 
-      dataPoints: [ 
-        { label: "Tickets Sold",  y: soldPercentage, legendText: "Tickets Sold"}, 
-        { label: "Tickets Available",    y: availablePercentage, legendText: "Tickets Available"  }
-      ] 
-    } 
-    ] 
-  }); 
+  // var sold = Number($(".sold-tickets").val());
+  // var soldPercentage = (sold / 50 ).toPrecision(4) * 100;
+  // var availablePercentage = 100 - soldPercentage;
+  // $("#chartContainer").CanvasJSChart({  
+  //   axisY: { 
+  //     title: "Tikets in %" 
+  //   }, 
+  //   legend :{ 
+  //     verticalAlign: "center", 
+  //     horizontalAlign: "right" 
+  //   }, 
+  //   data: [ 
+  //   { 
+  //     type: "pie", 
+  //     showInLegend: true, 
+  //     toolTipContent: "{label} <br/> {y} %", 
+  //     indexLabel: "{y} %", 
+  //     dataPoints: [ 
+  //       { label: "Tickets Sold",  y: soldPercentage, legendText: "Tickets Sold"}, 
+  //       { label: "Tickets Available",    y: availablePercentage, legendText: "Tickets Available"  }
+  //     ] 
+  //   } 
+  //   ] 
+  // }); 
 
   var undisplayApplicationTable = function() {
      var applyingItems = $('.applying-item');
@@ -76,7 +76,7 @@ $(document).ready(function() {
       // undisplay application table when there's no applying item
       undisplayApplicationTable();
       //if speakers-list-form does not exist create one
-      if($(".no-speakers").css("display") != "none") {
+      if($(".no-speakers").css("display") != "none" && $(".no-speakers").length != 0) {
         $(".no-speakers").css("display","none");
         //create a new speaker table
         var speakerTemplate = $("#speaker-template").html();

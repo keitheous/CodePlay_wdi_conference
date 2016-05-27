@@ -61,6 +61,7 @@ Rails.application.configure do
   # config.action_controller.asset_host = 'http://assets.example.com'
 
   # Action Mailer
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp

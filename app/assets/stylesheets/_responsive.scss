@@ -93,6 +93,13 @@
 
 }
 
+@media screen and (device-aspect-ratio: 375/667) {
+  #img-profile {
+    transform: none !important;
+  }
+}
+
+
 @media screen and (device-aspect-ratio: 40/71) {
 
   .speaker-info {
@@ -112,8 +119,6 @@
   }
 
   #img-profile {
-    position:static !important;
-    margin-top:6em;
   }
 
   #edit-page {
@@ -122,9 +127,7 @@
   }
 
   #profile-section {
-    position:static !important;
-    padding-top:5em;
-    padding-right:4em;
+    padding-top:3em;
   }
 
 }

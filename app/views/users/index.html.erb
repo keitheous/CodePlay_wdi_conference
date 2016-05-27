@@ -1,7 +1,7 @@
 <div id="edit-page">
   <div id="show-profile">
     <a href="/"><button class="login-button">Back To Main</button></a>
-    <h1 id="greeting">Hello <%= @user.name%>,</h1>
+    <h1 id="greeting">Hello <%= @user.name.capitalize%>,</h1>
     <img id="img-profile" src="<%= @user.img%>" alt="">
 
 
@@ -9,7 +9,7 @@
 
 
   <div id="desc-section">
-    <p id="description"><%= @user.desc%></p>
+    <p id="description"><%= @user.desc.capitalize%></p>
 
     <div id="profile-section">
       <ul id="edit-profile">

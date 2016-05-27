@@ -14,8 +14,6 @@
 //= require jquery_ujs
 //= require jquery.knob
 //= require jquery.throttle
-//= require canvasjs
-//= require jquery.canvasjs
 //= require jquery.countdown
 //= require countdown
 //= require typed
@@ -26,8 +24,11 @@
 //= require hamburger
 //= require forms
 //= require profile
-//= require adminpage_vertical
-//= require adminpage
 //= require checkout
 //= require googlemaps
 //= require speakers
+//= require canvasjs
+//= require jquery.canvasjs
+//= require handlebars
+//= require adminpage_vertical
+//= require adminpage

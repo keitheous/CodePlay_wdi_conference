@@ -33,7 +33,7 @@
   font-size: 0.85em;
   border: 1px solid white;
   position: absolute;
-  top: 85px;
+  top: 45px;
   right: 0;
 }
 
@@ -80,14 +80,6 @@
     background-color: inherit;
     cursor: pointer;
     padding-right: 12px;
-  }
-  .edit-hover {
-    display: none;
-    color:$california;
-  }
-  .delete-hover {
-    display: none;
-    color:$california;
   }
   .fa-pencil-square-o, .fa-trash {
     color:white;
@@ -189,7 +181,7 @@
 
 .edit-events-form {
   display: none;
-  padding-top: 50px;
+  padding-top: 13em;
   background-image: image-url('seating-bg.jpg');
   background-size:cover;
   height:100vh;
@@ -208,7 +200,7 @@
     font-size: 0.9em;
   }
   .edit-event-submit {
-    background-color: #f4b555;
+    background-color: $caribbean-green;
     margin-top: 20px;
     color:white;
     font-weight: bold;
